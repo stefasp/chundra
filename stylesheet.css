@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+.staatliches-regular {
+  font-family: "Staatliches", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.bold{
+  font-weight: 500;
+}
+a{
+    font-weight: 400;
+    text-decoration: none;
+    color: #876fff;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+.hero-text {
+    max-width: 600px;
+    margin-right: 20px;
+}
+.hero img {
+    width: 450px;
+    height: auto;
+}
+.hero h1 {
+    font-size: 4.5em;
+    margin: 0;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.hero p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 50px;
+    text-align: center;
+}
+.gallery h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+.gallery-item img, .gallery-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background-color: #eee;
+}
+.about img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.about-text {
+    max-width: 600px;
+}
+.studio-photos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.studio-photos img {
+    width: 150px;
+    height: auto;
+}
+
+.contact {
+    text-align: center;
+    padding: 30px;
+    background-color: #ddd;
+}
+.contact h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    font-size: 1.2em;
+}
+.contact-info img {
+    width: 25px;
+    height: auto;
+}
