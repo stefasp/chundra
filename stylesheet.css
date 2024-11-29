@@ -47,30 +47,58 @@ a{
     color: #555;
 }
 
-/* Gallery Section */
+//* Gallery Section */
+
+.gallery-container {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    display: block;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 40px 20px; 
+}
+
 .gallery {
-    padding: 50px;
+    width: calc(100% - 40px); /* Subtract 40px space on both sides */
+    padding: 20px; /* Add 40px padding to the left and right */
+    margin: 0 auto; /* Center the gallery */
+    position: relative;
+    display: block;
     text-align: center;
 }
-.gallery h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+
+/* Masonry grid container */
+.masonry-grid {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0;
 }
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-.gallery-item {
+
+/* Grid items */
+.grid-item {
     position: relative;
-    cursor: pointer;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 250px; /* Ensures each item is responsive */
+    margin-bottom: 10px;
 }
-.gallery-item img, .gallery-item video {
+
+.grid-item img {
     width: 100%;
     height: auto;
-    display: block;
+    object-fit: cover; /* Ensures images cover the area without distortion */
 }
-.gallery-item .overlay {
+
+/* Hover effect */
+.grid-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,21 +113,23 @@ a{
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.gallery-item:hover .overlay {
+.grid-item:hover .overlay {
     opacity: 1;
 }
 
+
 .about {
+    width: 80%;
+    margin: auto;
     display: flex;
     align-items: center;
     padding: 50px;
-    background-color: #eee;
 }
-.about img {
-    width: 200px;
+.about img.me {
+    width: 390px;
     height: auto;
-    margin-right: 20px;
-    border-radius: 50%;
+    margin-left: 70px;
+    border-radius: 0;
 }
 .about-text {
     max-width: 600px;
