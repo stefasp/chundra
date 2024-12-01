@@ -1,18 +1,85 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #fff;
     color: #333;
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 200;
     font-style: normal;
 }
-.staatliches-regular {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+    box-shadow: 0 0 5px #00000030;
+    width: 100%;
+    position: fixed;
+    display: block;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000000;
+    z-index: 999;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+}
+.logo-container img {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu li a {
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: none;
+    color: #00000091;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #f0a500;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.logo-font {
   font-family: "Staatliches", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+.Edu {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .bold{
   font-weight: 500;
 }
@@ -21,14 +88,30 @@ a{
     text-decoration: none;
     color: #876fff;
 }
+h2{
+    font-size: 43px;
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    margin: 20px 0;
+    font-weight: 200;
+}
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 110px 50px 50px 50px;
+}
+.hero .title{
+    display: flex;
+}
+.hero .title p{
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-size: 1.0rem;
+    padding-left: 10px;
+    padding-top: 47px;
+    font-style: italic;
 }
 .hero-text {
-    max-width: 600px;
+    width: 50%;
     margin-right: 20px;
 }
 .hero img {
@@ -49,74 +132,82 @@ a{
 
 //* Gallery Section */
 
-.gallery-container {
+.gallery-container h2{
     text-align: center;
-    margin: 0;
-    position: relative;
-    display: block;
-    max-width: 1200px; 
-    margin-left: auto;
-    margin-right: auto; 
-    padding: 40px 20px; 
+}
+.gallery-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .gallery {
-    width: calc(100% - 40px); /* Subtract 40px space on both sides */
-    padding: 20px; /* Add 40px padding to the left and right */
-    margin: 0 auto; /* Center the gallery */
-    position: relative;
-    display: block;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: center;
 }
 
-/* Masonry grid container */
-.masonry-grid {
-    margin: auto;
+.card {
+    position: relative;
+    height: 250px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    padding: 0;
-}
-
-/* Grid items */
-.grid-item {
-    position: relative;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
     overflow: hidden;
-    width: 100%;
-    max-width: 250px; /* Ensures each item is responsive */
-    margin-bottom: 10px;
+    width: 40%; /* Ocupa el 40% en pantallas grandes */
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+    background-color: #D1DFFFCC;
 }
 
-.grid-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensures images cover the area without distortion */
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.4s ease-in-out;
+    background-color: #f5efadcc;
+    cursor: pointer;
 }
 
-/* Hover effect */
-.grid-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.grid-item:hover .overlay {
-    opacity: 1;
+.card .image-container {
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  height: 100%;
 }
 
+.card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.card .details {
+  width: 60%;
+  padding: 15px;
+  text-align: left;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-weight: 200;
+}
+
+.card p {
+    padding: 0;
+    font-size: 13px;
+    color: #00000078;
+    margin: 6px 0;
+}
 
 .about {
     width: 80%;
@@ -124,6 +215,10 @@ a{
     display: flex;
     align-items: center;
     padding: 50px;
+}
+.about p {
+    opacity: 0.8;
+    line-height: 1.6rem;
 }
 .about img.me {
     width: 390px;
@@ -148,7 +243,13 @@ a{
 .contact {
     text-align: center;
     padding: 30px;
-    background-color: #ddd;
+    background-color: #fdf7d8;
+}
+.contact a{
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #00000091;
 }
 .contact h3 {
     font-size: 1.8em;
