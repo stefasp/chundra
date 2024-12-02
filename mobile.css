@@ -61,6 +61,12 @@
     padding: 0;
     padding-bottom: 30px;
   }
+  .piece-gallery {
+    padding: 20px 0%;
+  }
+  .piece-gallery img, .piece-gallery video {
+    padding: 30px 6%;
+  }
 }
 @media (max-width: 768px) {
   .gallery-container {
