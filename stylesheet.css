@@ -13,7 +13,12 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+.hide{
+    display: none !important;
+}
+#copyButton{
+    cursor: pointer; 
+}
 header {
     box-shadow: 0 0 5px #00000030;
     width: 100%;
@@ -32,7 +37,19 @@ header .container{
 .logo-container img {
   height: 50px;
 }
-
+.copybutton{
+    margin-right: 10px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+}
 nav {
   display: flex;
   align-items: center;
@@ -109,6 +126,9 @@ h2{
     padding-left: 10px;
     padding-top: 47px;
     font-style: italic;
+}
+.hero.piece p{
+    font-size: 0.9rem;
 }
 .hero-text {
     width: 50%;
@@ -221,13 +241,13 @@ h2{
     line-height: 1.6rem;
 }
 .about img.me {
-    width: 390px;
+    width: 52%;
     height: auto;
-    margin-left: 70px;
+    margin-left: 6%;
     border-radius: 0;
 }
 .about-text {
-    max-width: 600px;
+    width: 45%;
 }
 .studio-photos {
     display: flex;
@@ -266,3 +286,83 @@ h2{
     width: 25px;
     height: auto;
 }
+
+/* Section Styling */
+.exhibitions {
+    margin: auto;
+    width: 86%;
+    padding: 30px 20px;
+}
+
+.exhibitions h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Exhibition Row Styling */
+.exhibition-row {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.exhibition-row::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, #ddd, transparent);
+}
+.gallery-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  flex: 1;
+}
+
+.details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.details div {
+  font-size: 0.9em;
+}
+
+/* Technical Info Section */
+.technical-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.technical-info .info-column {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.technical-info p {
+  margin: 5px 0;
+}
+
+/* Images Gallery */
+.piece-gallery {
+    padding: 20px 30%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.piece-gallery img,
+.piece-gallery video {
+  padding: 30px 10%;
+  width: 100%;
+  object-fit: cover;
+}
+
