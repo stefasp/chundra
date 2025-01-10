@@ -75,6 +75,17 @@ nav {
 .menu li a:hover {
   color: #f0a500;
 }
+.button.main{
+    border-radius: 5px;
+    margin: 32px 0;
+    display: inline-block;
+    padding: 16px;
+    background: #876fff;
+    color: #fff;
+}
+.button.main:hover{
+    background-color: #5f4ac9;
+}
 
 .menu-toggle {
   display: none;
