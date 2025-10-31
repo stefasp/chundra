@@ -312,6 +312,12 @@ section.gallery-container{
     background-color: #D1DFFFCC;
 }
 
+.card[data-category="dibujo"],
+.card[data-category="dibujo"]:hover {
+  cursor: default;
+  transform: none; /* opcional, evita el zoom del hover */
+}
+
 .card:hover {
     transform: scale(1.03);
     transition: transform 0.4s ease-in-out;
