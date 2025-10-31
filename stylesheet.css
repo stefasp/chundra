@@ -77,7 +77,7 @@ nav {
     border-radius: 70px;
     position: absolute;
     left: 50%;
-    top: 550px;
+    bottom: -50px;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -86,6 +86,10 @@ nav {
     background-color: #9891CC;
     z-index: 1000;
     font-family: "Edu VIC WA NT Hand Pre", cursive;
+}
+.filter-bar span{
+    color: #00000085;
+    padding: 6px;
 }
 
 .filter-bar .filter-btn {
@@ -96,6 +100,8 @@ nav {
     border-radius: 60px;
     transition: all 0.2s;
     color: #EBE9D4;
+    white-space: nowrap;
+    position: relative;
 }
 
 .filter-bar .filter-btn.active {
@@ -103,6 +109,28 @@ nav {
   color: #807AB2;
 }
 
+/* Tooltip base (solo se aplica si existe data-tooltip con contenido) */
+.filter-btn[data-tooltip]:not([data-tooltip=""])::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -49%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(122 116 169);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    color: #EBE9D4;
+}
+
+/* Mostrar solo si hay texto */
+.filter-btn[data-tooltip]:not([data-tooltip=""]):hover::after {
+  opacity: 1;
+}
 .menu {
   display: flex;
   list-style: none;
@@ -124,11 +152,12 @@ nav {
   color: #f0a500;
 }
 .button.main{
-    border-radius: 5px;
+    font-size: 18px;
+    border-radius: 35px;
     margin: 32px 0;
     display: inline-block;
-    padding: 16px;
-    background: #9891CC;
+    padding: 13px 20px;
+    background: #5fa3bf;
     color: #fff;
 }
 .button.main:hover{
@@ -175,6 +204,7 @@ h2{
     align-items: center;
     justify-content: center;
     background-color: #C3DAB8;
+    position: relative;
 }
 .hero .title{
     display: flex;
@@ -292,6 +322,32 @@ section.gallery-container{
     display: block;
 }
 
+.card .details strong{
+    text-transform: uppercase;
+}
+
+.card.sold {
+  position: relative; /* Necesario para posicionar el ::after dentro */
+  overflow: hidden; /* Evita que la etiqueta sobresalga */
+}
+
+.card.sold::after {
+  content: "Vendido";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+
 .card .image-container {
     width: 100%;
     overflow: hidden;
@@ -375,7 +431,7 @@ display: none;
     font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
-    color: #00000091;
+    color: #555B72;
 }
 .contact h3 {
     font-size: 1.8em;

@@ -40,6 +40,7 @@
     width: 100%;
     text-align: center;
     margin-bottom: 40px;
+    padding-bottom: 40px;
   }
   .hero .title {
     display: block;
@@ -49,13 +50,17 @@
     padding-left: 0;
     padding-top: 0;
   }
+  .hero .logo {
+    margin-top: -70px !important;
+  }
   .hero .title h1{
     line-height: 4rem;
     margin: 0;
     padding: 0;
   }
-  .hero img{
-    display: none;
+  .hero > img{
+    margin-top: -260px;
+    width: 130%;
   }
   .about{
     padding: 0;
@@ -69,13 +74,19 @@
   }
 }
 @media (max-width: 768px) {
-  .gallery-container {
-    padding: 40px;
+  /* Barra de filtros */
+  .filter-bar {
+    display: none;
+  }
+} 
+@media (max-width: 568px) {
+  section.gallery-container {
+    padding: 0 0;
   }
   .card {
     flex-direction: column;
-    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
-    height: 600px;
+    width: 90%; /* Ocupa todo el ancho en pantallas pequeñas */
+    height: 440px;
   }
 
   .card .image-container {
