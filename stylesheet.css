@@ -32,6 +32,16 @@ body {
 #copyButton{
     cursor: pointer; 
 }
+.buying-info {
+  text-align: left;
+}
+.buying-info strong{
+    text-align: left;
+    font-size: 19px !important;
+}
+.buying-info .button {
+  display: inline-block;
+}
 header {
     box-shadow: 0 0 5px #00000030;
     width: 100%;
@@ -83,7 +93,7 @@ nav {
     justify-content: center;
     gap: 0;
     padding: 0.5rem;
-    background-color: #9891CC;
+    background-color: #618764;
     z-index: 1000;
     font-family: "Edu VIC WA NT Hand Pre", cursive;
 }
@@ -106,7 +116,7 @@ nav {
 
 .filter-bar .filter-btn.active {
   background-color: #EBE9D4;
-  color: #807AB2;
+  color: #618764;
 }
 
 /* Tooltip base (solo se aplica si existe data-tooltip con contenido) */
@@ -153,11 +163,11 @@ nav {
 }
 .button.main{
     font-size: 18px;
-    border-radius: 35px;
+    border-radius: 6px;
     margin: 32px 0;
     display: inline-block;
     padding: 13px 20px;
-    background: #5fa3bf;
+    background: #594593;
     color: #fff;
 }
 .button.main:hover{
