@@ -265,8 +265,8 @@ h2{
     margin: 40px 0 14px;
 }
 .hero p {
-    font-size: 1.3em;
-    color: #555B72;
+    font-size: 1.2em;
+    color: #66706d;
     text-align: center;
     line-height: 30px;
 }
@@ -410,8 +410,7 @@ section.gallery-container{
 .about {
     width: 80%;
     margin: auto;
-/*    display: flex;*/
-display: none;
+    display: flex;
     align-items: center;
     padding: 50px;
 }
