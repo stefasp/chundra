@@ -44,7 +44,7 @@ body {
 }
 
 .marquee-wrapper {
-    background-color: #618764;
+    background-color: #41354e;
     color: #fff; /* color del texto */
     overflow: hidden;
     padding: 8px;
@@ -237,7 +237,12 @@ nav {
 a{
     font-weight: 400;
     text-decoration: none;
-    color: #876fff;
+    color: #594593;
+}
+.buying-info a{
+    padding: 0px 12px;
+    font-weight: 400;
+    text-decoration: none;
 }
 h2{
     font-size: 43px;
