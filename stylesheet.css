@@ -44,11 +44,11 @@ body {
 }
 
 .marquee-wrapper {
-    background-color: #41354e;
-    color: #fff; /* color del texto */
+    background-color: #d11040;
+    color: #fff;
     overflow: hidden;
     padding: 8px;
-    font-size: 0.9em;
+    font-size: 1em;
     position: fixed;
     bottom: 0;
     z-index: 9999;
