@@ -271,14 +271,16 @@ h2{
     padding-top: 70px;
 }
 .hero.piece p{
+    line-height: 1.8rem;
     font-size: 0.9rem;
     text-align: left;
+    margin: 0;
 }
 .hero.piece img{
     width: 43%;
 }
 .hero.piece .hero-text{
-    text-align: center;
+    text-align: left;
     width: 50%;
     margin: 4%;
 }
@@ -288,12 +290,13 @@ h2{
     margin-right: auto;
 }
 .hero img {
-    width: 890px;
+    width: 820px;
     height: auto;
 }
 .hero .logo{
+    position: absolute;
     width: 130px;
-    margin: auto;
+    left: 698px;
 }
 .hero h1 {
     font-size: 4.5em;
@@ -307,11 +310,12 @@ h2{
     margin: 30px 0 40px;
 }
 .hero p {
+    margin: 21% 0 4%;
     opacity: 0.8;
-    font-size: 0.9rem;
+    font-size: 2.6rem;
     color: #555B72;
     text-align: center;
-    line-height: 27px;
+    line-height: 46px;
 }
 
 //* Gallery Section */
@@ -458,7 +462,8 @@ section.gallery-container{
     padding: 50px;
 }
 .about p {
-    opacity: 0.8;
+    opacity: 1;
+    font-weight: 200;
     line-height: 1.6rem;
 }
 .about img.me {
@@ -466,7 +471,10 @@ section.gallery-container{
     height: auto;
     margin-left: 6%;
     border-radius: 0;
+    transform: rotate(2deg);
+    border: 13px solid #ffffff;
 }
+
 .about-text {
     width: 45%;
 }
@@ -486,10 +494,14 @@ section.gallery-container{
     padding: 30px;
 }
 .contact a{
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
     color: #5a5a5a;
+}
+.contact a:hover{
+    color: #848485;
 }
 .contact h3 {
     font-size: 1.8em;
