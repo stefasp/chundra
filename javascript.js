@@ -1,3 +1,4 @@
+// Copy buttons
 document.addEventListener('click', function(e) {
   if (e.target.closest('#copyButton') || e.target.id === 'copyButton') {
     e.preventDefault();
@@ -16,7 +17,6 @@ document.addEventListener('click', function(e) {
     if (t) {
       const el = e.target.closest('#copyButton2') || e.target;
       const orig = el.textContent;
-      // Try modern API first, fall back to execCommand
       if (navigator.clipboard) {
         navigator.clipboard.writeText(t.value).then(() => {
           el.textContent = 'Copied!';
@@ -33,4 +33,39 @@ document.addEventListener('click', function(e) {
     }
     return;
   }
+});
+
+// Cookie consent
+function loadGA() {
+  window['ga-disable-G-Q8DDRJ6Y35'] = false;
+}
+
+function disableGA() {
+  window['ga-disable-G-Q8DDRJ6Y35'] = true;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cookieBanner = document.getElementById('cookie-banner');
+  const consent = localStorage.getItem('cookie-consent');
+
+  if (!consent) {
+    cookieBanner.style.display = 'flex';
+    disableGA();
+  } else if (consent === 'accepted') {
+    loadGA();
+  } else {
+    disableGA();
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    cookieBanner.style.display = 'none';
+    loadGA();
+  });
+
+  document.getElementById('cookie-decline').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'declined');
+    cookieBanner.style.display = 'none';
+    disableGA();
+  });
 });
