@@ -17,6 +17,8 @@
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="modal-purchase.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend:wght@100..900&family=Staatliches&display=swap" rel="stylesheet">
@@ -99,11 +101,19 @@
             <div class="buying-info">
               <p><strong>390 €</strong></p>
               <p>Framed / Sobre Bastidor</p>
-              <p>💳 Payment via PayPal.</p>
               <p>📦 Shipping EU: 30 € • Rest of the world 60–130 € (exact quote on request)</p>
+              
+              <p>💳 Payment via PayPal.</p>
               <p>Delivery usually takes 3-6 weeks. I can't influence the delays due to the fault of the post or customs.</p>
-              <a href="https://ig.me/m/chundra.art" class="button main" target="_blank">Send DM via Instagram to Buy</a>
-              <a href="mailto:stefus.sp@gmail.com">Or contact me via email</a>
+
+              <button class="open-purchase-modal button main"
+                    data-piece="Confluence"
+                    data-price="390 €"
+                    data-ship-spain="30 €"
+                    data-ship-europe="30 €"
+                    data-ship-world="60–130 €">
+              Enquire to purchase
+            </button>
             </div>
         </div>
         <img src="images/confluence-01.png" alt="Hero Image">
@@ -135,51 +145,20 @@
     <!-- Shared Section -->
     <div id="products-container"></div>
 
-     <script src="javascript.js"></script>
-
-     <script>
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
+    <!-- JS -->
+    <script src="javascript.js"></script>
+    <script src="modal-purchase.js"></script>
+    <script>
+      fetch("galeria.html")
+        .then(response => {
+          if (!response.ok) throw new Error("No se pudo cargar la galería");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("products-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar la galería:", error));
     </script>
-     <script>
-        document.getElementById('copyButton2').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy2');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-        </script>
-        <script>
-          fetch("galeria.html")
-            .then(response => {
-              if (!response.ok) throw new Error("No se pudo cargar la galería");
-              return response.text();
-            })
-            .then(data => {
-              document.getElementById("products-container").innerHTML = data;
-            })
-            .catch(error => console.error("Error al cargar la galería:", error));
-        </script>
 
 </body>
 </html>

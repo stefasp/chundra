@@ -17,6 +17,7 @@
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="modal-purchase.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,13 +122,22 @@
             <p>Feline strength: sharp and alert. This piece celebrates the voracity to reach dreams and the determination to conquer what we desire. It is not softness; it is drive, energy, and power concentrated in every action.</p>
 
             <div class="buying-info">
-              <p><strong>73 €</strong></p>
+              <p><strong>63 €</strong></p>
               <p>📦 Shipping: to Spain 14 € • Rest of Europe 25 € • Rest of the world 40–80 € (exact quote on request)</p>
-              <p>Ready to ship in 1–2 days. Delivery can take up to 48 hours once dispatched.</p>
-              <p>The shipping service includes a tracking link so you can follow your package at any time.</p>
+             
+              <p>💳 Payment via PayPal.</p>
+              <p>Ready to ship in 1–2 days.</p>
+              <p>Shipments within Europe can take up to 48 hours once dispatched and include a tracking link so you can follow your package at any time.</p>
+              <p>For destinations outside Europe, shipping options and tracking availability are discussed individually at the time of purchase.</p>
 
-              <a href="https://ig.me/m/chundra.art" class="button main" target="_blank">Send DM via Instagram to Buy</a>
-              <a href="mailto:stefus.sp@gmail.com">Or contact me via email</a>
+              <button class="open-purchase-modal button main"
+                      data-piece="Guardian Juana"
+                      data-price="63 €"
+                      data-ship-spain="14 €"
+                      data-ship-europe="25 €"
+                      data-ship-world="40–80 €">
+                Enquire to purchase
+              </button>
             </div>
         </div>
         <img src="images/juana-00.png" alt="Hero Image">
@@ -159,51 +169,21 @@
     <!-- Shared Section -->
     <div id="products-container"></div>
 
-     <script src="javascript.js"></script>
-
-     <script>
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
+    <!-- JS -->
+    <script src="javascript.js"></script>
+    <script src="modal-purchase.js"></script>
+    <script>
+      fetch("galeria.html")
+        .then(response => {
+          if (!response.ok) throw new Error("No se pudo cargar la galería");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("products-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar la galería:", error));
     </script>
-     <script>
-        document.getElementById('copyButton2').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy2');
 
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-        </script>
-        <script>
-          fetch("galeria.html")
-            .then(response => {
-              if (!response.ok) throw new Error("No se pudo cargar la galería");
-              return response.text();
-            })
-            .then(data => {
-              document.getElementById("products-container").innerHTML = data;
-            })
-            .catch(error => console.error("Error al cargar la galería:", error));
-        </script>
 
 </body>
 </html>

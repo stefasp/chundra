@@ -16,6 +16,7 @@
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="modal-purchase.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,14 +120,22 @@
             <div class="title"><h2>Totem of Legacy</h2></div>
             <p>This piece speaks of the cycle of life. The figures could represent one person—youth and age—or two, reflecting how life is passed from one to another. It’s a reminder that we don’t completely leave when we go; we leave parts of ourselves in those we love, in those who love us, and in the things we build and leave behind. Like a totem, it stands tall, carrying the weight of memories, of connections, of legacy. Its light shines not just in the present but echoes through the lives touched and the moments shared.</p>
             <div class="buying-info">
-              <p><strong>200 €</strong></p>
-              <p>💳 Payment via PayPal.</p>
-              <p>📦 Shipping: to Spain 19 € • Rest of Europe 40 € • Rest of the world 60–130 € (exact quote on request)</p>
-              <p>Ready to ship in 1–2 days. Delivery can take up to 48 hours once dispatched.</p>
-              <p>The shipping service includes a tracking link so you can follow your package at any time.</p>
+                <p><strong>200 €</strong></p>
+                <p>📦 Shipping: to Spain 19 € • Rest of Europe 40 € • Rest of the world 60–130 € (exact quote on request)</p>
+                
+                <p>💳 Payment via PayPal.</p>
+                <p>Ready to ship in 1–2 days.</p>
+                <p>Shipments within Europe can take up to 48 hours once dispatched and include a tracking link so you can follow your package at any time.</p>
+                <p>For destinations outside Europe, shipping options and tracking availability are discussed individually at the time of purchase.</p>
 
-              <a href="https://ig.me/m/chundra.art" class="button main" target="_blank">Send DM via Instagram to Buy</a>
-              <a href="mailto:stefus.sp@gmail.com">Or contact me via email</a>
+                <button class="open-purchase-modal button main"
+                      data-piece="Totem of Legacy"
+                      data-price="200 €"
+                      data-ship-spain="19 €"
+                      data-ship-europe="40 €"
+                      data-ship-world="60–130 €">
+                Enquire to purchase
+              </button>
             </div>
         </div>
         <img src="images/totem-01.png" alt="Hero Image">
@@ -158,51 +167,20 @@
     <!-- Shared Section -->
     <div id="products-container"></div>
 
-     <script src="javascript.js"></script>
-
-     <script>
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
+    <!-- JS -->
+    <script src="javascript.js"></script>
+    <script src="modal-purchase.js"></script>
+    <script>
+      fetch("galeria.html")
+        .then(response => {
+          if (!response.ok) throw new Error("No se pudo cargar la galería");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("products-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar la galería:", error));
     </script>
-     <script>
-        document.getElementById('copyButton2').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy2');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-        </script>
-        <script>
-          fetch("galeria.html")
-            .then(response => {
-              if (!response.ok) throw new Error("No se pudo cargar la galería");
-              return response.text();
-            })
-            .then(data => {
-              document.getElementById("products-container").innerHTML = data;
-            })
-            .catch(error => console.error("Error al cargar la galería:", error));
-        </script>
 
 </body>
 </html>

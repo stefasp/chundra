@@ -25,9 +25,9 @@
             <li id="ship-europe">Rest of Europe — </li>
             <li id="ship-world">Rest of the world — </li>
           </ul>
-          <p class="shipping-note">Need a custom quote or want to combine multiple pieces in one shipment? Just mention it in your message.</p>
+          
           <p class="shipping-note">Payment only via PayPal. The payment link will be sent via email.</p>
-          <p class="shipping-note">Ready to ship in 1–2 days. Delivery can take up to 48 hours once dispatched for EU, more for other destinations. The shipping service includes a tracking link so you can follow your package at any time within EU.</p>
+          <p class="shipping-note">Ready to ship in 1–2 days. For sculptures sent within EU delivery can take up to 48 hours once dispatched, more for other destinations.</p>
         </div>
 
         <form id="purchase-form" action="https://formspree.io/f/xkoqjobo" method="POST" novalidate>
@@ -41,7 +41,7 @@
           <input type="text"  name="address"       required placeholder="Full address (Street, House, Apartment)">
           <input type="tel"   name="phone"         required placeholder="Phone">
 
-          <p class="message-hint">💡 If you'd like to purchase more than one piece, mention it in your message — I'll put together a combined shipping quote so you pay less.</p>
+          <p class="message-hint">Need a custom quote or want to combine multiple pieces in one shipment? Just mention it in your message.</p>
           <textarea name="message" rows="3" placeholder="Notes or message (optional)"></textarea>
 
           <label id="policy-check">
