@@ -74,43 +74,6 @@
 
 <body>
 
-<!-- 
-    <header>
-        <div class="container">
-                <div class="logo-container">
-                  <a href="index.html">
-                    <img src="images/logo.png" alt="Logo">
-                  </a>
-                </div>
-                <nav>
-                  <ul class="menu">
-                    <li><a href="#gallerylink">Gallery</a></li>
-                    <li><a href="#aboutme">About</a></li>
-                    <li><a href="#exhibitions">Exhibitions</a></li>
-                    <li><a href="#contactbox">Contact</a></li>
-                    <li  class="hide"><a href="https://shop-online.com" target="_blank" rel="noopener noreferrer">Shop Online</a></li>
-                    <li><a href="https://instagram.com/chundra.art/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                  </ul>
-                  <button class="menu-toggle" aria-label="Toggle menu">
-                    ☰
-                  </button>
-                </nav>
-        </div>
-  </header>
-
-  <div class="mobile-menu">
-    <ul class="menu">
-        <li><a href="#gallerylink">Gallery</a></li>
-        <li><a href="#aboutme">About</a></li>
-        <li><a href="#exhibitions">Exhibitions</a></li>
-        <li><a href="#contactbox">Contact</a></li>
-        <li  class="hide"><a href="https://shop-online.com" target="_blank" rel="noopener noreferrer">Shop Online</a></li>
-        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    </ul>
-  </div>
-
- -->
-
  <div class="marquee-wrapper">
   <div class="marquee">
     <span>50% OFF on the second piece's shipping cost on large scultures • Pay just the higher shipping for other pieces and paintings</span>
@@ -571,35 +534,6 @@
         </div>
         <img src="images/aboutme.png" class="me" alt="Stefy Spangenberg">
     </section>
-
-    <section id="exhibitions" class="exhibitions hide">
-      <h2>¿Donde encontrar las piezas de Chundra?</h2>
-      <div class="exhibition-row">
-        <a class="gallery-name" href="https://maps.app.goo.gl/s79rRdFW21jtb5DF6" target="_blank">Eclectica, Arte Unico</a>
-        <div class="details">
-          <div>C. Carretería, 94, Centro. Málaga</div>
-          <div>From 11/20/2024 to 12/30/2024</div>
-        </div>
-      </div>
-      <div class="exhibition-row">
-        <a class="gallery-name" id="copyButton">Contact to propose exhibition</a><input class="hide" type="text" id="textToCopy" value="stefus.sp@gmail.com"/>
-      </div>
-    </section>
-
-    <!-- Exhibitions -->
-    <section id="exhibitions" class="exhibitions">
-      <h2>Exhibitions</h2>
-      <div class="exhibition-row">
-        <a class="gallery-name" href="https://maps.app.goo.gl/s79rRdFW21jtb5DF6" target="_blank">Eclectica, Arte Unico</a>
-        <div class="details">
-          <div>C. Carretería, 94, Centro. Málaga</div>
-          <div>From 11/20/2024 to 12/30/2024</div>
-        </div>
-      </div>
-      <div class="exhibition-row">
-        <a class="gallery-name" id="copyButton">Contact to propose exhibition</a><input class="hide" type="text" id="textToCopy" value="stefus.sp@gmail.com"/>
-      </div>
-    </section>
     
     <!-- FOOTER Section -->
     <section class="contact" id="contactbox">
@@ -613,69 +547,16 @@
             <img src="images/icons/policy.png" alt="Policy Icon">
             <a href="policy.html">Returns & Damage Policy</a>
 
+            <img src="images/icons/policy.png" alt="Policy Icon">
+            <a href="privacy.html">Privacy Policy</a>
+
             <img src="images/icons/about.png" alt="About Icon">
             <a href="about.html">About the artist</a>
         </div>
     </section>
 
      <script src="javascript.js"></script>
-
-     <script>
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-    </script>
-     <script>
-        document.getElementById('copyButton2').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy2');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-        </script>
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.filter-btn');
-            const products = document.querySelectorAll('.gallery a.card');
-
-            buttons.forEach(btn => {
-              btn.addEventListener('click', () => {
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const filter = btn.getAttribute('data-filter');
-
-                products.forEach(product => {
-                  const categories = product.dataset.category ? product.dataset.category.split(' ') : [];
-                  if (filter === 'all' || categories.includes(filter)) {
-                    product.classList.remove('hide');
-                  } else {
-                    product.classList.add('hide');
-                  }
-                });
-              });
-            });
-          });
-          </script>
+     <script src="index.js"></script>
 
 </body>
 </html>

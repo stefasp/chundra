@@ -70,6 +70,18 @@ body {
     color: #fff; /* asegurar color blanco en los spans */
 }
 
+.policy-page ul{
+    margin: 20px;
+    padding: 0;
+    display: 0;
+}
+.policy-page ul li{
+    padding-bottom: 20px;
+}
+.buying-info .policy-page strong{
+    font-size: 1rem !important;
+}
+
 @keyframes scroll-left {
     0% {
         transform: translateX(0%);
@@ -198,7 +210,9 @@ nav {
 .menu li a:hover {
   color: #f0a500;
 }
+
 .button.main{
+    cursor: pointer;
     font-size: 18px;
     border-radius: 6px;
     margin: 32px 0;
@@ -206,9 +220,10 @@ nav {
     padding: 13px 20px;
     background: #594593;
     color: #fff;
+    border: 0;
 }
 .button.main:hover{
-    background-color: #5f4ac9;
+    background-color: #318160;
 }
 
 .menu-toggle {
@@ -238,7 +253,7 @@ nav {
 a{
     font-weight: 400;
     text-decoration: none;
-    color: #594593;
+    color: #2b6445;
 }
 .buying-info a{
     padding: 0px 12px;

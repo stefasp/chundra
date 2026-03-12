@@ -12,7 +12,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gibran - Stefania Spangenberg Ceramic Art</title>
+    <title>About the artist - Stefania Spangenberg Ceramic Art</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="mobile.css">
 
@@ -21,12 +21,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend:wght@100..900&family=Staatliches&display=swap" rel="stylesheet">
 
     <!-- SEO GLOBAL -->
-    <meta name="title" content="Trina — Ceramics for Collectors | Mystical, Ancestral & Feminine Art by Stefania">
-    <meta name="description" content="Trina is a mystical ceramic sculpture inspired by Latin American ancestry, spirituality, and feminine introspection. A symbolic guardian piece for collectors seeking emerging artists, ritual art, and meaningful creations.">
+    <meta name="title" content="About the artist — Ceramics for Collectors | Mystical, Ancestral & Feminine Art by Stefania">
+    <meta name="description" content="Mstical ceramic sculpture inspired by Latin American ancestry, spirituality, and feminine introspection. A symbolic guardian piece for collectors seeking emerging artists, ritual art, and meaningful creations.">
     <meta name="keywords" content="ceramic sculpture, collectible art, emerging artists, mystical art, spiritual art, feminine art, Latin American art, ancestral art, symbolic sculpture, ritual art, contemporary ceramics, artisanal sculpture">
 
     <!-- OPEN GRAPH / FACEBOOK -->
-    <meta property="og:title" content="Trina — Mystical Ceramic Sculpture for Collectors">
+    <meta property="og:title" content="Mystical Ceramic Sculpture for Collectors">
     <meta property="og:description" content="A symbolic guardian sculpture inspired by spirituality, ancestry, and feminine energy. Perfect for collectors of mystical and meaningful art.">
     <meta property="og:image" content="https://www.chundra.site/img/trina-01.png">
     <meta property="og:url" content="https://www.chundra.site">
@@ -34,7 +34,7 @@
 
     <!-- TWITTER / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Trina — Mystical Ceramic Sculpture for Collectors">
+    <meta name="twitter:title" content="TMystical Ceramic Sculpture for Collectors">
     <meta name="twitter:description" content="An ancestral, feminine, and symbolic sculpture for art lovers and collectors. Ritual art with spiritual depth.">
     <meta name="twitter:image" content="https://www.chundra.site/img/trina-01.png">
 
@@ -43,7 +43,7 @@
       {
         "@context": "https://schema.org",
         "@type": "VisualArtwork",
-        "name": "Trina — Guardian of Transformation",
+        "name": "About the artist — Stefania Spangenberg",
         "creator": {
           "@type": "Person",
           "name": "Stefania Spangenberg"
@@ -106,8 +106,6 @@
               Now I live in Málaga, making ceramic figures and paintings that come from that same place. Pieces that don't just sit on a shelf — that ask something of you. That reflect something back.<br/>
               I make Chundra because I believe most of us carry more wisdom than we think. We've just learned to look for answers everywhere except inside. These pieces are an invitation to stop looking outward for a moment. To remember what you already know.
             </p>
-              <a href="https://ig.me/chundra.art" class="button main" target="_blank">Find me on Instagram </a>
-              <a href="mailto:stefus.sp@gmail.com">Contact me via email</a>
             </div>
         </div>
         <img src="images/aboutme.png" alt="stefy Spangenberg">
@@ -147,9 +145,6 @@
               Now I live in Málaga, making ceramic figures and paintings that come from that same place. Pieces that don't just sit on a shelf — that ask something of you. That reflect something back.<br/>
               I make Chundra because I believe most of us carry more wisdom than we think. We've just learned to look for answers everywhere except inside. These pieces are an invitation to stop looking outward for a moment. To remember what you already know.
             </p>
-            </p>
-              <a href="https://ig.me/chundra.art" class="button main" target="_blank">Encontrame en Instagram </a>
-              <a href="mailto:stefus.sp@gmail.com">Contactame via email</a>
             </div>
         </div>
         <img src="images/aboutme.png" alt="stefy Spangenberg">
@@ -192,56 +187,17 @@
             <img src="images/icons/policy.png" alt="Policy Icon">
             <a href="policy.html">Returns & Damage Policy</a>
 
+            <img src="images/icons/policy.png" alt="Policy Icon">
+            <a href="privacy.html">Privacy Policy</a>
+
             <img src="images/icons/about.png" alt="About Icon">
             <a href="about.html">About the artist</a>
         </div>
     </section>
 
-     <script src="javascript.js"></script>
-
-     <script>
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-    </script>
-     <script>
-        document.getElementById('copyButton2').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy2');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-        </script>
-        <script>
-          fetch("galeria.html")
-            .then(response => {
-              if (!response.ok) throw new Error("No se pudo cargar la galería");
-              return response.text();
-            })
-            .then(data => {
-              document.getElementById("products-container").innerHTML = data;
-            })
-            .catch(error => console.error("Error al cargar la galería:", error));
-        </script>
+     <!-- JS -->
+   <script src="javascript.js"></script>
+   <script src="modal-purchase.js"></script>
 
 </body>
 </html>

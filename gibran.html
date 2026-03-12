@@ -15,6 +15,7 @@
     <title>Gibran - Stefania Spangenberg Ceramic Art</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="modal-purchase.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,8 +120,8 @@
             <p>Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences “for the feed,” but often forgetting what truly matters. The deepest memories don’t come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.</p>
             <br>
             <p>This piece is a reminder that the essential thing is not to accumulate places, but to live the present fully. That the journey is not a checklist of achievements, but a space to experience, feel, and remember. Destinations fade, but emotions and shared moments remain, and that is what we truly carry with us.</p>
-            <p>“Progress means leaving footprints in the sand that time cannot erase.” Khalil Gibran</p>
 
+            <br>
             <div class="buying-info">
               <p><strong>93 €</strong></p>
               <p>💳 Payment via PayPal.</p>
@@ -129,8 +130,14 @@
               <p>Ready to ship in 1–2 days. Delivery can take up to 48 hours once dispatched.</p>
               <p>The shipping service includes a tracking link so you can follow your package at any time.</p>
 
-              <a href="https://ig.me/m/chundra.art" class="button main" target="_blank">Send DM via Instagram to Buy</a>
-              <a href="mailto:stefus.sp@gmail.com">Or contact me via email</a>
+              <button class="open-purchase-modal button main"
+                      data-piece="Gibran Traveler"
+                      data-price="93 €"
+                      data-ship-spain="17 €"
+                      data-ship-europe="30 €"
+                      data-ship-world="60–130 €">
+                      Enquire to purchase
+              </button>
             </div>
         </div>
         <img src="images/gibran-00.png" alt="Hero Image">
@@ -162,51 +169,20 @@
     <!-- Gallery Section -->
     <div id="products-container"></div>
 
-     <script src="javascript.js"></script>
-
-     <script>
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
+    <!-- JS -->
+   <script src="javascript.js"></script>
+   <script src="modal-purchase.js"></script>
+    <script>
+      fetch("galeria.html")
+        .then(response => {
+          if (!response.ok) throw new Error("No se pudo cargar la galería");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("products-container").innerHTML = data;
+        })
+        .catch(error => console.error("Error al cargar la galería:", error));
     </script>
-     <script>
-        document.getElementById('copyButton2').addEventListener('click', function() {
-            // Select the input field text
-            var copyText = document.getElementById('textToCopy2');
-
-            // Select the text field
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
-            document.execCommand("copy");
-
-            // Alert the copied text (optional)
-            alert("Copied the text: " + copyText.value);
-        });
-        </script>
-        <script>
-          fetch("galeria.html")
-            .then(response => {
-              if (!response.ok) throw new Error("No se pudo cargar la galería");
-              return response.text();
-            })
-            .then(data => {
-              document.getElementById("products-container").innerHTML = data;
-            })
-            .catch(error => console.error("Error al cargar la galería:", error));
-        </script>
 
 </body>
 </html>

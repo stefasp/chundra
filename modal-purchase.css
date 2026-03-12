@@ -1,0 +1,179 @@
+/* Purchase Modal — Chundra */
+
+#purchase-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#purchase-modal.is-open {
+  display: flex;
+}
+
+#purchase-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+#purchase-modal-content {
+  position: relative;
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem 1.8rem;
+  z-index: 1;
+  border-radius: 2px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+
+#purchase-modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+  padding: 0;
+}
+#purchase-modal-close:hover { color: #333; }
+
+/* Header */
+#purchase-modal-header {
+  margin-bottom: 1.2rem;
+}
+#modal-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 0.2rem;
+}
+#modal-piece-name {
+  font-size: 1.3rem;
+  margin: 0 0 0.2rem;
+}
+#modal-piece-price {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Shipping info */
+#purchase-modal-shipping {
+  background: #f7f5f0;
+  border-radius: 2px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+#purchase-modal-shipping p:first-child {
+  margin-bottom: 0.4rem;
+}
+#purchase-modal-shipping ul {
+  margin: 0 0 0.5rem 1rem;
+  padding: 0;
+}
+#purchase-modal-shipping li {
+  margin-bottom: 0.15rem;
+}
+.shipping-note {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0.4rem 0 0;
+}
+
+/* Form — placeholder-style, no labels */
+#purchase-form input,
+#purchase-form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 0.55rem;
+}
+#purchase-form input:focus,
+#purchase-form textarea:focus {
+  border-color: #a89cc8;
+  background: #fff;
+}
+#purchase-form input::placeholder,
+#purchase-form textarea::placeholder {
+  color: #aaa;
+}
+#purchase-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* Submit button */
+#form-submit {
+  width: 100%;
+  padding: 0.8rem;
+  background: #4a4063;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.3rem;
+}
+#form-submit:hover    { background: #362f4a; }
+#form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+#form-success {
+  text-align: center;
+  padding: 1.2rem 0;
+  color: #4a7c59;
+  font-size: 0.95rem;
+}
+#form-error {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+#policy-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0.4rem 0 0.8rem;
+  cursor: pointer;
+  line-height: 1.4;
+}
+#policy-check input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+}
+#policy-check a {
+  color: #4a4063;
+  text-decoration: underline;
+}
+
