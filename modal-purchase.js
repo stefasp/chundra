@@ -30,21 +30,26 @@
           <p class="shipping-note">Ready to ship in 1–2 days. Delivery can take up to 48 hours once dispatched for EU, more for other destinations. The shipping service includes a tracking link so you can follow your package at any time within EU.</p>
         </div>
 
-        <form id="purchase-form" action="https://formspree.io/f/xkoqjobo" method="POST">
+        <form id="purchase-form" action="https://formspree.io/f/xkoqjobo" method="POST" novalidate>
           <input type="hidden" name="piece" id="form-piece-name">
 
-          <input type="text"  name="name"            required placeholder="Full name">
-          <input type="email" name="paypal_email"     required placeholder="PayPal email">
-          <input type="email" name="contact_email"    placeholder="Contact email (if different from PayPal)">
-          <input type="text"  name="country"          required placeholder="Country">
-          <input type="text"  name="city"             required placeholder="City">
-          <input type="text"  name="address"          required placeholder="Full address (Street, House, Apartment)">
-          <input type="tel"   name="phone"            required placeholder="Phone">
-          <textarea           name="message" rows="3"          placeholder="Notes or message (optional)"></textarea>
+          <input type="text"  name="name"         required placeholder="Full name">
+          <input type="email" name="paypal_email"  required placeholder="PayPal email">
+          <input type="email" name="contact_email"          placeholder="Contact email (if different from PayPal)">
+          <input type="text"  name="country"       required placeholder="Country">
+          <input type="text"  name="city"          required placeholder="City">
+          <input type="text"  name="address"       required placeholder="Full address (Street, House, Apartment)">
+          <input type="tel"   name="phone"         required placeholder="Phone">
+
+          <p class="message-hint">💡 If you'd like to purchase more than one piece, mention it in your message — I'll put together a combined shipping quote so you pay less.</p>
+          <textarea name="message" rows="3" placeholder="Notes or message (optional)"></textarea>
+
           <label id="policy-check">
-            <input type="checkbox" name="policy" required>
-            By submitting this form, you agree to the <a href="policy.html" target="_blank">privacy and return policy</a>
+            <input type="checkbox" name="policy" id="policy-checkbox">
+            By submitting this form, you agree to the <a href="privacy.html" target="_blank">privacy</a> and <a href="policy.html" target="_blank">return</a> policy
           </label>
+          <p id="policy-error" style="display:none;">Please accept the privacy and return policy to continue.</p>
+
           <button type="submit" id="form-submit">Send enquiry</button>
           <p id="form-success" style="display:none;">✓ Message sent! I'll be in touch soon.</p>
           <p id="form-error"   style="display:none;">Something went wrong. Please try again or contact me directly.</p>
@@ -68,15 +73,17 @@
     document.getElementById('modal-piece-price').textContent = btn.dataset.price || '';
     formPiece.value = btn.dataset.piece || '';
 
-    document.getElementById('ship-spain').textContent   = 'Spain — '            + (btn.dataset.shipSpain  || 'on request');
-    document.getElementById('ship-europe').textContent  = 'Rest of Europe — '   + (btn.dataset.shipEurope || 'on request');
-    document.getElementById('ship-world').textContent   = 'Rest of the world — '+ (btn.dataset.shipWorld  || '60–130 € (will be confirmed via email)');
+    document.getElementById('ship-spain').textContent   = 'Spain — '             + (btn.dataset.shipSpain  || 'on request');
+    document.getElementById('ship-europe').textContent  = 'Rest of Europe — '    + (btn.dataset.shipEurope || 'on request');
+    document.getElementById('ship-world').textContent   = 'Rest of the world — ' + (btn.dataset.shipWorld  || '60–130 € (will be confirmed via email)');
 
     successMsg.style.display = 'none';
     errorMsg.style.display   = 'none';
-    form.style.display       = 'block';
-    submitBtn.textContent    = 'Send enquiry';
-    submitBtn.disabled       = false;
+    document.getElementById('policy-error').style.display = 'none';
+    document.getElementById('policy-checkbox').checked = false;
+    form.style.display    = 'block';
+    submitBtn.textContent = 'Send enquiry';
+    submitBtn.disabled    = false;
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
@@ -98,8 +105,20 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Validate policy checkbox manually
+    const policyCheck   = document.getElementById('policy-checkbox');
+    const policyError   = document.getElementById('policy-error');
+
+    if (!policyCheck.checked) {
+      policyError.style.display = 'block';
+      policyCheck.focus();
+      return;
+    }
+    policyError.style.display = 'none';
+
     submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    submitBtn.disabled    = true;
 
     try {
       const response = await fetch(form.action, {
