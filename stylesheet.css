@@ -282,6 +282,11 @@ h2{
     padding-top: 47px;
     font-style: italic;
 }
+.hero h2{
+    font-size: 15px;
+    opacity: 0.7;
+    margin: 0;
+}
 .hero.piece{
     padding-top: 70px;
 }
