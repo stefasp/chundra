@@ -260,6 +260,7 @@ a{
     font-weight: 400;
     text-decoration: none;
 }
+.hero.piece h2,
 h2{
     font-size: 43px;
     margin: 20px 0;
