@@ -54,7 +54,7 @@ body {
     z-index: 9999;
     left: 0;
     width: 100%;
-    display: none;
+    display: block;
 }
 
 .marquee-wrapper .marquee {
@@ -68,6 +68,20 @@ body {
     white-space: nowrap;
     font-weight: bold;
     color: #fff; /* asegurar color blanco en los spans */
+}
+
+.price-original {
+  font-size: 15px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.card .details .price-sale {
+  color: #ff6b6b;
+}
+
+.card .details .price-badge {
+  background-color: #d11040;
 }
 
 .policy-page ul{
