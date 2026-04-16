@@ -71,13 +71,12 @@ body {
 }
 
 .price-original {
-  font-size: 15px;
   color: #999;
   text-decoration: line-through;
 }
 
 .card .details .price-sale {
-  color: #ff6b6b;
+  color: #6bffb7;
 }
 
 .card .details .price-badge {
