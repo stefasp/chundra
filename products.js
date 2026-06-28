@@ -360,6 +360,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. In soft violet-grey tones with white and earthy speckled details, it carries a refined and sophisticated presence. Its handmade, scalloped edge adds a unique, crafted texture, while the candle support features gentle curved details and a richly textured border.`,
     images: [
       'images/portavela-malva-01.png',
+      'images/portavela-malva-02.png'
     ],
   },
 
@@ -414,7 +415,13 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.3,
     materials: 'Mixed media on canvas',
     framed: false,
-    images: ['images/small-painting-thewalk-01.png'],
+    images: [
+      'images/small-painting-thewalk-01.png',
+      'images/small-painting-thewalk-02.png',
+      'images/small-painting-thewalk-03.png',
+      'images/small-painting-thewalk-04.png',
+      'images/small-painting-thewalk-05.png'
+    ],
   },
 
   bird: {
@@ -428,7 +435,10 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.3,
     materials: 'Acrylic on canvas',
     framed: false,
-    images: ['images/small-painting-bird-01.png'],
+    images: [
+      'images/small-painting-bird-01.png',
+      'images/small-painting-bird-02.png'
+    ],
   },
 
   mistify: {
@@ -442,7 +452,12 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.3,
     materials: 'Mixed media on canvas',
     framed: false,
-    images: ['images/small-painting-mistify-01.png'],
+    images: [
+      'images/small-painting-mistify-01.png',
+      'images/small-painting-mistify-02.png',
+      'images/small-painting-mistify-03.png',
+      'images/small-painting-mistify-04.png'
+    ],
   },
 
   wait: {
