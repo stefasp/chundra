@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0,0,0,0.22);
-  z-index: 900;  /* below modals and marquee overlay */
+  z-index: 900;
   transition: background 0.2s, transform 0.15s;
 }
 #cart-fab:hover { background: #318160; transform: scale(1.06); }
@@ -60,7 +60,7 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 420px;
+  width: 480px;
   max-width: 100vw;
   background: #EBE9D4;
   display: flex;
@@ -73,16 +73,17 @@
   to   { transform: translateX(0); }
 }
 
+/* ── Header ── */
 #cm-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 1.4rem;
+  padding: 1.4rem 1.6rem 1.2rem;
   border-bottom: 1px solid #d8d5c3;
 }
 #cm-header h2 {
   font-family: "Edu AU VIC WA NT Pre", cursive;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 200;
   margin: 0;
   color: #333;
@@ -98,46 +99,49 @@
 }
 #cm-close:hover { color: #333; }
 
-/* ── Body ── */
+/* ── Body (scrollable) ── */
 #cm-body {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
 }
+
 #cm-empty {
   text-align: center;
   padding: 3rem 0;
   color: #888;
 }
 
-/* Item list */
+/* ── Item list ── */
 #cm-item-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem;
+  margin: 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.7rem;
 }
 .cm-item {
   display: flex;
-  gap: 0.8rem;
-  align-items: flex-start;
+  gap: 0.9rem;
+  align-items: center;
   background: #fff;
-  border-radius: 3px;
-  padding: 0.7rem;
+  border-radius: 4px;
+  padding: 0.8rem;
   position: relative;
 }
 .cm-item-img {
-  width: 64px;
-  height: 64px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 3px;
   flex-shrink: 0;
 }
 .cm-item-info { flex: 1; min-width: 0; }
 .cm-item-name {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #333;
   margin: 0 0 0.15rem;
@@ -145,43 +149,51 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.cm-item-meta { font-size: 0.75rem; color: #999; margin: 0 0 0.2rem; }
-.cm-item-price { font-size: 0.85rem; margin: 0; color: #444; }
+.cm-item-meta { font-size: 0.78rem; color: #999; margin: 0 0 0.25rem; }
+.cm-item-price { font-size: 0.9rem; margin: 0; color: #444; }
 .cm-remove-btn {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #ccc;
   cursor: pointer;
   padding: 0;
   line-height: 1;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 .cm-remove-btn:hover { color: #d11040; }
 
-/* ── Totals ── */
+/* ── Totals block ── */
 #cm-totals {
-  border-top: 1px solid #d8d5c3;
-  padding-top: 1rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
+/* Subtotal row — with bottom border for visual separation */
 #cm-subtotal-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.88rem;
+  align-items: center;
+  font-size: 0.95rem;
   color: #555;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1.5px solid #c8c5b0;
+  margin-bottom: 0.9rem;
+}
+#cm-subtotal {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
 }
 
-/* Zone selector — shown before selection */
+/* Shipping to line (inline text + edit icon) */
 #cm-zone-block {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  margin: 0.2rem 0;
+  margin-bottom: 0.7rem;
 }
 #cm-zone-block label {
   font-size: 0.75rem;
@@ -194,7 +206,7 @@
   background: #fafaf5;
   border-radius: 3px;
   padding: 0.5rem 0.7rem;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-family: inherit;
   color: #333;
   outline: none;
@@ -203,41 +215,43 @@
 }
 #cm-zone-select:focus { border-color: #594593; }
 
-/* Shipping confirmed row — shown after selection */
+/* Confirmed shipping line */
 #cm-shipping-confirmed {
   display: none;
   align-items: center;
-  justify-content: space-between;
-  background: #f2f0e4;
-  border-radius: 3px;
-  padding: 0.55rem 0.8rem;
-  margin: 0.2rem 0;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
 }
 #cm-shipping-confirmed.visible { display: flex; }
 
 #cm-shipping-zone-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.84rem;
+  font-size: 0.9rem;
   color: #555;
 }
 #cm-shipping-change-btn {
   background: none;
   border: none;
-  font-size: 0.75rem;
-  color: #594593;
   cursor: pointer;
   padding: 0;
-  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+  margin-left: 2px;
 }
-#cm-shipping-change-btn:hover { color: #318160; }
+#cm-shipping-change-btn:hover { opacity: 1; }
+#cm-shipping-change-btn img {
+  width: 24px;
+  height: 24px;
+}
 
+/* Shipping cost row */
 #cm-shipping-row {
   display: none;
   justify-content: space-between;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: #555;
+  margin-bottom: 0.3rem;
 }
 #cm-shipping-row.visible { display: flex; }
 
@@ -246,9 +260,7 @@
   font-size: 0.75rem;
   color: #888;
   line-height: 1.5;
-  background: #f5f3e8;
-  border-radius: 3px;
-  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.4rem;
 }
 #cm-shipping-breakdown.visible { display: block; }
 
@@ -256,10 +268,8 @@
   display: none;
   font-size: 0.78rem;
   color: #a07030;
-  background: #fdf5e0;
-  border-radius: 3px;
-  padding: 0.5rem 0.7rem;
   line-height: 1.5;
+  margin-bottom: 0.4rem;
 }
 #cm-shipping-confirm.visible { display: block; }
 #cm-shipping-confirm p { margin: 0; }
@@ -267,65 +277,83 @@
 #cm-savings-row {
   display: none;
   justify-content: space-between;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: #618764;
+  margin-bottom: 0.3rem;
 }
 #cm-savings-row.visible { display: flex; }
 .cm-savings-amount { font-weight: 600; }
 
-#cm-total-row {
-  display: none;
-  justify-content: space-between;
-  font-size: 1rem;
-  color: #222;
-  border-top: 1px solid #d8d5c3;
-  padding-top: 0.6rem;
-  margin-top: 0.2rem;
-}
-#cm-total-row.visible { display: flex; }
-
 #cm-shipping-pending {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: #aaa;
   font-style: italic;
-  text-align: center;
-  padding: 0.4rem 0;
+  padding: 0.3rem 0 0.5rem;
 }
 
-/* ── Footer ── */
+/* ── Footer: white box with total + button + stripe note ── */
 #cm-footer {
-  padding: 1rem 1.4rem 1.4rem;
-  border-top: 1px solid #d8d5c3;
-  display: flex;
+  display: none;
   flex-direction: column;
-  gap: 0.6rem;
+  background: #fff;
+  border-top: 1px solid #d8d5c3;
+  padding: 1.2rem 1.6rem 1.4rem;
+  gap: 0.9rem;
 }
-#cm-stripe-note {
-  font-size: 0.73rem;
-  color: #aaa;
-  text-align: center;
-  margin: 0;
+#cm-footer.visible { display: flex; }
+
+#cm-total-row {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
+  font-size: 1.05rem;
+  color: #222;
 }
+#cm-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
 #cm-checkout-btn {
   cursor: pointer;
   font-size: 1rem;
   border-radius: 6px;
   display: block;
   width: 100%;
-  padding: 13px 20px;
+  padding: 14px 20px;
   background: #594593;
   color: #fff;
   border: 0;
   text-align: center;
   transition: background 0.2s;
-  margin: 0;
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 #cm-checkout-btn:hover:not(:disabled) { background: #318160; }
 #cm-checkout-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+#cm-stripe-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+#cm-stripe-note img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
 .cm-error { font-size: 0.82rem; color: #d11040; text-align: center; }
 
-@media (max-width: 480px) { #cm-panel { width: 100vw; } }
+@media (max-width: 520px) {
+  #cm-panel { width: 100vw; }
+}

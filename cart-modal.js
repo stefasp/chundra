@@ -5,21 +5,26 @@
   <div id="cart-modal" role="dialog" aria-modal="true" aria-label="Your cart">
     <div id="cm-overlay"></div>
     <div id="cm-panel">
+
       <div id="cm-header">
         <h2>Your cart</h2>
         <button id="cm-close" aria-label="Close cart">×</button>
       </div>
+
       <div id="cm-body">
         <div id="cm-empty" style="display:none;"><p>Your cart is empty.</p></div>
+
         <ul id="cm-item-list"></ul>
+
         <div id="cm-totals" style="display:none;">
 
+          <!-- Subtotal with bottom border -->
           <div id="cm-subtotal-row">
             <span>Pieces total</span>
             <span id="cm-subtotal">—</span>
           </div>
 
-          <!-- Zone selector (shown before selection) -->
+          <!-- Zone selector (before selection) -->
           <div id="cm-zone-block">
             <label for="cm-zone-select">Shipping to:</label>
             <select id="cm-zone-select">
@@ -30,38 +35,46 @@
             </select>
           </div>
 
-          <!-- Confirmed zone display (shown after selection) -->
+          <!-- Inline "Shipping to Spain [edit icon]" (after selection) -->
           <div id="cm-shipping-confirmed">
-            <div id="cm-shipping-zone-label">
-              <span id="cm-zone-flag"></span>
-              <span id="cm-zone-name"></span>
-            </div>
-            <button id="cm-shipping-change-btn">Change</button>
+            <span id="cm-shipping-zone-label"></span>
+            <button id="cm-shipping-change-btn" aria-label="Change region">
+              <img src="images/icons/edit.png" alt="Edit">
+            </button>
           </div>
 
+          <!-- Shipping cost row -->
           <div id="cm-shipping-row">
-            <span>Shipping</span>
+            <span id="cm-shipping-breakdown"></span>
             <span id="cm-shipping-cost">—</span>
           </div>
-          <div id="cm-shipping-breakdown"></div>
           <div id="cm-shipping-confirm"><p>⚠️ Final shipping cost confirmed before payment.</p></div>
+
+          <!-- Savings -->
           <div id="cm-savings-row">
             <span>🎁 You save on shipping</span>
             <span id="cm-savings" class="cm-savings-amount">—</span>
           </div>
-          <div id="cm-total-row">
-            <span><strong>Total to pay via Stripe</strong></span>
-            <strong id="cm-total">—</strong>
-          </div>
+
           <p id="cm-shipping-pending">Select your region to see shipping costs.</p>
+
         </div>
       </div>
 
-      <div id="cm-footer" style="display:none;">
+      <!-- Footer: white box with total + button + stripe note -->
+      <div id="cm-footer">
+        <div id="cm-total-row">
+          <span>Total to pay via Stripe</span>
+          <strong id="cm-total">—</strong>
+        </div>
         <button id="cm-checkout-btn" disabled>Proceed to checkout</button>
-        <p id="cm-stripe-note">🔒 Payment processed securely via Stripe. You'll be redirected to complete your order.</p>
+        <p id="cm-stripe-note">
+          <img src="images/icons/lock.png" alt="Secure">
+          Payment processed securely via Stripe. You'll be redirected to complete your order.
+        </p>
         <p id="cm-checkout-error" style="display:none;" class="cm-error"></p>
       </div>
+
     </div>
   </div>
 
@@ -73,42 +86,50 @@
   document.body.insertAdjacentHTML('beforeend', html);
 
   // ── DOM refs ──────────────────────────────────────────────
-  const modal         = document.getElementById('cart-modal');
-  const overlay       = document.getElementById('cm-overlay');
-  const itemList      = document.getElementById('cm-item-list');
-  const emptyMsg      = document.getElementById('cm-empty');
-  const totalsEl      = document.getElementById('cm-totals');
-  const subtotalEl    = document.getElementById('cm-subtotal');
-  const zoneBlock     = document.getElementById('cm-zone-block');
-  const zoneSelect    = document.getElementById('cm-zone-select');
-  const confirmedEl   = document.getElementById('cm-shipping-confirmed');
-  const zoneFlagEl    = document.getElementById('cm-zone-flag');
-  const zoneNameEl    = document.getElementById('cm-zone-name');
-  const changeBtn     = document.getElementById('cm-shipping-change-btn');
-  const shippingRow   = document.getElementById('cm-shipping-row');
-  const shippingCostEl= document.getElementById('cm-shipping-cost');
-  const breakdownEl   = document.getElementById('cm-shipping-breakdown');
-  const confirmNote   = document.getElementById('cm-shipping-confirm');
-  const savingsRow    = document.getElementById('cm-savings-row');
-  const savingsEl     = document.getElementById('cm-savings');
-  const totalRow      = document.getElementById('cm-total-row');
-  const totalEl       = document.getElementById('cm-total');
-  const pendingMsg    = document.getElementById('cm-shipping-pending');
-  const footerEl      = document.getElementById('cm-footer');
-  const checkoutBtn   = document.getElementById('cm-checkout-btn');
-  const checkoutErr   = document.getElementById('cm-checkout-error');
-  const fab           = document.getElementById('cart-fab');
-  const fabCount      = document.getElementById('cart-fab-count');
+  const modal          = document.getElementById('cart-modal');
+  const overlay        = document.getElementById('cm-overlay');
+  const itemList       = document.getElementById('cm-item-list');
+  const emptyMsg       = document.getElementById('cm-empty');
+  const totalsEl       = document.getElementById('cm-totals');
+  const subtotalEl     = document.getElementById('cm-subtotal');
+  const zoneBlock      = document.getElementById('cm-zone-block');
+  const zoneSelect     = document.getElementById('cm-zone-select');
+  const confirmedEl    = document.getElementById('cm-shipping-confirmed');
+  const zoneLabelEl    = document.getElementById('cm-shipping-zone-label');
+  const changeBtn      = document.getElementById('cm-shipping-change-btn');
+  const shippingRow    = document.getElementById('cm-shipping-row');
+  const shippingCostEl = document.getElementById('cm-shipping-cost');
+  const breakdownEl    = document.getElementById('cm-shipping-breakdown');
+  const confirmNote    = document.getElementById('cm-shipping-confirm');
+  const savingsRow     = document.getElementById('cm-savings-row');
+  const savingsEl      = document.getElementById('cm-savings');
+  const pendingMsg     = document.getElementById('cm-shipping-pending');
+  const footerEl       = document.getElementById('cm-footer');
+  const totalRow       = document.getElementById('cm-total-row');
+  const totalEl        = document.getElementById('cm-total');
+  const checkoutBtn    = document.getElementById('cm-checkout-btn');
+  const checkoutErr    = document.getElementById('cm-checkout-error');
+  const fab            = document.getElementById('cart-fab');
+  const fabCount       = document.getElementById('cart-fab-count');
 
   const ZONE_LABELS = {
-    spain:  { flag: '🇪🇸', name: 'Spain' },
-    europe: { flag: '🇪🇺', name: 'Rest of Europe' },
-    world:  { flag: '🌍', name: 'Rest of the world' },
+    spain:  'Shipping to 🇪🇸 Spain',
+    europe: 'Shipping to 🇪🇺 Europe',
+    world:  'Shipping to 🌍 rest of the world',
   };
 
+  let selectedZone = '';
+
   // ── Open / Close ──────────────────────────────────────────
-  function openCart() { render(); modal.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
-  function closeCart() { modal.classList.remove('is-open'); document.body.style.overflow = ''; }
+  function openCart() {
+    render();
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
 
   document.getElementById('cm-close').addEventListener('click', closeCart);
   overlay.addEventListener('click', closeCart);
@@ -120,14 +141,12 @@
     const products = Cart.getProducts();
     const isEmpty  = products.length === 0;
 
-    emptyMsg.style.display = isEmpty ? 'block' : 'none';
-    totalsEl.style.display = isEmpty ? 'none'  : 'block';
-    footerEl.style.display = isEmpty ? 'none'  : 'block';
+    emptyMsg.style.display  = isEmpty ? 'block' : 'none';
+    totalsEl.style.display  = isEmpty ? 'none'  : 'block';
 
     // Items
     itemList.innerHTML = '';
     products.forEach(p => {
-      const ep = p.priceSale ?? p.price;
       const li = document.createElement('li');
       li.className = 'cm-item';
       li.innerHTML = `
@@ -143,41 +162,38 @@
       itemList.appendChild(li);
     });
 
-    const subtotal = Cart.getSubtotal();
-    subtotalEl.textContent = `€${subtotal}`;
+    subtotalEl.textContent = `€${Cart.getSubtotal()}`;
 
-    // Reset shipping display
-    showPending();
-    checkoutBtn.disabled = true;
-
-    // Recalc if zone already selected
-    if (zoneSelect.value) applyZone(products, zoneSelect.value, subtotal);
+    // Restore zone if already selected
+    if (selectedZone) {
+      applyZone(products, selectedZone);
+    } else {
+      showPending();
+    }
   }
 
-  // ── Zone selection ────────────────────────────────────────
+  // ── Zone states ───────────────────────────────────────────
   function showPending() {
-    zoneBlock.style.display      = 'flex';
+    zoneBlock.style.display = 'flex';
     confirmedEl.classList.remove('visible');
     shippingRow.classList.remove('visible');
     breakdownEl.classList.remove('visible');
     confirmNote.classList.remove('visible');
     savingsRow.classList.remove('visible');
-    totalRow.classList.remove('visible');
-    pendingMsg.style.display     = 'block';
-    checkoutBtn.disabled         = true;
+    pendingMsg.style.display = 'block';
+    footerEl.classList.remove('visible');
+    checkoutBtn.disabled = true;
   }
 
-  function applyZone(products, zone, subtotal) {
+  function applyZone(products, zone) {
+    selectedZone = zone;
     const result = calculateShipping(products, zone);
-    const label  = ZONE_LABELS[zone];
 
-    // Hide selector, show confirmed pill
+    // Switch from select to inline label
     zoneBlock.style.display = 'none';
-    zoneFlagEl.textContent  = label.flag;
-    zoneNameEl.textContent  = label.name;
-    confirmedEl.classList.add('visible');
     pendingMsg.style.display = 'none';
-
+    zoneLabelEl.textContent = ZONE_LABELS[zone];
+    confirmedEl.classList.add('visible');
     shippingRow.classList.add('visible');
 
     if (result.cost === null) {
@@ -185,7 +201,7 @@
       breakdownEl.textContent    = result.breakdown;
       breakdownEl.classList.add('visible');
       confirmNote.classList.add('visible');
-      totalRow.classList.remove('visible');
+      footerEl.classList.remove('visible');
       checkoutBtn.disabled = true;
     } else {
       shippingCostEl.textContent = `€${result.cost}`;
@@ -193,12 +209,12 @@
       if (result.breakdown) {
         breakdownEl.textContent = result.breakdown;
         breakdownEl.classList.add('visible');
+      } else {
+        breakdownEl.classList.remove('visible');
       }
-      if (result.needsConfirmation) confirmNote.classList.add('visible');
-
-      const total = subtotal + result.cost;
-      totalEl.textContent = `€${total}`;
-      totalRow.classList.add('visible');
+      if (result.needsConfirmation) {
+        confirmNote.classList.add('visible');
+      }
 
       // Savings
       const individualCost = products.reduce((sum, p) => {
@@ -209,21 +225,24 @@
       if (saved > 0.5 && products.length > 1) {
         savingsEl.textContent = `−€${saved.toFixed(0)}`;
         savingsRow.classList.add('visible');
+      } else {
+        savingsRow.classList.remove('visible');
       }
 
+      const total = Cart.getSubtotal() + result.cost;
+      totalEl.textContent = `€${total}`;
+      footerEl.classList.add('visible');
       checkoutBtn.disabled = false;
     }
   }
 
   zoneSelect.addEventListener('change', () => {
     if (!zoneSelect.value) return;
-    const products = Cart.getProducts();
-    const subtotal = Cart.getSubtotal();
-    applyZone(products, zoneSelect.value, subtotal);
+    applyZone(Cart.getProducts(), zoneSelect.value);
   });
 
-  // "Change" button — show selector again
   changeBtn.addEventListener('click', () => {
+    selectedZone = '';
     zoneSelect.value = '';
     showPending();
   });
@@ -241,8 +260,7 @@
     checkoutBtn.textContent   = 'Redirecting…';
 
     const products = Cart.getProducts();
-    const zone     = zoneSelect.value || zoneNameEl.textContent.toLowerCase().replace(/ /g,'_');
-    const shipping = calculateShipping(products, zoneSelect.value || 'world');
+    const shipping = calculateShipping(products, selectedZone);
 
     const lineItems = products.map(p => ({
       id:    p.id,
@@ -258,7 +276,7 @@
         body: JSON.stringify({
           items:        lineItems,
           shippingCost: shipping.cost,
-          zone:         zone,
+          zone:         selectedZone,
           shippingLabel: shipping.needsConfirmation
             ? 'Shipping (to be confirmed)'
             : `Shipping — ${shipping.breakdown}`,
@@ -278,7 +296,7 @@
     }
   });
 
-  // ── FAB counter ───────────────────────────────────────────
+  // ── FAB ──────────────────────────────────────────────────
   function updateFab() {
     const count = Cart.getCount();
     fabCount.textContent   = count;

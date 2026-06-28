@@ -1,22 +1,30 @@
-// Gallery filter — index only
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.filter-btn');
-  const products = document.querySelectorAll('.gallery a.card');
+// index.js — Chundra
+// Filter bar logic for the gallery.
+// Cards use data-category attribute (can have multiple space-separated values).
 
-  buttons.forEach(btn => {
+document.addEventListener('DOMContentLoaded', function () {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards      = document.querySelectorAll('.card[data-category]');
+
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
+      const filter = btn.dataset.filter;
+
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      products.forEach(product => {
-        const categories = product.dataset.category
-          ? product.dataset.category.split(' ')
-          : [];
-        if (filter === 'all' || categories.includes(filter)) {
-          product.classList.remove('hide');
-        } else {
-          product.classList.add('hide');
+
+      // Show/hide cards
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = '';
+          return;
         }
+        // data-category can be "guardianas ritual" (space-separated)
+        const categories = (card.dataset.category || '').split(' ');
+        card.style.display = categories.includes(filter) ? '' : 'none';
       });
     });
   });
