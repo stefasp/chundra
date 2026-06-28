@@ -1,0 +1,318 @@
+/* cart-modal.css — Chundra */
+
+/* ── Cart FAB (floating action button) ── */
+#cart-fab {
+  position: fixed;
+  bottom: 50px; /* above marquee */
+  right: 20px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #594593;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+  z-index: 1050;
+  transition: background 0.2s, transform 0.15s;
+}
+#cart-fab:hover {
+  background: #318160;
+  transform: scale(1.06);
+}
+
+#cart-fab-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #d11040;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Modal shell ── */
+#cart-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+}
+#cart-modal.is-open {
+  display: block;
+}
+
+#cm-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+}
+
+/* ── Side panel ── */
+#cm-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 420px;
+  max-width: 100vw;
+  background: #EBE9D4;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -6px 0 30px rgba(0,0,0,0.15);
+  animation: slideIn 0.22s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+#cm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid #d8d5c3;
+}
+#cm-header h2 {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin: 0;
+  color: #333;
+}
+
+#cm-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+  padding: 0;
+}
+#cm-close:hover { color: #333; }
+
+/* ── Body ── */
+#cm-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.4rem;
+}
+
+#cm-empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: #888;
+}
+
+/* Item list */
+#cm-item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cm-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 3px;
+  padding: 0.7rem;
+  position: relative;
+}
+
+.cm-item-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.cm-item-info {
+  flex: 1;
+  min-width: 0;
+}
+.cm-item-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cm-item-meta {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0 0 0.2rem;
+}
+.cm-item-price {
+  font-size: 0.85rem;
+  margin: 0;
+  color: #444;
+}
+
+.cm-remove-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #ccc;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.cm-remove-btn:hover { color: #d11040; }
+
+/* Totals block */
+#cm-totals {
+  border-top: 1px solid #d8d5c3;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#cm-subtotal-row,
+#cm-shipping-row,
+#cm-total-row,
+#cm-savings-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #555;
+}
+#cm-total-row {
+  font-size: 1rem;
+  color: #222;
+  border-top: 1px solid #d8d5c3;
+  padding-top: 0.5rem;
+  margin-top: 0.2rem;
+}
+.cm-savings-amount {
+  color: #618764;
+  font-weight: 600;
+}
+
+/* Zone selector */
+#cm-zone-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.4rem 0;
+}
+#cm-zone-block label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+}
+#cm-zone-select {
+  border: 1px solid #d0cdb8;
+  background: #fafaf5;
+  border-radius: 3px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+#cm-zone-select:focus {
+  border-color: #594593;
+}
+
+/* Shipping notes */
+#cm-shipping-breakdown {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.5;
+  background: #f5f3e8;
+  border-radius: 3px;
+  padding: 0.4rem 0.6rem;
+}
+#cm-shipping-confirm {
+  font-size: 0.78rem;
+  color: #a07030;
+  background: #fdf5e0;
+  border-radius: 3px;
+  padding: 0.5rem 0.7rem;
+  line-height: 1.5;
+}
+#cm-shipping-confirm p { margin: 0; }
+
+#cm-shipping-pending {
+  font-size: 0.82rem;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  padding: 0.4rem 0;
+}
+
+/* ── Footer ── */
+#cm-footer {
+  padding: 1rem 1.4rem 1.4rem;
+  border-top: 1px solid #d8d5c3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+#cm-stripe-note {
+  font-size: 0.73rem;
+  color: #aaa;
+  text-align: center;
+  margin: 0;
+}
+
+#cm-checkout-btn {
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  background: #594593;
+  color: #fff;
+  border: 0;
+  text-align: center;
+  transition: background 0.2s;
+  margin: 0;
+}
+#cm-checkout-btn:hover:not(:disabled) { background: #318160; }
+#cm-checkout-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cm-error {
+  font-size: 0.82rem;
+  color: #d11040;
+  text-align: center;
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  #cm-panel {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,341 @@
+/* piece-modal.css — Chundra */
+
+#piece-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+}
+#piece-modal.is-open {
+  display: flex;
+}
+
+#pm-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+}
+
+#pm-content {
+  position: relative;
+  background: #EBE9D4;
+  width: 96%;
+  max-width: 1260px;
+  max-height: 92vh;
+  overflow-y: auto;
+  z-index: 1;
+  border-radius: 3px;
+  box-shadow: 0 12px 60px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+#pm-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+  z-index: 2;
+  padding: 0;
+}
+#pm-close:hover { color: #333; }
+
+/* ── Inner layout ── */
+#pm-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  min-height: 500px;
+}
+
+/* ── Gallery / Slider ── */
+#pm-gallery {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem;
+  gap: 0.8rem;
+}
+
+#pm-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  flex: 1;
+}
+
+#pm-main-img-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 420px;
+}
+
+#pm-main-img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 2px;
+  transition: opacity 0.15s;
+}
+
+#pm-prev, #pm-next {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #555;
+  transition: background 0.15s;
+}
+#pm-prev:hover, #pm-next:hover { background: #f0f0f0; }
+
+/* Thumbnails */
+#pm-thumbs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.pm-thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.65;
+  transition: opacity 0.15s, border-color 0.15s;
+}
+.pm-thumb.active,
+.pm-thumb:hover {
+  opacity: 1;
+  border-color: #594593;
+}
+
+/* ── Details panel ── */
+#pm-details {
+  padding: 2rem 1.8rem 2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  overflow-y: auto;
+}
+
+#pm-category-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  margin: 0;
+}
+
+#pm-title {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-size: 1.8rem;
+  font-weight: 200;
+  margin: 0;
+  color: #333;
+  line-height: 1.2;
+}
+
+#pm-subtitle {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Price block */
+#pm-price-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.2rem 0;
+}
+.pm-price {
+  font-size: 1.3rem;
+  color: #333;
+}
+.price-original {
+  color: #aaa;
+  text-decoration: line-through;
+  font-size: 0.95rem;
+}
+.price-sale {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+.price-badge {
+  background: #d11040;
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* Description */
+#pm-description {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #555;
+}
+#pm-description p { margin: 0 0 0.6rem; }
+#pm-description p:last-child { margin-bottom: 0; }
+
+/* Specs */
+#pm-specs {
+  border-top: 1px solid #e0ddd0;
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.pm-spec {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.5;
+}
+.pm-spec strong {
+  color: #444;
+}
+
+/* Shipping note */
+#pm-shipping-note {
+  background: #f2f0e4;
+  border-radius: 3px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+/* Actions */
+#pm-actions {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+#pm-cart-btn {
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 12px 24px;
+  background: #594593;
+  color: #fff;
+  border: 0;
+  transition: background 0.2s;
+  width: 100%;
+  text-align: center;
+}
+#pm-cart-btn:hover { background: #318160; }
+#pm-cart-btn.in-cart {
+  background: #618764;
+}
+#pm-cart-btn.in-cart:hover {
+  background: #4a6650;
+}
+
+#pm-sold-msg {
+  color: #888;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  #pm-inner {
+    grid-template-columns: 1fr;
+  }
+  #pm-gallery {
+    max-height: 55vw;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+  #pm-main-img-wrap {
+    max-height: 50vw;
+  }
+  #pm-main-img {
+    max-height: 50vw;
+  }
+  #pm-details {
+    padding: 1.2rem 1rem;
+  }
+  #pm-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Shipping preview block ── */
+#pm-shipping-block {
+  background: #f2f0e4;
+  border-radius: 3px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.2rem;
+}
+
+.pm-shipping-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #888;
+  margin: 0 0 0.5rem;
+}
+
+#pm-shipping-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+#pm-shipping-table td {
+  padding: 0.2rem 0;
+  color: #555;
+}
+#pm-shipping-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: #333;
+}
+
+#pm-shipping-custom {
+  font-size: 0.82rem;
+  color: #a07030;
+  line-height: 1.5;
+}
+
+.pm-shipping-multi {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0.6rem 0 0;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.pm-spec-note {
+  color: #a07030;
+  font-size: 0.78rem;
+}
