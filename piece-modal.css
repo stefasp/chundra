@@ -289,3 +289,47 @@
   }
   #pm-title { font-size: 1.6rem; }
 }
+
+/* ── Shipping preview full table ── */
+.pm-shipping-subtitle {
+  font-size: 0.65rem;
+  color: #aaa;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+#pm-shipping-table-full {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+}
+#pm-shipping-table-full th {
+  font-size: 0.7rem;
+  color: #aaa;
+  font-weight: 400;
+  text-align: right;
+  padding: 0 0 0.3rem;
+}
+#pm-shipping-table-full th:first-child { text-align: left; }
+#pm-shipping-table-full td {
+  padding: 0.2rem 0;
+  color: #555;
+  text-align: right;
+}
+#pm-shipping-table-full td:first-child {
+  text-align: left;
+  color: #444;
+}
+#pm-shipping-table-full tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #e8e5d8;
+}
+#pm-shipping-table-full td:last-child,
+#pm-shipping-table-full th:last-child {
+  color: #594593;
+  font-weight: 600;
+}
+#pm-shipping-table-full td:last-child[data-na="true"] {
+  color: #ccc;
+  font-weight: 400;
+}

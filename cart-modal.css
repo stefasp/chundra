@@ -241,8 +241,8 @@
 }
 #cm-shipping-change-btn:hover { opacity: 1; }
 #cm-shipping-change-btn img {
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
 }
 
 /* Shipping cost row */
@@ -346,8 +346,8 @@
   line-height: 1.4;
 }
 #cm-stripe-note img {
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
   opacity: 0.5;
   flex-shrink: 0;
 }
@@ -357,3 +357,79 @@
 @media (max-width: 520px) {
   #cm-panel { width: 100vw; }
 }
+
+/* ── Delivery method selector ── */
+#cm-delivery-method {
+  margin: 0.6rem 0;
+}
+#cm-delivery-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  margin: 0 0 0.5rem;
+}
+#cm-delivery-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.cm-delivery-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.9rem 0.5rem;
+  border: 2px solid #d8d5c3;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: inherit;
+  text-align: center;
+}
+.cm-delivery-btn:hover {
+  border-color: #594593;
+}
+.cm-delivery-btn.active {
+  border-color: #594593;
+  background: #f4f1fb;
+}
+.cm-delivery-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.cm-delivery-name {
+  font-size: 0.78rem;
+  color: #444;
+  font-weight: 500;
+}
+.cm-delivery-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #594593;
+}
+.cm-breakdown-text {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+.cm-confirm-note {
+  font-size: 0.78rem;
+  color: #a07030;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+.cm-confirm-note p { margin: 0; }
+
+/* ── No shipping method message ── */
+.cm-email-copy {
+  color: #594593;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.cm-email-copy:hover { color: #318160; }

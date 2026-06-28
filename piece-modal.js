@@ -40,7 +40,7 @@
 
           <!-- Shipping preview -->
           <div id="pm-shipping-block">
-            <p class="pm-shipping-title">📦 Estimated shipping</p>
+            <p class="pm-shipping-title">📦 Estimated shipping <span class="pm-shipping-subtitle">(confirmed at checkout)</span></p>
             <div id="pm-shipping-custom" style="display:none;"></div>
             <table id="pm-shipping-table" style="display:none;">
               <tbody>
@@ -172,40 +172,91 @@
   function populateShipping(p) {
     const customEl = document.getElementById('pm-shipping-custom');
     const tableEl  = document.getElementById('pm-shipping-table');
+    const zone     = window.selectedShippingZone;
 
-    // If product has a manual shippingNote, show that instead of calculating
-    if (p.shippingNote) {
-      customEl.textContent  = p.shippingNote;
+    // shippingNote is only a fallback for non-Inpost zones.
+    // We still show the full table — shippingNote shows in world/europe rows only.
+
+    // If user already chose a zone in cart, show that zone with both methods
+    if (zone && typeof calculateShippingOptions !== 'undefined') {
+      const label = (typeof ZONE_LABELS !== 'undefined' && ZONE_LABELS[zone])
+        ? `${ZONE_LABELS[zone].flag} ${ZONE_LABELS[zone].name}`
+        : zone;
+      const { correos, inpost } = calculateShippingOptions([p], zone);
+
+      let html = `<p class="pm-shipping-zone-label">Shipping to ${label}</p>`;
+
+      if (inpost && inpost.cost !== null) {
+        const correosCost = correos.cost !== null ? `€${correos.cost}` : 'Quote';
+        html += `
+          <table id="pm-shipping-table-inner">
+            <tr><td>🏠 To your address</td><td>${correosCost}</td></tr>
+            <tr><td>📦 Inpost pickup</td><td>€${inpost.cost}</td></tr>
+          </table>`;
+      } else {
+        const correosCost = correos.cost !== null ? `€${correos.cost}` : 'Quote on request';
+        html += `<p class="pm-shipping-single">🏠 ${correosCost}</p>`;
+      }
+
+      customEl.innerHTML    = html;
       customEl.style.display = 'block';
       tableEl.style.display  = 'none';
       return;
     }
 
-    // Calculate for each zone
-    const zones = ['spain', 'europe', 'world'];
-    const ids   = ['pm-ship-spain', 'pm-ship-europe', 'pm-ship-world'];
-    let allCustom = false;
+    // Default: show key zones with Correos + Inpost where available
+    const PREVIEW_ZONES = [
+      { key: 'spain',   flag: '🇪🇸', label: 'Spain' },
+      { key: 'portugal',flag: '🇵🇹', label: 'Portugal' },
+      { key: 'france',  flag: '🇫🇷', label: 'France' },
+      { key: 'germany', flag: '🇩🇪', label: 'Germany' },
+      { key: 'europe',  flag: '🌍', label: 'Rest of Europe' },
+      { key: 'world',   flag: '🌏', label: 'Rest of world' },
+    ];
 
-    zones.forEach((zone, i) => {
-      const result = calculateShipping([p], zone);
-      const el = document.getElementById(ids[i]);
-      if (result.cost === null) {
-        el.textContent = 'Quote on request';
-        allCustom = true;
+    const rows = PREVIEW_ZONES.map(z => {
+      const { correos, inpost } = typeof calculateShippingOptions !== 'undefined'
+        ? calculateShippingOptions([p], z.key)
+        : { correos: calculateShipping([p], z.key), inpost: null };
+
+      // For pieces with shippingNote, Correos shows quote for non-Inpost zones
+      let correosStr;
+      if (p.shippingNote && correos.cost === null) {
+        correosStr = 'Quote';
       } else {
-        el.textContent = `€${result.cost % 1 === 0 ? result.cost : result.cost.toFixed(2)}`;
+        correosStr = correos.cost !== null ? `€${correos.cost}` : 'Quote';
       }
-    });
+      const inpostStr = (inpost && inpost.cost !== null) ? `€${inpost.cost}` : '—';
 
-    if (allCustom) {
-      customEl.textContent   = 'Shipping cost on request for this piece.';
-      customEl.style.display = 'block';
-      tableEl.style.display  = 'none';
-    } else {
-      customEl.style.display = 'none';
-      tableEl.style.display  = 'table';
-    }
+      return `<tr>
+        <td>${z.flag} ${z.label}</td>
+        <td>${correosStr}</td>
+        <td>${inpostStr}</td>
+      </tr>`;
+    }).join('');
+
+    const html = `
+      <table id="pm-shipping-table-full">
+        <thead>
+          <tr>
+            <th></th>
+            <th>🏠 Home</th>
+            <th>📦 Inpost</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+
+    customEl.innerHTML    = html;
+    customEl.style.display = 'block';
+    tableEl.style.display  = 'none';
   }
+
+  // Public: refresh shipping if zone changes while modal is open
+  window.PieceModal = window.PieceModal || {};
+  PieceModal.refreshShipping = function(zone) {
+    if (currentProduct) populateShipping(currentProduct);
+  };
 
   function setSpec(id, label, value) {
     const el = document.getElementById(id);
