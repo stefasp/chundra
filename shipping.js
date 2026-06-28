@@ -77,7 +77,10 @@ const ZONE_TO_CORREOS = {
 // ── Helpers ───────────────────────────────────────────────────────
 
 function effectiveDims(product) {
-  const src = product.dimsFramed || product.dims;
+  // flatPackable pieces with dimsCompact use compact dims for shipping
+  const src = (product.flatPackable && product.dimsCompact)
+    ? product.dimsCompact
+    : (product.dimsFramed || product.dims);
   if (!src) return { w: 30, h: 30, d: 5 };
   if (product.fragile) {
     return { w: src.w + PADDING*2, h: src.h + PADDING*2, d: src.d + PADDING*2 };
@@ -86,7 +89,9 @@ function effectiveDims(product) {
 }
 
 function pieceDiagonal(product) {
-  const src = product.dimsFramed || product.dims;
+  const src = (product.flatPackable && product.dimsCompact)
+    ? product.dimsCompact
+    : (product.dimsFramed || product.dims);
   if (!src) return 999;
   return Math.sqrt(src.w ** 2 + src.h ** 2);
 }
