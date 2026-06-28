@@ -1,5 +1,493 @@
+.league-spartan-light{
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+.edu-italic {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
 
-/* ── Marquee: always below modals and overlays ── */
+body {
+    margin: 0;
+    padding: 0 0 30px 0;
+    background-color: #EBE9D4;
+    color: #555B72;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hide { display: none !important; }
+
+#copyButton { cursor: pointer; }
+
+.buying-info { text-align: left; }
+.buying-info strong { text-align: left; font-size: 19px !important; }
+.buying-info .button { display: inline-block; }
+
+/* ── Marquee — always below modals ── */
 .marquee-wrapper {
-  z-index: 50 !important;
+    background-color: #d11040;
+    color: #fff;
+    overflow: hidden;
+    padding: 8px;
+    font-size: 1em;
+    position: fixed;
+    bottom: 0;
+    z-index: 50;
+    left: 0;
+    width: 100%;
+    display: block;
+}
+.marquee-wrapper .marquee {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 15s linear infinite;
+}
+.marquee-wrapper .marquee span {
+    padding: 0 50px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #fff;
+}
+
+.price-original {
+  color: #999;
+  text-decoration: line-through;
+}
+.card .details .price-sale { color: #6bffb7; }
+.card .details .price-badge { background-color: #d11040; }
+
+/* Price block inside cards */
+.price-block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.price-block .price-original { color: #aaa; font-size: 0.8rem; }
+.price-block .price-sale { color: #fff; font-weight: 700; font-size: 0.95rem; }
+.price-block .price-badge {
+  background: #d11040;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.policy-page ul { margin: 20px; padding: 0; }
+.policy-page ul li { padding-bottom: 20px; }
+.buying-info .policy-page strong { font-size: 1rem !important; }
+
+@keyframes scroll-left {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── Header ── */
+header {
+    box-shadow: 0 0 5px #00000030;
+    width: 100%;
+    position: fixed;
+    display: block;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000000;
+    z-index: 999;
+    text-align: center;
+}
+header nav { display: none; }
+
+.logo-container img { height: 70px; }
+
+.copybutton {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav { display: flex; align-items: center; }
+
+/* ── Filter bar ── */
+.filter-bar {
+    border-radius: 70px;
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 0.5rem;
+    background-color: #618764;
+    z-index: 1000;
+    font-family: "Edu VIC WA NT Hand Pre", cursive;
+}
+.filter-bar span { color: #00000085; padding: 6px; }
+.filter-bar .filter-btn {
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0.7rem;
+    border-radius: 60px;
+    transition: all 0.2s;
+    color: #EBE9D4;
+    white-space: nowrap;
+    position: relative;
+}
+.filter-bar .filter-btn.active {
+  background-color: #EBE9D4;
+  color: #618764;
+}
+.filter-btn[data-tooltip]:not([data-tooltip=""])::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -49%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(122 116 169);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    color: #EBE9D4;
+}
+.filter-btn[data-tooltip]:not([data-tooltip=""]):hover::after { opacity: 1; }
+
+/* ── Nav ── */
+.menu { display: flex; list-style: none; }
+.menu li { margin: 0 10px; }
+.menu li a {
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: none;
+    color: #00000091;
+    transition: color 0.3s;
+}
+.menu li a:hover { color: #f0a500; }
+
+.button.main {
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 6px;
+    margin: 32px 0;
+    display: inline-block;
+    padding: 13px 20px;
+    background: #594593;
+    color: #fff;
+    border: 0;
+}
+.button.main:hover { background-color: #318160; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.logo-font {
+  font-family: "Staatliches", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.Edu {
+  font-family: "Edu AU VIC WA NT Pre", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.bold { font-weight: 500; }
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: #2b6445;
+}
+.buying-info a {
+    padding: 0px 12px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.hero.piece h2, h2 {
+    font-size: 43px;
+    margin: 20px 0;
+    font-weight: 200;
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+}
+
+/* ── Hero ── */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C3DAB8;
+    position: relative;
+}
+.hero .title { display: flex; }
+.hero .title p {
+    font-size: 1.0rem;
+    padding-left: 10px;
+    padding-top: 47px;
+    font-style: italic;
+}
+.hero h2 { font-size: 15px; opacity: 0.7; margin: 0; }
+.hero.piece { padding-top: 70px; }
+.hero.piece p { line-height: 1.8rem; font-size: 0.9rem; text-align: left; margin: 0; }
+.hero.piece img { width: 43%; }
+.hero.piece .hero-text { text-align: left; width: 50%; margin: 4%; }
+.hero-text { text-align: center; width: 50%; margin-right: auto; }
+.hero img { width: 820px; height: auto; }
+.hero .logo { position: absolute; width: 130px; left: 698px; }
+.hero h1 {
+    font-size: 4.5em;
+    margin: 0;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.hero .slogan { width: 200px; margin: 30px 0 40px; }
+.hero p {
+    margin: 21% 0 4%;
+    opacity: 0.8;
+    font-size: 2.6rem;
+    color: #555B72;
+    text-align: center;
+    line-height: 46px;
+}
+
+/* ── Gallery ── */
+section.gallery-container { padding: 60px 0; }
+.gallery-container { padding: 60px 0; }
+.gallery { text-align: center; margin-bottom: 20px; }
+.gallery-container h2 { text-align: center; }
+.gallery h2 { font-size: 24px; margin-bottom: 20px; color: #333; }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: center;
+  background-image: url('images/bg-doodles-left.png'), url('images/bg-doodles-right.png');
+  background-position: left top, right top;
+  background-repeat: repeat-y, repeat-y;
+  background-size: 11%;
+}
+
+.card {
+    position: relative;
+    height: 409px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 365px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+    background-color: #D1DFFFCC;
+}
+.card[data-category="dibujo"],
+.card[data-category="dibujo"]:hover {
+  cursor: default;
+  transform: none;
+}
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.4s ease-in-out;
+    background-color: #f5efadcc;
+    cursor: pointer;
+}
+.card:hover .details { display: block; }
+.card .details strong { text-transform: uppercase; }
+
+.card.sold {
+  position: relative;
+  overflow: hidden;
+}
+.card.sold::after {
+  content: "Vendido";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.card .image-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+.card .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .details {
+    background: #0000009e;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+}
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+}
+.card p { line-height: 19px; padding: 0; font-size: 13px; margin: 0; }
+
+/* ── About ── */
+.about {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+.about p { opacity: 1; font-weight: 200; line-height: 1.6rem; }
+.about img.me {
+    width: 52%;
+    height: auto;
+    margin-left: 6%;
+    border-radius: 0;
+    transform: rotate(2deg);
+    border: 13px solid #ffffff;
+}
+.about-text { width: 45%; }
+.studio-photos { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.studio-photos img { width: 150px; height: auto; }
+
+/* ── Contact / Footer ── */
+.contact { text-align: center; padding: 30px; }
+.contact a {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #5a5a5a;
+}
+.contact a:hover { color: #848485; }
+.contact h3 { font-size: 1.8em; margin-bottom: 10px; }
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    font-size: 1.2em;
+}
+.contact-info img { width: 25px; height: auto; }
+
+/* ── Exhibitions ── */
+.exhibitions { margin: auto; width: 86%; padding: 30px 20px; display: none; }
+.exhibitions h2 { text-align: center; font-size: 2em; margin-bottom: 20px; }
+.exhibition-row {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.exhibition-row::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, #ddd, transparent);
+}
+.gallery-name { font-weight: bold; font-size: 1.2em; flex: 1; }
+.details { flex: 2; display: flex; flex-direction: column; }
+.details div { font-size: 0.9em; }
+
+/* ── Technical info (piece pages) ── */
+.technical-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.technical-info .info-column { flex: 1; padding: 0 10px; }
+.technical-info p { margin: 5px 0; }
+
+/* ── Piece gallery (piece pages) ── */
+.piece-gallery { padding: 20px 30%; width: 100%; object-fit: cover; }
+.piece-gallery img, .piece-gallery video { padding: 30px 10%; width: 100%; object-fit: cover; }
+
+/* ── Cookie banner ── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 9999;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+#cookie-banner p { margin: 0; flex: 1; min-width: 200px; }
+#cookie-banner a { color: #ccc; text-decoration: underline; }
+.cookie-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+#cookie-accept {
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#cookie-decline {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #ccc;
+  padding: 8px 20px;
+  cursor: pointer;
 }
