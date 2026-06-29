@@ -289,16 +289,111 @@ function calculateCorreos(products, zone) {
 
 // ── Inpost ────────────────────────────────────────────────────────
 
+const MATERIALS_COST = 4; // € per Inpost package (packaging materials, internal)
+
+// Check if a group of products fits in a single Inpost package
+function inpostPackageFits(products, zone) {
+  if (!products.length) return true;
+  const dims = products.map(p => {
+    const d = p.dimsFramed || p.dims || { w: 30, h: 30, d: 5 };
+    return { w: d.w, h: d.h, d: d.d };
+  });
+
+  // Stack along depth axis, max footprint determines w and h
+  const sorted = [...dims].sort((a,b) => (b.w*b.h) - (a.w*a.h));
+  const maxW = Math.max(...dims.map(d => d.w));
+  const maxH = Math.max(...dims.map(d => d.h));
+  const totalD = dims.reduce((s, d) => s + d.d, 0) + (dims.length - 1) * GAP_BETWEEN;
+
+  // Try all orientations of the bounding box
+  const sides = [maxW, maxH, totalD].sort((a,b) => b-a);
+  const sum = sides[0] + sides[1] + sides[2];
+
+  if (sides[0] > 120) return false;
+  if (sum > 150) return false;
+
+  // Country-specific limits
+  const countryLimits = INPOST_SIZE_LIMITS[zone];
+  if (countryLimits) {
+    if (countryLimits.maxSide && sides[0] > countryLimits.maxSide) return false;
+    if (countryLimits.maxH && sides[1] > countryLimits.maxH) return false;
+    if (countryLimits.maxW && sides[2] > countryLimits.maxW) return false;
+  }
+
+  return true;
+}
+
 function calculateInpost(products, zone) {
   if (!INPOST_ZONES.has(zone)) return null;
-  if (!inpostFits(products, zone)) return null;
-  const weight = totalWeight(products) + PACKAGING_WEIGHT;
-  const cost   = inpostPrice(zone, weight);
-  if (cost === null) return null;
+
+  // Separate flat pieces (paintings/drawings) from 3D pieces (sculptures/wall art)
+  const flatPieces = products.filter(p => p.flatPackable || p.category?.includes('dibujo'));
+  const bulkyPieces = products.filter(p => !p.flatPackable && !p.category?.includes('dibujo'));
+
+  // Check each bulky piece fits Inpost individually
+  for (const p of bulkyPieces) {
+    if (!inpostPackageFits([p], zone)) return null;
+  }
+
+  const packages = []; // [{products, weight}]
+
+  // ── Flat pieces: max 2 per package ──
+  for (let i = 0; i < flatPieces.length; i += 2) {
+    const group = flatPieces.slice(i, i + 2);
+    if (!inpostPackageFits(group, zone)) {
+      // If 2 don't fit together, send individually
+      for (const p of group) {
+        if (!inpostPackageFits([p], zone)) return null; // oversized single piece
+        packages.push({ products: [p], weight: (p.weight || 0.5) + PACKAGING_WEIGHT });
+      }
+    } else {
+      const w = group.reduce((s, p) => s + (p.weight || 0.5), 0) + PACKAGING_WEIGHT;
+      packages.push({ products: group, weight: w });
+    }
+  }
+
+  // ── Bulky pieces: bin-packing with L+A+a limit ──
+  const remaining = [...bulkyPieces];
+  while (remaining.length > 0) {
+    const current = remaining.shift();
+    let placed = false;
+
+    for (const pkg of packages.filter(p => p.isBulky)) {
+      const testGroup = [...pkg.products, current];
+      if (inpostPackageFits(testGroup, zone)) {
+        pkg.products.push(current);
+        pkg.weight += current.weight || 0.5;
+        placed = true;
+        break;
+      }
+    }
+
+    if (!placed) {
+      packages.push({
+        products: [current],
+        weight: (current.weight || 0.5) + PACKAGING_WEIGHT,
+        isBulky: true,
+      });
+    }
+  }
+
+  // ── Calculate cost per package ──
+  let totalCost = 0;
+  for (const pkg of packages) {
+    const pkgCost = inpostPrice(zone, pkg.weight);
+    if (pkgCost === null) return null; // too heavy
+    totalCost += pkgCost + MATERIALS_COST;
+  }
+
+  const totalWeight = packages.reduce((s, p) => s + p.weight, 0);
+  const pkgCount = packages.length;
+
   return {
-    cost,
-    weight: Math.round(weight * 100) / 100,
-    breakdown: `${products.length} piece${products.length>1?'s':''} · ${weight.toFixed(1)}kg`,
+    cost: totalCost,
+    weight: Math.round(totalWeight * 100) / 100,
+    breakdown: pkgCount > 1
+      ? `${pkgCount} packages · ${totalWeight.toFixed(1)}kg total`
+      : `1 package · ${totalWeight.toFixed(1)}kg`,
     isEstimate: false, needsConfirmation: false,
     method: 'inpost',
   };
