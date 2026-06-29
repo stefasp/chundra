@@ -209,7 +209,20 @@
     zoneLabelEl.textContent    = `Shipping to ${label.flag} ${label.name}`;
     confirmedEl.style.display  = 'flex';
 
-    const { correos, inpost } = calculateShippingOptions(products, zone);
+    const { correos, inpost, noMethod } = calculateShippingOptions(products, zone);
+
+    // No shipping method available at all → show contact message
+    if (noMethod) {
+      deliveryMethodEl.style.display = 'none';
+      shippingRow.style.display      = 'block';
+      shippingCostEl.textContent     = '';
+      breakdownEl.innerHTML          = NO_METHOD_MSG;
+      confirmNote.style.display      = 'none';
+      pendingMsg.style.display       = 'none';
+      footerEl.style.display         = 'none';
+      checkoutBtn.disabled           = true;
+      return;
+    }
 
     // Show/hide delivery method selector
     const hasInpost = inpost && inpost.cost !== null;
@@ -217,7 +230,7 @@
     if (hasInpost) {
       // Show both options
       deliveryMethodEl.style.display = 'block';
-      priceCorreos.textContent = correos.cost !== null ? `€${correos.cost}` : 'Quote';
+      priceCorreos.textContent = correos && correos.cost !== null ? `€${correos.cost}` : 'Quote';
       priceInpost.textContent  = `€${inpost.cost}`;
       applyMethod(products, zone, selectedMethod, correos, inpost);
     } else {
