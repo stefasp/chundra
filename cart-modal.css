@@ -241,8 +241,8 @@
 }
 #cm-shipping-change-btn:hover { opacity: 1; }
 #cm-shipping-change-btn img {
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
 }
 
 /* Shipping cost row */
@@ -254,7 +254,6 @@
   color: #555;
   margin-bottom: 0.3rem;
 }
-#cm-shipping-row.visible { display: flex; }
 
 #cm-shipping-cost {
   font-weight: 600;
@@ -263,13 +262,11 @@
 }
 
 #cm-shipping-breakdown {
-  display: none;
   font-size: 0.75rem;
   color: #888;
   line-height: 1.5;
   margin-bottom: 0.4rem;
 }
-#cm-shipping-breakdown.visible { display: block; }
 
 #cm-shipping-confirm {
   display: none;
@@ -345,8 +342,8 @@
   line-height: 1.4;
 }
 #cm-stripe-note img {
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
   opacity: 0.5;
   flex-shrink: 0;
 }
