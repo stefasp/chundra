@@ -223,7 +223,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['wallart'], status: 'available',
     price: 50, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
-    dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
+    dimsCompact: { w: 14, h: 14, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
