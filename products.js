@@ -80,7 +80,7 @@ Ritual: Includes a guided exercise to help reconnect with our inner cycles and p
   marina: {
     id: 'marina', name: 'Guardian Marina', subtitle: 'transformative power of depth',
     category: ['guardianas','ritual'], status: 'available',
-    price: 72, fragile: true,
+    price: 85, priceSale: 72, fragile: true,
     dims: { w: 15, h: 19, d: 12.5 },
     weight: 1.0, packingEfficiency: 0.20,
     materials: 'Ceramic, glass and fabric',
@@ -170,7 +170,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
   totem: {
     id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life',
     category: ['lamparas'], status: 'available',
-    price: 104, fragile: true,
+    price: 122, priceSale: 104, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
     weight: 1.35, packingEfficiency: 0.20,
     materials: 'Ceramic',

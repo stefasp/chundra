@@ -57,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Weight string
-    const weightStr = p.weight
-      ? `${p.weight} kg · ${(p.weight * 2.205).toFixed(2)} lbs`
-      : 'NA';
+    const weightStr = p.weight ? `${p.weight} kg` : null;
 
     // Framing
     const framingMap = { 'framed': 'Framed', 'unframed': 'Unframed', 'stretched canvas': 'Stretched canvas' };
@@ -72,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="card-specs">
         ${p.materials ? `<p>${p.materials}</p>` : ''}
         ${dimsStr ? `<p>${dimsStr}</p>` : ''}
-        <p>Weight: ${weightStr}</p>
+        ${p.weight ? `<p>Weight: ${p.weight} kg</p>` : ''}
         ${framingStr ? `<p>${framingStr}</p>` : ''}
       </div>
     `;

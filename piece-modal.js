@@ -137,7 +137,11 @@
       let dimsStr = `${d.w} W × ${d.h} H × ${d.d} D cm`;
       if (p.dimsFramed) {
         const f = p.dimsFramed;
-        dimsStr += ` · Framed: ${f.w} W × ${f.h} H × ${f.d} D cm`;
+        dimsStr += ` (framed: ${f.w} W × ${f.h} H × ${f.d} D cm)`;
+      }
+      if (p.dimsCompact) {
+        const c = p.dimsCompact;
+        dimsStr += ` / central figure: ${c.w} W × ${c.h} H × ${c.d} D cm`;
       }
       setSpec('pm-spec-dims', 'Dimensions', dimsStr);
     } else {
@@ -145,7 +149,7 @@
     }
 
     p.weight
-      ? setSpec('pm-spec-weight', 'Weight', `${p.weight} kg · ${(p.weight * 2.205).toFixed(2)} lbs`)
+      ? setSpec('pm-spec-weight', 'Weight', `${p.weight} kg`)
       : hide('pm-spec-weight');
 
     typeof p.framed === 'boolean'

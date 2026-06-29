@@ -159,13 +159,31 @@ function inpostPrice(zone, weightKg) {
   return null;
 }
 
-function inpostFits(products) {
+// Per-country size restrictions beyond general limits
+const INPOST_SIZE_LIMITS = {
+  italy:  { maxSide: 64, maxH: 41, maxW: 38 },
+  poland: { maxSide: 64, maxH: 41, maxW: 38 },
+  germany: { maxSide: 120 }, // only length limit
+};
+
+function inpostFits(products, zone) {
+  const countryLimits = INPOST_SIZE_LIMITS[zone];
+
   for (const p of products) {
     const d = p.dimsFramed || p.dims;
     if (!d) continue;
     const sides = [d.w, d.h, d.d].sort((a,b) => b-a);
+
+    // General limits
     if (sides[0] > 120) return false;
     if (sides[0]+sides[1]+sides[2] > 150) return false;
+
+    // Country-specific limits
+    if (countryLimits) {
+      if (countryLimits.maxSide && sides[0] > countryLimits.maxSide) return false;
+      if (countryLimits.maxH && sides[1] > countryLimits.maxH) return false;
+      if (countryLimits.maxW && sides[2] > countryLimits.maxW) return false;
+    }
   }
   return true;
 }
@@ -273,7 +291,7 @@ function calculateCorreos(products, zone) {
 
 function calculateInpost(products, zone) {
   if (!INPOST_ZONES.has(zone)) return null;
-  if (!inpostFits(products)) return null;
+  if (!inpostFits(products, zone)) return null;
   const weight = totalWeight(products) + PACKAGING_WEIGHT;
   const cost   = inpostPrice(zone, weight);
   if (cost === null) return null;

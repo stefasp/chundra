@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0,0,0,0.22);
-  z-index: 900;
+  z-index: 1050;
   transition: background 0.2s, transform 0.15s;
 }
 #cart-fab:hover { background: #318160; transform: scale(1.06); }
@@ -249,11 +249,18 @@
 #cm-shipping-row {
   display: none;
   justify-content: space-between;
+  align-items: baseline;
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 0.3rem;
 }
 #cm-shipping-row.visible { display: flex; }
+
+#cm-shipping-cost {
+  font-weight: 600;
+  color: #333;
+  text-align: right;
+}
 
 #cm-shipping-breakdown {
   display: none;
@@ -274,15 +281,7 @@
 #cm-shipping-confirm.visible { display: block; }
 #cm-shipping-confirm p { margin: 0; }
 
-#cm-savings-row {
-  display: none;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: #618764;
-  margin-bottom: 0.3rem;
-}
-#cm-savings-row.visible { display: flex; }
-.cm-savings-amount { font-weight: 600; }
+
 
 #cm-shipping-pending {
   font-size: 0.85rem;

@@ -81,10 +81,6 @@
           <div id="cm-shipping-confirm" class="cm-confirm-note" style="display:none;">
             <p>⚠️ Final shipping cost confirmed before payment.</p>
           </div>
-          <div id="cm-savings-row" style="display:none;">
-            <span>🎁 You save on shipping</span>
-            <span id="cm-savings" class="cm-savings-amount">—</span>
-          </div>
 
           <p id="cm-shipping-pending">Select your region to see shipping options.</p>
         </div>
@@ -135,8 +131,6 @@
   const shippingCostEl  = document.getElementById('cm-shipping-cost');
   const breakdownEl     = document.getElementById('cm-shipping-breakdown');
   const confirmNote     = document.getElementById('cm-shipping-confirm');
-  const savingsRow      = document.getElementById('cm-savings-row');
-  const savingsEl       = document.getElementById('cm-savings');
   const pendingMsg      = document.getElementById('cm-shipping-pending');
   const footerEl        = document.getElementById('cm-footer');
   const totalEl         = document.getElementById('cm-total');
@@ -199,7 +193,6 @@
     shippingRow.style.display    = 'none';
     breakdownEl.textContent      = '';
     confirmNote.style.display    = 'none';
-    savingsRow.style.display     = 'none';
     pendingMsg.style.display     = 'block';
     checkoutBtn.disabled         = true;
     footerEl.style.display       = 'none';
@@ -251,7 +244,6 @@
       shippingCostEl.textContent = '';
       breakdownEl.innerHTML      = NO_METHOD_MSG;
       confirmNote.style.display  = 'none';
-      savingsRow.style.display   = 'none';
       footerEl.style.display     = 'none';
       checkoutBtn.disabled       = true;
       return;
@@ -260,19 +252,6 @@
     shippingCostEl.textContent = `€${result.cost}`;
     breakdownEl.textContent    = result.breakdown || '';
     confirmNote.style.display  = result.needsConfirmation ? 'block' : 'none';
-
-    // Savings vs individual shipping
-    const individualCost = products.reduce((sum, p) => {
-      const r = calculateShipping([p], zone);
-      return sum + (r.cost || 0);
-    }, 0);
-    const saved = individualCost - result.cost;
-    if (saved > 0.5 && products.length > 1) {
-      savingsEl.textContent    = `−€${saved.toFixed(0)}`;
-      savingsRow.style.display = 'flex';
-    } else {
-      savingsRow.style.display = 'none';
-    }
 
     const total = Cart.getSubtotal() + result.cost;
     totalEl.textContent      = `€${total}`;
