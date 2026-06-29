@@ -249,7 +249,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   thewalk: {
     id: 'thewalk', name: 'The Walk',
     category: ['cuadros'], status: 'available',
-    price: 60, fragile: false,
+    price: 50, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -259,7 +259,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   bird: {
     id: 'bird', name: 'Bird',
     category: ['cuadros'], status: 'available',
-    price: 50, fragile: false,
+    price: 40, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -269,7 +269,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   mistify: {
     id: 'mistify', name: 'Mistify',
     category: ['cuadros'], status: 'available',
-    price: 60, fragile: false,
+    price: 50, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
