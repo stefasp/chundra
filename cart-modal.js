@@ -121,7 +121,7 @@
   const confirmedEl     = document.getElementById('cm-shipping-confirmed');
   const zoneLabelEl     = document.getElementById('cm-shipping-zone-label');
   const changeBtn       = document.getElementById('cm-shipping-change-btn');
-  const deliveryMethod  = document.getElementById('cm-delivery-method');
+  const deliveryMethodEl = document.getElementById('cm-delivery-method');
   const deliveryBtns    = document.querySelectorAll('.cm-delivery-btn');
   const priceCorreos    = document.getElementById('cm-price-correos');
   const priceInpost     = document.getElementById('cm-price-inpost');
@@ -189,7 +189,7 @@
   function showPending() {
     zoneBlock.style.display      = 'flex';
     confirmedEl.style.display    = 'none';
-    deliveryMethod.style.display = 'none';
+    deliveryMethodEl.style.display = 'none';
     shippingRow.style.display    = 'none';
     breakdownEl.textContent      = '';
     confirmNote.style.display    = 'none';
@@ -216,13 +216,13 @@
 
     if (hasInpost) {
       // Show both options
-      deliveryMethod.style.display = 'block';
+      deliveryMethodEl.style.display = 'block';
       priceCorreos.textContent = correos.cost !== null ? `€${correos.cost}` : 'Quote';
       priceInpost.textContent  = `€${inpost.cost}`;
       applyMethod(products, zone, selectedMethod, correos, inpost);
     } else {
       // Only one option — show it directly
-      deliveryMethod.style.display = 'none';
+      deliveryMethodEl.style.display = 'none';
       applyResult(products, zone, correos);
     }
   }
