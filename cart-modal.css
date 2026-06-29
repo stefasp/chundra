@@ -241,8 +241,8 @@
 }
 #cm-shipping-change-btn:hover { opacity: 1; }
 #cm-shipping-change-btn img {
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
 }
 
 /* Shipping cost row */
@@ -345,8 +345,8 @@
   line-height: 1.4;
 }
 #cm-stripe-note img {
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
   opacity: 0.5;
   flex-shrink: 0;
 }
