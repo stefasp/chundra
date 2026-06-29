@@ -319,7 +319,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, framed: 'stretched canvas',
     materials: 'Acrylic on canvas',
-    shippingFixed: { spain: 22, europe: 22, world: null },
+    shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/whispers-01.png'],
   },
 
@@ -330,7 +330,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, framed: 'unframed',
     materials: 'Acrylic on canvas',
-    shippingFixed: { spain: 22, europe: 22, world: null },
+    shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/horizons-01.png','images/horizons-02.png','images/horizons-05.png'],
   },
 
@@ -342,7 +342,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
     weight: 2.3, framed: 'framed',
     materials: 'Acrylic on canvas',
-    shippingFixed: { spain: 22, europe: 30, world: null },
+    shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/encuentros-01.png','images/encuentros-02.png','images/encuentros-03.png'],
   },
 
@@ -353,7 +353,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 90, h: 60, d: 0.1 },
     weight: 0.8, framed: 'stretched canvas',
     materials: 'Acrylic on canvas',
-    shippingFixed: { spain: 30, europe: 30, world: null },
+    shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/confluence-01.png','images/confluence-02.png','images/confluence-03.png'],
   },
 
