@@ -10,7 +10,7 @@ const PRODUCTS = {
 
   ariadna: {
     id: 'ariadna', name: 'Ariadna', subtitle: 'a quiet enigma',
-    category: ['guardianas'], status: 'available',
+    category: ['guardians'], status: 'available',
     price: 90, fragile: true,
     dims: { w: 17, h: 32.5, d: 16.5 },
     weight: 1.42, packingEfficiency: 0.62,
@@ -25,7 +25,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
 
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh',
-    category: ['guardianas'], status: 'available',
+    category: ['guardians'], status: 'available',
     price: 120, priceSale: 103, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
     weight: 0.96, packingEfficiency: 0.50,
@@ -40,7 +40,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
 
   juana: {
     id: 'juana', name: 'Guardian Juana', subtitle: 'feline strength',
-    category: ['guardianas'], status: 'available',
+    category: ['guardians'], status: 'available',
     price: 76, priceSale: 56, fragile: true,
     dims: { w: 12.5, h: 15, d: 3 },
     weight: 0.36, packingEfficiency: 0.30,
@@ -51,7 +51,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
 
   mara: {
     id: 'mara', name: 'Guardian Mara', subtitle: 'the power to nest, the power to fly',
-    category: ['guardianas'], status: 'available',
+    category: ['guardians'], status: 'available',
     price: 76, priceSale: 56, fragile: true,
     dims: { w: 13.5, h: 14, d: 4 },
     weight: 0.45, packingEfficiency: 0.30,
@@ -62,7 +62,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
 
   lunar: {
     id: 'lunar', name: 'Lunar Guardian', subtitle: 'movement of life and femininity',
-    category: ['guardianas','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available',
     price: 90, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, packingEfficiency: 0.65,
@@ -79,7 +79,7 @@ Ritual: Includes a guided exercise to help reconnect with our inner cycles and p
 
   marina: {
     id: 'marina', name: 'Guardian Marina', subtitle: 'transformative power of depth',
-    category: ['guardianas','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available',
     price: 85, priceSale: 72, fragile: true,
     dims: { w: 15, h: 19, d: 12.5 },
     weight: 1.0, packingEfficiency: 0.20,
@@ -96,7 +96,7 @@ Ritual: Includes an exercise to help you face challenges or fears, connecting wi
 
   salamanca: {
     id: 'salamanca', name: 'Guardian Salamanca', subtitle: 'guardian of transition',
-    category: ['guardianas','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available',
     price: 89, priceSale: 76, fragile: true,
     dims: { w: 16, h: 18.5, d: 13 },
     weight: 1.0, packingEfficiency: 0.20,
@@ -111,7 +111,7 @@ Ritual: Includes an exercise inviting reflection on inherited mandates and consc
 
   trina: {
     id: 'trina', name: 'Guardian Trina', subtitle: 'the dreams protector',
-    category: ['guardianas','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available',
     price: 89, priceSale: 76, fragile: true,
     dims: { w: 10, h: 15, d: 10 },
     weight: 0.56, packingEfficiency: 0.20,
@@ -126,7 +126,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
 
   amalia: {
     id: 'amalia', name: 'Guardian Amalia', subtitle: 'conscious serenity',
-    category: ['guardianas','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available',
     price: 160, priceSale: 123, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
     weight: 1.45, packingEfficiency: 0.30,
@@ -223,12 +223,12 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['wallart'], status: 'available',
     price: 50, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
-    dimsCompact: { w: 14, h: 14, d: 1.5 }, // central figure (used for shipping)
+    dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece captures a luminous gaze emerging from a deep, night-blue face, surrounded by golden petals. The eyes are alert and alive, as if quietly tracing every detail of the world around them. It speaks of a perception that goes beyond seeing.`,
-    images: ['images/justhere-01.png'],
+    images: ['images/justhere-01.png','images/justhere-02.png','images/justhere-03.png'],
   },
 
   heartandfox: {
@@ -241,7 +241,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
-    images: ['images/heartandfox-01.png'],
+    images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
   },
 
   // ─── CUADROS ───────────────────────────────────────────────────
@@ -249,7 +249,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   thewalk: {
     id: 'thewalk', name: 'The Walk',
     category: ['cuadros'], status: 'available',
-    price: 50, fragile: false,
+    price: 60, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -259,7 +259,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   bird: {
     id: 'bird', name: 'Bird',
     category: ['cuadros'], status: 'available',
-    price: 40, fragile: false,
+    price: 50, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -269,7 +269,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   mistify: {
     id: 'mistify', name: 'Mistify',
     category: ['cuadros'], status: 'available',
-    price: 50, fragile: false,
+    price: 60, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -399,12 +399,52 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     materials: 'Pencil and ink on paper',
     images: ['images/dibujo-02.png'],
   },
+
+  // ─── NUEVOS ────────────────────────────────────────────────────
+
+  newman: {
+    id: 'newman', name: 'A New Man', subtitle: 'guardian of inner space',
+    category: ['guardians'], status: 'available',
+    price: 175, fragile: true,
+    dims: { w: 16, h: 35, d: 18 },
+    weight: 3.0, packingEfficiency: 0,
+    materials: 'Ceramic, textile, acrylic details, semi-matte varnish',
+    description: `A New Man reflects on the construction of masculinity in Western culture and imagines the possibility of another configuration of being. The figure appears rigid, pale and unfinished, yet opens to reveal an interior where plants and flowers emerge in vivid contrast.
+
+What happens when softness, vulnerability and inner life are suppressed in favor of performance, strength and protection? This work proposes that when this armor breaks, it is not the self that collapses, but a fiction. What appears through the crack is not purity or an essential truth, but space: space to listen, to transform, and to inhabit oneself with greater honesty.
+
+For indoor use only.`,
+    images: [
+      'images/newman-01.png','images/newman-02.png','images/newman-03.png',
+      'images/newman-04.png','images/newman-05.png','images/newman-06.png',
+      'images/newman-07.png',
+    ],
+  },
+
   // ─── VENDIDO ───────────────────────────────────────────────────
+
+
+  breathingdeeply: {
+    id: 'breathingdeeply', name: 'Breathing Deeply', subtitle: 'Silence is part of music',
+    category: ['macetas'], status: 'sold',
+    price: 68, fragile: true,
+    dims: null,
+    weight: null,
+    materials: 'Ceramic',
+    description: `There is something paradoxically beautiful in the way we connect with others and with the world around us when we allow ourselves to disconnect from the symbolic universe we have built as humans. Beyond the structures of civilization lies a reality that is not separate from us but makes everything else possible: rich, silent, alive. Silence is part of music. This shaman invites us to pause — perhaps to disconnect, or perhaps to finally connect. We are more than humans, we are animals. Breath.
+
+For indoor use only.`,
+    images: [
+      'images/breathingdeeply-01.png','images/breathingdeeply-02.png',
+      'images/breathingdeeply-03.png','images/breathingdeeply-04.png',
+      'images/breathingdeeply-05.png',
+    ],
+  },
 
   amazona: {
     id: 'amazona', name: 'Amazona', subtitle: 'cosmic feminine mystery',
-    category: ['guardianas'], status: 'sold',
-    price: null, fragile: true,
+    category: ['macetas'], status: 'sold',
+    price: 87, fragile: true,
     dims: { w: 18, h: 15.5, d: 18 },
     weight: 1.28,
     materials: 'Ceramic',
@@ -420,5 +460,5 @@ const PRODUCT_ORDER = [
   'ariadna','zaira','juana','mara','lunar','marina','salamanca','trina','amalia',
   'carnival','traveler','gibran','totem',
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
-  'floral-dream-1','floral-dream-2','master','amazona',
+  'newman','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
 ];
