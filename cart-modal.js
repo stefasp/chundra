@@ -140,7 +140,9 @@
   const fabCount        = document.getElementById('cart-fab-count');
 
   let selectedZone   = '';
-  let selectedMethod = 'correos'; // 'correos' | 'inpost'
+  let selectedMethod = 'correos';
+
+  const NO_METHOD_MSG = `For this piece and destination I would need to find a custom shipping option. Please write to <strong class="cm-email-copy" data-email="stefus.sp@gmail.com">stefus.sp@gmail.com</strong> — click to copy.`; // 'correos' | 'inpost'
 
   // ── Open / Close ──────────────────────────────────────────
   function openCart()  { render(); modal.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
@@ -246,8 +248,6 @@
     const result = method === 'inpost' ? inpost : correos;
     applyResult(products, zone, result);
   }
-
-  const NO_METHOD_MSG = `For this piece and destination I would need to find a custom shipping option. Please write to <strong class="cm-email-copy" data-email="stefus.sp@gmail.com">stefus.sp@gmail.com</strong> — click to copy.`;
 
   function applyResult(products, zone, result) {
     shippingRow.style.display = 'block';
