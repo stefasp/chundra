@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chundra — Earnings</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="mobile.css">
+
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend:wght@100..900&family=Staatliches&display=swap" rel="stylesheet">
+
+  <style>
+    .earnings-hero {
+      background-color: #C3DAB8;
+      padding: 80px 5% 40px;
+      text-align: center;
+    }
+    .earnings-hero h1 {
+      font-family: "Edu AU VIC WA NT Pre", cursive;
+      font-size: 2.4rem;
+      font-weight: 200;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .earnings-hero p {
+      font-size: 0.9rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .earnings-filters {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      padding: 0.5rem;
+      background-color: #618764;
+      border-radius: 70px;
+      margin-top: 20px;
+    }
+
+    .earnings-summary {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 24px 5%;
+      background: #f5f3e8;
+    }
+    .summary-box {
+      background: #fff;
+      border-radius: 6px;
+      padding: 16px 24px;
+      text-align: center;
+      min-width: 160px;
+    }
+    .summary-box .label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+    .summary-box .value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .table-wrap {
+      padding: 32px 3% 64px;
+      overflow-x: auto;
+    }
+    table.earnings-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      min-width: 1100px;
+    }
+    .earnings-table thead th {
+      text-align: left;
+      padding: 10px 12px;
+      background: #594593;
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      position: sticky;
+      top: 0;
+    }
+    .earnings-table thead th.num { text-align: right; }
+    .earnings-table tbody td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #eee;
+      color: #444;
+    }
+    .earnings-table tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .earnings-table tbody tr:nth-child(even) { background: #fafaf5; }
+    .earnings-table tbody tr:hover { background: #f0eefa; }
+
+    .earnings-table .piece-name {
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+    }
+    .earnings-table .piece-img {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 3px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .positive { color: #318160; font-weight: 600; }
+    .negative { color: #d11040; font-weight: 600; }
+    .na { color: #ccc; }
+
+    .group-header td {
+      background: #e8e5d4 !important;
+      font-weight: 700;
+      color: #555;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 10px 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo.png" alt="Chundra"></a>
+    </div>
+  </div>
+</header>
+
+<section class="earnings-hero">
+  <h1>Earnings overview</h1>
+  <p>
+    Production cost and hours per piece, against retail price and partnership margin.
+    Internal use only.
+  </p>
+
+  <div class="earnings-filters edu-italic" id="earnings-filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="sculptures">Sculptures</button>
+    <button class="filter-btn" data-filter="paintings">Paintings</button>
+  </div>
+</section>
+
+<div class="earnings-summary" id="earnings-summary"></div>
+
+<div class="table-wrap">
+  <table class="earnings-table">
+    <thead>
+      <tr>
+        <th>Piece</th>
+        <th class="num">Prod. cost</th>
+        <th class="num">Hours</th>
+        <th class="num">Retail price</th>
+        <th class="num">Profit (retail)</th>
+        <th class="num">Profit / hour</th>
+        <th class="num">Partner price</th>
+        <th class="num">Profit (partner)</th>
+      </tr>
+    </thead>
+    <tbody id="earnings-tbody"></tbody>
+  </table>
+</div>
+
+<script src="products.js"></script>
+<script>
+(function() {
+  const WHOLESALE_DIVISOR = 3;
+  const tbody = document.getElementById('earnings-tbody');
+  const summaryEl = document.getElementById('earnings-summary');
+
+  const PAINTING_CATS = ['cuadros', 'dibujo'];
+  function isPainting(p) { return (p.category || []).some(c => PAINTING_CATS.includes(c)); }
+
+  function fmt(n) {
+    if (n === null || n === undefined || isNaN(n)) return '<span class="na">—</span>';
+    const cls = n >= 0 ? 'positive' : 'negative';
+    return `<span class="${cls}">€${n.toFixed(2).replace(/\.00$/, '')}</span>`;
+  }
+
+  function buildTable(filter) {
+    tbody.innerHTML = '';
+
+    const ids = getSortedProductOrder().filter(id => {
+      const p = PRODUCTS[id];
+      if (!p || p.status === 'sold') return false;
+      if (p.productionCost === undefined) return false; // skip pieces without cost data
+      if (filter === 'sculptures') return !isPainting(p);
+      if (filter === 'paintings') return isPainting(p);
+      return true;
+    });
+
+    let totalProfit = 0, totalPartnerProfit = 0, totalHours = 0, count = 0;
+
+    let lastGroup = null;
+    ids.forEach(id => {
+      const p = PRODUCTS[id];
+      const group = isPainting(p) ? 'Paintings & Drawings' : 'Sculptures & Wall Art';
+
+      if (group !== lastGroup && filter === 'all') {
+        const tr = document.createElement('tr');
+        tr.className = 'group-header';
+        tr.innerHTML = `<td colspan="8">${group}</td>`;
+        tbody.appendChild(tr);
+        lastGroup = group;
+      }
+
+      const retailPrice = p.price; // list price, not discounted
+      const cost = p.productionCost;
+      const hours = p.hoursWorked;
+
+      const profitRetail = retailPrice - cost;
+      const profitPerHour = hours ? profitRetail / hours : null;
+      const partnerPrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
+      const profitPartner = partnerPrice - cost;
+
+      totalProfit += profitRetail;
+      totalPartnerProfit += profitPartner;
+      if (hours) totalHours += hours;
+      count++;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="piece-name"><img class="piece-img" src="${p.images[0]}" alt="">${p.name}</td>
+        <td class="num">€${cost}</td>
+        <td class="num">${hours ?? '<span class="na">—</span>'}</td>
+        <td class="num">€${retailPrice}</td>
+        <td class="num">${fmt(profitRetail)}</td>
+        <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
+        <td class="num">€${partnerPrice}</td>
+        <td class="num">${fmt(profitPartner)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Summary boxes
+    const avgProfit = count ? totalProfit / count : 0;
+    const avgPerHour = totalHours ? totalProfit / totalHours : 0;
+    summaryEl.innerHTML = `
+      <div class="summary-box"><div class="label">Pieces shown</div><div class="value">${count}</div></div>
+      <div class="summary-box"><div class="label">Avg. profit (retail)</div><div class="value">€${avgProfit.toFixed(0)}</div></div>
+      <div class="summary-box"><div class="label">Avg. profit / hour</div><div class="value">€${avgPerHour.toFixed(0)}</div></div>
+      <div class="summary-box"><div class="label">Avg. profit (partner)</div><div class="value">€${(totalPartnerProfit/count).toFixed(0)}</div></div>
+    `;
+  }
+
+  buildTable('all');
+
+  document.getElementById('earnings-filter-bar').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#earnings-filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    buildTable(btn.dataset.filter);
+  });
+})();
+</script>
+
+</body>
+</html>
