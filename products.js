@@ -198,7 +198,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'candle-cat': {
     id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available',
     price: 50, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, packingEfficiency: 0.85,
@@ -209,7 +209,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'candle-freckles': {
     id: 'candle-freckles', name: 'Malva Freckles Candle Holder', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available',
     price: 50, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, packingEfficiency: 0.85,
@@ -220,26 +220,26 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   gaze: {
     id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available',
     price: 62, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, packingEfficiency: 0.85,
-    materials: 'Mixed media — ceramic, acrylic paint, matte varnish',
+    materials: 'Ceramic',
     description: `This piece captures a luminous gaze emerging from a deep, night-blue face, surrounded by golden petals. The eyes are alert and alive, as if quietly tracing every detail of the world around them. It speaks of a perception that goes beyond seeing.`,
     images: ['images/justhere-01.png','images/justhere-02.png','images/justhere-03.png'],
   },
 
   heartandfox: {
     id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available',
     price: 62, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, packingEfficiency: 0.85,
-    materials: 'Mixed media — ceramic, acrylic paint, matte varnish',
+    materials: 'Ceramic',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
   },
@@ -282,7 +282,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     price: 215, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
-    weight: 1.2, framed: 'framed',
+    weight: 1.2, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/wait-01.png'],
@@ -294,7 +294,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     price: 305, priceSale: 250, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
-    weight: 0.7, framed: 'framed',
+    weight: 0.7, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/marea-01.png','images/marea-02.png','images/marea-03.png','images/pivot-06.png'],
@@ -306,7 +306,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     price: 305, priceSale: 250, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
-    weight: 0.7, framed: 'framed',
+    weight: 0.7, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/pivot-01.png','images/pivot-02.png','images/pivot-03.png','images/pivot-06.png'],
@@ -317,7 +317,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['cuadros'], status: 'available',
     price: 270, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
-    weight: 0.7, framed: 'stretched canvas',
+    weight: 0.7, framed: 'stretched canvas', flatPackable: true,
     materials: 'Acrylic on canvas',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/whispers-01.png'],
@@ -328,7 +328,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['cuadros'], status: 'available',
     price: 330, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
-    weight: 1.25, framed: 'unframed',
+    weight: 1.25, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/horizons-01.png','images/horizons-02.png','images/horizons-05.png'],
@@ -340,7 +340,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     price: 330, priceSale: 270, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
-    weight: 2.3, framed: 'framed',
+    weight: 2.3, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on canvas',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/encuentros-01.png','images/encuentros-02.png','images/encuentros-03.png'],
@@ -462,34 +462,3 @@ const PRODUCT_ORDER = [
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
   'newman','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
 ];
-
-// ── Dynamic sort order ──────────────────────────────────────────
-// Sculptures (3D pieces) first, then paintings/drawings (2D pieces).
-// Within each group, sorted by price ascending (cheapest first).
-
-const PAINTING_CATEGORIES = ['cuadros', 'dibujo'];
-
-function isPainting(product) {
-  return (product.category || []).some(c => PAINTING_CATEGORIES.includes(c));
-}
-
-function getSortedProductOrder() {
-  const ids = Object.keys(PRODUCTS).filter(id => PRODUCTS[id].status !== 'sold');
-
-  const sculptures = ids.filter(id => !isPainting(PRODUCTS[id]));
-  const paintings  = ids.filter(id => isPainting(PRODUCTS[id]));
-
-  const byPrice = (a, b) => {
-    const pa = PRODUCTS[a].priceSale ?? PRODUCTS[a].price ?? 0;
-    const pb = PRODUCTS[b].priceSale ?? PRODUCTS[b].price ?? 0;
-    return pa - pb;
-  };
-
-  sculptures.sort(byPrice);
-  paintings.sort(byPrice);
-
-  // Sold pieces always go last, in original PRODUCT_ORDER order
-  const soldIds = PRODUCT_ORDER.filter(id => PRODUCTS[id] && PRODUCTS[id].status === 'sold');
-
-  return [...sculptures, ...paintings, ...soldIds];
-}
