@@ -208,6 +208,7 @@
       const p = PRODUCTS[id];
       if (!p) return;
       if (p.status === 'sold') return;
+      if (!p.wholesaleAvailable) return;
       if (filter !== 'all' && !p.category?.includes(filter)) return;
 
       // Retail price = original list price (not discounted)

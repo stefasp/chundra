@@ -198,7 +198,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'candle-cat': {
     id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 50, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, packingEfficiency: 0.85,
@@ -209,7 +209,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'candle-freckles': {
     id: 'candle-freckles', name: 'Malva Freckles Candle Holder', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 50, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, packingEfficiency: 0.85,
@@ -220,7 +220,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   gaze: {
     id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 62, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
@@ -233,7 +233,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   heartandfox: {
     id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 62, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
