@@ -462,3 +462,33 @@ const PRODUCT_ORDER = [
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
   'newman','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
 ];
+
+// ── Dynamic sort order ──────────────────────────────────────────
+// Sculptures (3D pieces) first, then paintings/drawings (2D pieces).
+// Within each group, sorted by price ascending (cheapest first).
+
+const PAINTING_CATEGORIES = ['cuadros', 'dibujo'];
+
+function isPainting(product) {
+  return (product.category || []).some(c => PAINTING_CATEGORIES.includes(c));
+}
+
+function getSortedProductOrder() {
+  const ids = Object.keys(PRODUCTS).filter(id => PRODUCTS[id].status !== 'sold');
+
+  const sculptures = ids.filter(id => !isPainting(PRODUCTS[id]));
+  const paintings  = ids.filter(id => isPainting(PRODUCTS[id]));
+
+  const byPrice = (a, b) => {
+    const pa = PRODUCTS[a].priceSale ?? PRODUCTS[a].price ?? 0;
+    const pb = PRODUCTS[b].priceSale ?? PRODUCTS[b].price ?? 0;
+    return pa - pb;
+  };
+
+  sculptures.sort(byPrice);
+  paintings.sort(byPrice);
+
+  const soldIds = Object.keys(PRODUCTS).filter(id => PRODUCTS[id].status === 'sold');
+
+  return [...sculptures, ...paintings, ...soldIds];
+}
