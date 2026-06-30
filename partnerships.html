@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chundra — Partnerships</title>
+  <title>Chundra — Colaboraciones</title>
   <meta name="robots" content="noindex, nofollow">
 
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="stylesheet" href="mobile.css">
-  <link rel="stylesheet" href="piece-modal.css">
 
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,24 +31,14 @@
       font-size: 1rem;
       color: #555;
       max-width: 560px;
-      margin: 0 auto 32px;
+      margin: 0 auto 12px;
       line-height: 1.75;
     }
-
-    /* Filter bar same as index but static positioning */
-    .partner-filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0;
-      padding: 0.5rem;
-      background-color: #618764;
-      border-radius: 70px;
-      display: inline-flex;
-      margin-top: 8px;
+    .partnership-hero .note {
+      font-size: 0.82rem;
+      color: #777;
     }
 
-    /* Gallery */
     .partner-gallery-wrap {
       padding: 48px 4%;
     }
@@ -60,19 +49,12 @@
       justify-content: center;
     }
 
-    /* Product card */
     .partner-card {
       width: 300px;
       margin-bottom: 28px;
       background: #fff;
       border-radius: 4px;
       overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .partner-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
     .partner-card-img {
       width: 100%;
@@ -95,34 +77,34 @@
       color: #999;
       margin: 0 0 10px;
     }
+    .partner-card-dims {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin: 0 0 10px;
+    }
     .partner-price-block {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 4px 10px;
+      align-items: baseline;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 10px;
     }
     .partner-price-label {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: #aaa;
       width: 100%;
-      margin-bottom: 2px;
     }
     .partner-my-price {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #333;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #594593;
     }
     .partner-retail-price {
-      font-size: 0.85rem;
-      color: #888;
-    }
-    .partner-retail-label {
-      font-size: 0.68rem;
-      color: #bbb;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+      color: #999;
     }
 
     .partner-contact {
@@ -169,91 +151,91 @@
 
 <!-- Hero -->
 <section class="partnership-hero">
-  <h1>Work with Chundra</h1>
+  <h1>Colaboremos</h1>
   <p>
-    Each piece is handmade in Málaga — ceramic sculptures, paintings and drawings
-    that hold space on a shelf, a wall, a counter. If you're looking for something
-    distinctive for your store, let's talk.
+    Cada pieza está hecha a mano en Málaga — esculturas de cerámica, cuadros y dibujos
+    que ocupan un lugar propio en una repisa, una pared, un mostrador. Si buscás algo
+    distintivo para tu tienda, hablemos.
   </p>
-  <p style="font-size:0.82rem; color:#777; margin-top:-16px;">
-    Prices shown are what I charge. Suggested retail is ×2.5.
-    I deliver locally in Málaga at no shipping cost.
+  <p class="note">
+    Los precios mostrados son los que te ofrezco a vos. El precio de venta sugerido al público es el original de cada pieza.
+    Entrego en persona en Málaga sin costo de envío.
   </p>
 
-  <!-- Filter bar -->
-  <div style="margin-top: 24px;">
-    <div class="partner-filters edu-italic" id="partner-filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="wallart">Wall Art</button>
-      <button class="filter-btn" data-filter="guardians">Guardians</button>
-      <button class="filter-btn" data-filter="lamparas">Lamps</button>
-      <button class="filter-btn" data-filter="macetas">Pots & Jars</button>
-      <button class="filter-btn" data-filter="viajeros">Travelers</button>
-      <button class="filter-btn" data-filter="cuadros">Paintings</button>
-      <button class="filter-btn" data-filter="dibujo">Drawings</button>
-    </div>
+  <div class="filter-bar edu-italic" id="partner-filter-bar" style="position: static; transform: none; display: inline-flex; margin-top: 24px;">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="wallart">Wall Art</button>
+    <button class="filter-btn" data-filter="guardians">Guardians</button>
+    <button class="filter-btn" data-filter="lamparas">Lamps</button>
+    <button class="filter-btn" data-filter="macetas">Pots & Jars</button>
+    <button class="filter-btn" data-filter="viajeros">Travelers</button>
+    <button class="filter-btn" data-filter="cuadros">Paintings</button>
+    <button class="filter-btn" data-filter="dibujo">Drawings</button>
   </div>
 </section>
 
 <!-- Gallery -->
 <section class="partner-gallery-wrap">
-  <div class="partner-gallery" id="partner-gallery">
-    <!-- Populated by JS -->
-  </div>
+  <div class="partner-gallery" id="partner-gallery"></div>
 </section>
 
 <!-- Contact -->
 <section class="partner-contact">
-  <h2>Interested?</h2>
+  <h2>¿Te interesa?</h2>
   <p>
-    Write to me and we can arrange a visit to the studio or discuss which pieces
-    might work for your space.
+    Escribime y coordinamos una visita al taller o conversamos sobre qué piezas
+    podrían funcionar para tu espacio.
   </p>
   <p>
     <span class="partner-email" id="partner-email-copy" data-email="stefus.sp@gmail.com">
       stefus.sp@gmail.com
     </span>
-    <span id="partner-email-copied" style="display:none; color:#618764; font-size:0.85rem;"> ✓ Copied</span>
+    <span id="partner-email-copied" style="display:none; color:#618764; font-size:0.85rem;"> ✓ Copiado</span>
   </p>
 </section>
 
 <script src="products.js"></script>
-<script src="shipping.js"></script>
-<script src="cart.js"></script>
-<script src="javascript.js"></script>
-<script src="piece-modal.js"></script>
 
 <script>
 (function() {
-  const RETAIL_MULTIPLIER = 2.5;
+  // Wholesale price = retail price / 3 (your margin shrinks to 1/3 of normal retail)
+  const WHOLESALE_DIVISOR = 3;
   const gallery = document.getElementById('partner-gallery');
 
   function buildGallery(filter) {
     gallery.innerHTML = '';
-    PRODUCT_ORDER.forEach(id => {
+    getSortedProductOrder().forEach(id => {
       const p = PRODUCTS[id];
       if (!p) return;
-      if (p.status === 'sold') return; // skip sold pieces
+      if (p.status === 'sold') return;
       if (filter !== 'all' && !p.category?.includes(filter)) return;
 
-      const myPrice  = p.priceSale ?? p.price;
-      if (!myPrice) return;
-      const retail   = Math.round(myPrice * RETAIL_MULTIPLIER);
+      // Retail price = original list price (not discounted)
+      const retailPrice = p.price;
+      if (!retailPrice) return;
+
+      // Wholesale price = retail / 3
+      const wholesalePrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
+
+      // Dimensions
+      let dimsStr = '';
+      if (p.dims) {
+        const d = p.dimsFramed || p.dims;
+        dimsStr = `${d.w} × ${d.h} × ${d.d} cm`;
+      }
 
       const card = document.createElement('div');
       card.className = 'partner-card';
-      card.dataset.productId = id;
-      card.dataset.category  = (p.category || []).join(' ');
       card.innerHTML = `
         <img class="partner-card-img" src="${p.images[0]}" alt="${p.name}">
         <div class="partner-card-body">
           <p class="partner-card-name">${p.name}</p>
           <p class="partner-card-materials">${p.materials || ''}</p>
+          ${dimsStr ? `<p class="partner-card-dims">${dimsStr}</p>` : ''}
           <div class="partner-price-block">
-            <span class="partner-price-label">Artist price</span>
-            <span class="partner-my-price">€${myPrice}</span>
-            <span class="partner-retail-label" style="margin-left:8px;">Est. retail</span>
-            <span class="partner-retail-price">~€${retail}</span>
+            <span class="partner-price-label">Tu precio</span>
+            <span class="partner-my-price">€${wholesalePrice}</span>
+            <span class="partner-retail-price">PVP €${retailPrice}</span>
           </div>
         </div>`;
       gallery.appendChild(card);
@@ -262,7 +244,6 @@
 
   buildGallery('all');
 
-  // Filter buttons
   document.getElementById('partner-filter-bar').addEventListener('click', e => {
     const btn = e.target.closest('.filter-btn');
     if (!btn) return;
@@ -271,7 +252,6 @@
     buildGallery(btn.dataset.filter);
   });
 
-  // Email copy
   document.getElementById('partner-email-copy').addEventListener('click', function() {
     navigator.clipboard.writeText(this.dataset.email).then(() => {
       document.getElementById('partner-email-copied').style.display = 'inline';

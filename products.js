@@ -226,7 +226,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, packingEfficiency: 0.85,
-    materials: 'Ceramic',
+    materials: 'Mixed media — ceramic, acrylic paint, matte varnish',
     description: `This piece captures a luminous gaze emerging from a deep, night-blue face, surrounded by golden petals. The eyes are alert and alive, as if quietly tracing every detail of the world around them. It speaks of a perception that goes beyond seeing.`,
     images: ['images/justhere-01.png','images/justhere-02.png','images/justhere-03.png'],
   },
@@ -239,7 +239,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, packingEfficiency: 0.85,
-    materials: 'Ceramic',
+    materials: 'Mixed media — ceramic, acrylic paint, matte varnish',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
   },
@@ -462,3 +462,34 @@ const PRODUCT_ORDER = [
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
   'newman','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
 ];
+
+// ── Dynamic sort order ──────────────────────────────────────────
+// Sculptures (3D pieces) first, then paintings/drawings (2D pieces).
+// Within each group, sorted by price ascending (cheapest first).
+
+const PAINTING_CATEGORIES = ['cuadros', 'dibujo'];
+
+function isPainting(product) {
+  return (product.category || []).some(c => PAINTING_CATEGORIES.includes(c));
+}
+
+function getSortedProductOrder() {
+  const ids = Object.keys(PRODUCTS).filter(id => PRODUCTS[id].status !== 'sold');
+
+  const sculptures = ids.filter(id => !isPainting(PRODUCTS[id]));
+  const paintings  = ids.filter(id => isPainting(PRODUCTS[id]));
+
+  const byPrice = (a, b) => {
+    const pa = PRODUCTS[a].priceSale ?? PRODUCTS[a].price ?? 0;
+    const pb = PRODUCTS[b].priceSale ?? PRODUCTS[b].price ?? 0;
+    return pa - pb;
+  };
+
+  sculptures.sort(byPrice);
+  paintings.sort(byPrice);
+
+  // Sold pieces always go last, in original PRODUCT_ORDER order
+  const soldIds = PRODUCT_ORDER.filter(id => PRODUCTS[id] && PRODUCTS[id].status === 'sold');
+
+  return [...sculptures, ...paintings, ...soldIds];
+}
