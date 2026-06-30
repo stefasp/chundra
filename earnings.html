@@ -69,9 +69,17 @@
       margin-bottom: 4px;
     }
     .summary-box .value {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #333;
+      line-height: 1.5;
+    }
+    .summary-box .group-tag {
+      font-size: 0.62rem;
+      font-weight: 400;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .table-wrap {
@@ -169,8 +177,8 @@
     <thead>
       <tr>
         <th>Piece</th>
-        <th class="num border-right">Prod. cost</th>
-        <th class="num">Hours</th>
+        <th class="num">Prod. cost</th>
+        <th class="num border-right">Hours</th>
         <th class="num">Retail price</th>
         <th class="num">Profit (retail)</th>
         <th class="num">Profit / hour</th>
@@ -244,8 +252,8 @@
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td class="piece-name"><img class="piece-img" src="${p.images[0]}" alt="">${p.name}</td>
-        <td class="num border-right">€${cost}</td>
-        <td class="num">${hours ?? '<span class="na">—</span>'}</td>
+        <td class="num">€${cost}</td>
+        <td class="num border-right">${hours ?? '<span class="na">—</span>'}</td>
         <td class="num">€${retailPrice}</td>
         <td class="num">${fmt(profitRetail)}</td>
         <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
@@ -255,14 +263,72 @@
       tbody.appendChild(tr);
     });
 
-    // Summary boxes
-    const avgProfit = count ? totalProfit / count : 0;
-    const avgPerHour = totalHours ? totalProfit / totalHours : 0;
+    buildSummary(ids);
+  }
+
+  function buildSummary(ids) {
+    // Group by sculptures vs paintings, regardless of current filter —
+    // summary always compares both categories side by side.
+    const allIds = getSortedProductOrder().filter(id => {
+      const p = PRODUCTS[id];
+      return p && p.status !== 'sold' && p.productionCost !== undefined;
+    });
+
+    const sculptureIds = allIds.filter(id => !isPainting(PRODUCTS[id]));
+    const paintingIds  = allIds.filter(id => isPainting(PRODUCTS[id]));
+
+    function groupStats(idList) {
+      let totalProfit = 0, totalHours = 0, totalPartnerProfit = 0, count = idList.length;
+      idList.forEach(id => {
+        const p = PRODUCTS[id];
+        const cost = p.productionCost;
+        const hours = p.hoursWorked;
+        const retail = p.price;
+        const partner = Math.round(retail / WHOLESALE_DIVISOR);
+        const profitRetail = retail - cost;
+        const profitPartner = partner - cost;
+        totalProfit += profitRetail;
+        totalPartnerProfit += profitPartner;
+        if (hours) totalHours += hours;
+      });
+      return {
+        count,
+        totalProfit,
+        avgProfitPerHourRetail: totalHours ? totalProfit / totalHours : 0,
+        avgProfitPerHourPartner: totalHours ? totalPartnerProfit / totalHours : 0,
+      };
+    }
+
+    const sculptStats = groupStats(sculptureIds);
+    const paintStats  = groupStats(paintingIds);
+
+    const mostSold = sculptStats.count >= paintStats.count
+      ? `Sculptures (${sculptStats.count})`
+      : `Paintings (${paintStats.count})`;
+
+    const moreEarnings = sculptStats.totalProfit >= paintStats.totalProfit
+      ? `Sculptures (€${sculptStats.totalProfit.toFixed(0)})`
+      : `Paintings (€${paintStats.totalProfit.toFixed(0)})`;
+
     summaryEl.innerHTML = `
-      <div class="summary-box"><div class="label">Pieces shown</div><div class="value">${count}</div></div>
-      <div class="summary-box"><div class="label">Avg. profit (retail)</div><div class="value">€${avgProfit.toFixed(0)}</div></div>
-      <div class="summary-box"><div class="label">Avg. profit / hour</div><div class="value">€${avgPerHour.toFixed(0)}</div></div>
-      <div class="summary-box"><div class="label">Avg. profit (partner)</div><div class="value">€${(totalPartnerProfit/count).toFixed(0)}</div></div>
+      <div class="summary-box">
+        <div class="label">Most pieces</div>
+        <div class="value">${mostSold}</div>
+      </div>
+      <div class="summary-box">
+        <div class="label">Higher total profit</div>
+        <div class="value">${moreEarnings}</div>
+      </div>
+      <div class="summary-box">
+        <div class="label">Avg. profit/h (retail)</div>
+        <div class="value">€${sculptStats.avgProfitPerHourRetail.toFixed(0)} <span class="group-tag">sculptures</span></div>
+        <div class="value">€${paintStats.avgProfitPerHourRetail.toFixed(0)} <span class="group-tag">paintings</span></div>
+      </div>
+      <div class="summary-box">
+        <div class="label">Avg. profit/h (partner)</div>
+        <div class="value">€${sculptStats.avgProfitPerHourPartner.toFixed(0)} <span class="group-tag">sculptures</span></div>
+        <div class="value">€${paintStats.avgProfitPerHourPartner.toFixed(0)} <span class="group-tag">paintings</span></div>
+      </div>
     `;
   }
 
