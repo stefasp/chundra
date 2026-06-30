@@ -103,6 +103,10 @@
       color: #444;
     }
     .earnings-table tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .earnings-table .border-right { border-right: 2px solid #c8c5b0; }
+    .earnings-table .border-left { border-left: 2px solid #c8c5b0; }
+    .earnings-table thead th.border-right { border-right: 2px solid #463370; }
+    .earnings-table thead th.border-left { border-left: 2px solid #463370; }
     .earnings-table tbody tr:nth-child(even) { background: #fafaf5; }
     .earnings-table tbody tr:hover { background: #f0eefa; }
 
@@ -165,13 +169,13 @@
     <thead>
       <tr>
         <th>Piece</th>
-        <th class="num">Prod. cost</th>
+        <th class="num border-right">Prod. cost</th>
         <th class="num">Hours</th>
         <th class="num">Retail price</th>
         <th class="num">Profit (retail)</th>
         <th class="num">Profit / hour</th>
-        <th class="num">Partner price</th>
-        <th class="num">Profit (partner)</th>
+        <th class="num border-left">Partner price</th>
+        <th class="num">Profit / hour (partner)</th>
       </tr>
     </thead>
     <tbody id="earnings-tbody"></tbody>
@@ -235,16 +239,18 @@
       if (hours) totalHours += hours;
       count++;
 
+      const profitPartnerPerHour = hours ? profitPartner / hours : null;
+
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td class="piece-name"><img class="piece-img" src="${p.images[0]}" alt="">${p.name}</td>
-        <td class="num">€${cost}</td>
+        <td class="num border-right">€${cost}</td>
         <td class="num">${hours ?? '<span class="na">—</span>'}</td>
         <td class="num">€${retailPrice}</td>
         <td class="num">${fmt(profitRetail)}</td>
         <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
-        <td class="num">€${partnerPrice}</td>
-        <td class="num">${fmt(profitPartner)}</td>
+        <td class="num border-left">€${partnerPrice}</td>
+        <td class="num">${profitPartnerPerHour !== null ? fmt(profitPartnerPerHour) + '/h' : '<span class="na">—</span>'}</td>
       `;
       tbody.appendChild(tr);
     });
