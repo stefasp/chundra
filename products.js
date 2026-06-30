@@ -221,7 +221,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   gaze: {
     id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 50, fragile: true,
+    price: 62, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
@@ -234,7 +234,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   heartandfox: {
     id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 50, fragile: true,
+    price: 62, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
@@ -405,7 +405,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   newman: {
     id: 'newman', name: 'A New Man', subtitle: 'guardian of inner space',
     category: ['guardians'], status: 'available',
-    price: 175, fragile: true,
+    price: 195, fragile: true,
     dims: { w: 16, h: 35, d: 18 },
     weight: 3.0, packingEfficiency: 0,
     materials: 'Ceramic, textile, acrylic details, semi-matte varnish',
@@ -427,7 +427,7 @@ For indoor use only.`,
   breathingdeeply: {
     id: 'breathingdeeply', name: 'Breathing Deeply', subtitle: 'Silence is part of music',
     category: ['macetas'], status: 'sold',
-    price: 68, fragile: true,
+    price: 78, fragile: true,
     dims: null,
     weight: null,
     materials: 'Ceramic',
@@ -444,7 +444,7 @@ For indoor use only.`,
   amazona: {
     id: 'amazona', name: 'Amazona', subtitle: 'cosmic feminine mystery',
     category: ['macetas'], status: 'sold',
-    price: 87, fragile: true,
+    price: 97, fragile: true,
     dims: { w: 18, h: 15.5, d: 18 },
     weight: 1.28,
     materials: 'Ceramic',
