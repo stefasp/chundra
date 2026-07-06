@@ -221,7 +221,11 @@
       const retailPrice = p.price;
       if (!retailPrice) return;
 
-      const wholesalePrice = Math.round(retailPrice / 3);
+      const cost = p.productionCost || 0;
+      const hours = p.hoursWorked || 0;
+      const calcPrice = Math.round(retailPrice / 3);
+      const minPrice = hours > 0 ? Math.round(10 * hours + cost) : 0;
+      const wholesalePrice = Math.max(calcPrice, minPrice);
 
       let dimsStr = '';
       if (p.dims) {
