@@ -207,8 +207,6 @@
 
 <script>
 (function() {
-  const WHOLESALE_DIVISOR = 3;
-  const MIN_HOURLY = 10;
   const gallery = document.getElementById('partner-gallery');
 
   function buildGallery(filter) {
@@ -223,12 +221,7 @@
       const retailPrice = p.price;
       if (!retailPrice) return;
 
-      const cost = p.productionCost || 0;
-      const hours = p.hoursWorked || 0;
-      const calcPrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
-      const minPrice = hours > 0 ? Math.round(MIN_HOURLY * hours + cost) : 0;
-      const wholesalePrice = Math.max(calcPrice, minPrice);
-      const usedMinimum = minPrice > calcPrice && minPrice > 0;
+      const wholesalePrice = Math.round(retailPrice / 3);
 
       let dimsStr = '';
       if (p.dims) {
@@ -245,9 +238,8 @@
           <p class="partner-card-materials">${p.materials || ''}</p>
           ${dimsStr ? `<p class="partner-card-dims">${dimsStr}</p>` : ''}
           <div class="partner-price-block">
-            <span class="partner-price-label">Tu precio${usedMinimum ? ' <span class="partner-min-tag">min €10/h</span>' : ''}</span>
+            <span class="partner-price-label">Tu precio</span>
             <span class="partner-my-price">€${wholesalePrice}</span>
-            <span class="partner-retail-price">PVP €${retailPrice}</span>
           </div>
         </div>`;
       gallery.appendChild(card);
