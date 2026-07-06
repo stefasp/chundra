@@ -35,7 +35,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
 We often say we should listen to our hearts, but I'm not sure that the heart is what truly tells us where to go. I believe direction might be somewhere deeper, more primitive — from the stomach, from the viscera, from that place where sensations live before they become emotions or words.
 
 Zaira calls us back to the flesh, to the awareness of our mortality, to a more vivid way of being. She invites us to awaken a quiet, humble wisdom.`,
-    images: ['images/zaira-02.png','images/zaira-01.png','images/zaira-03.png','images/zaira-04.png','images/zaira-05.png','images/zaira-06.png'],
+    images: ['images/zaira-02.png','images/zaira-01.png','images/zaira-03.png','images/zaira-04.png','images/zaira-05.png','images/zaira-06.png','images/zaira-07.png'],
   },
 
   juana: {
@@ -281,7 +281,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 4, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
-    images: ['images/small-painting-thewalk-01.png','images/small-painting-thewalk-02.png','images/small-painting-thewalk-03.png','images/small-painting-thewalk-04.png','images/small-painting-thewalk-05.png'],
+    images: ['images/small-painting-thewalk-01.png','images/small-painting-thewalk-02.png','images/small-painting-thewalk-03.png','images/small-painting-thewalk-04.png','images/small-painting-thewalk-05.png','images/small-painting-thewalk-06.png'],
   },
 
   bird: {
