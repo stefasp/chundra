@@ -13,7 +13,7 @@ const PRODUCTS = {
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 90, fragile: true,
     dims: { w: 17, h: 32.5, d: 16.5 },
-    weight: 1.42, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.62,
+    weight: 1.42, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.62,
     materials: 'Mixed — ceramic, acrylic paint, textile, matte varnish',
     description: `Ariadna holds a mysterious, almost somber presence, yet she vibrates with color, with life. There is something luminous in her contrasts — in the dialogue between gold, floral textures, and the vivid interplay of turquoise and warm orange tones.
 
@@ -65,7 +65,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 87, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
-    weight: 0.58, productionCost: 6, hoursWorked: 5, packingEfficiency: 0.65,
+    weight: 0.58, productionCost: 6, hoursWorked: 4, packingEfficiency: 0.65,
     materials: 'Ceramic',
     description: `This piece celebrates the essence of the feminine in all its complexity. The Lunar Guardian honors the shifting nature of femininity. The torso, resting on a surface reminiscent of the sea's texture, connects us to nature — its flow and the constant movement of life.
 
@@ -82,7 +82,7 @@ Ritual: Includes a guided exercise to help reconnect with our inner cycles and p
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 85, priceSale: 72, fragile: true,
     dims: { w: 15, h: 19, d: 12.5 },
-    weight: 1.0, productionCost: 10, hoursWorked: 5, packingEfficiency: 0.20,
+    weight: 1.0, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic, glass and fabric',
     description: `Marina inhabits the deep waters, where calm and storm coexist.
 
@@ -99,7 +99,7 @@ Ritual: Includes an exercise to help you face challenges or fears, connecting wi
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 89, priceSale: 76, fragile: true,
     dims: { w: 16, h: 18.5, d: 13 },
-    weight: 1.0, productionCost: 10, hoursWorked: 5, packingEfficiency: 0.20,
+    weight: 1.0, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic, metal and fabric',
     description: `Salamanca is the guardian of transition and loyalty, a companion in processes of change and a protector during transformations. Her presence is earthy and warm, with an energy of rootedness and shelter. She represents the ancestral: her textures evoke caves, our origins, the inherited and the ancient.
 
@@ -114,7 +114,7 @@ Ritual: Includes an exercise inviting reflection on inherited mandates and consc
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 89, priceSale: 76, fragile: true,
     dims: { w: 10, h: 15, d: 10 },
-    weight: 0.56, productionCost: 6, hoursWorked: 5, packingEfficiency: 0.20,
+    weight: 0.56, productionCost: 6, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic and fabric',
     description: `Trina comes from the Latin Trinus, meaning "triple." Filled with wisdom, balance, and wholeness (body, mind, and spirit / past, present, and future / birth, life, and death). Delicate yet carrying inner strength — feminine, ancient, introspective.
 
@@ -129,7 +129,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 157, priceSale: 123, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
-    weight: 1.45, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
+    weight: 1.45, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `Amalia represents conscious serenity, the wisdom attained when we stop reacting and start observing. Her face conveys temperance, balance, and inner clarity. This piece invites you to pause, reconnect with calm, and remember that the deepest strength arises from lucid silence.
 
@@ -144,7 +144,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
     category: ['viajeros'], status: 'available', wholesaleAvailable: true,
     price: 93, fragile: true,
     dims: { w: 18.5, h: 17.5, d: 16 },
-    weight: 1.1, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.45,
+    weight: 1.1, productionCost: 10, hoursWorked: 5, packingEfficiency: 0.45,
     materials: 'Ceramic and textile',
     description: `The Silent Traveler does not journey alone; he moves in harmony with his companion, his steadfast support. Together, they traverse the world — their world. They seem to have stepped out of a mythological tale, with a touch of Spain perhaps present in the bull, an unconscious expression of cultural ties.
 
@@ -157,7 +157,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
     category: ['viajeros'], status: 'available', wholesaleAvailable: true,
     price: 78, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
-    weight: 0.35, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.20,
+    weight: 0.35, productionCost: 3, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic',
     description: `Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences "for the feed," but often forgetting what truly matters. The deepest memories don't come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.
 
@@ -435,7 +435,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 146, fragile: true,
     dims: { w: 16, h: 35, d: 18 },
-    weight: 3.0, productionCost: 10, hoursWorked: 8, packingEfficiency: 0,
+    weight: 3.0, productionCost: 10, hoursWorked: 7, packingEfficiency: 0,
     materials: 'Ceramic, textile, acrylic details, semi-matte varnish',
     description: `A New Man reflects on the construction of masculinity in Western culture and imagines the possibility of another configuration of being. The figure appears rigid, pale and unfinished, yet opens to reveal an interior where plants and flowers emerge in vivid contrast.
 
