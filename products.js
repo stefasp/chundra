@@ -10,7 +10,7 @@ const PRODUCTS = {
 
   ariadna: {
     id: 'ariadna', name: 'Ariadna', subtitle: 'a quiet enigma',
-    category: ['guardians'], status: 'available',
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 90, fragile: true,
     dims: { w: 17, h: 32.5, d: 16.5 },
     weight: 1.42, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.62,
@@ -25,7 +25,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
 
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh',
-    category: ['guardians'], status: 'available',
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 116, priceSale: 103, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
     weight: 0.96, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.50,
@@ -40,18 +40,18 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
 
   juana: {
     id: 'juana', name: 'Guardian Juana', subtitle: 'feline strength',
-    category: ['guardians'], status: 'available',
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 66, fragile: true,
     dims: { w: 12.5, h: 15, d: 3 },
     weight: 0.36, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `Sharp and alert. This piece celebrates the voracity to reach dreams and the determination to conquer what we desire. It is not softness; it is drive, energy, and power concentrated in every action.`,
-    images: ['images/juana-00.png','images/juana-01.png','images/juana-02.png','images/juana-03.png'],
+    images: ['images/juana-01.png', 'images/juana-02.png', 'images/juana-03.png', 'images/juana-04.png'],
   },
 
   mara: {
     id: 'mara', name: 'Guardian Mara', subtitle: 'the power to nest, the power to fly',
-    category: ['guardians'], status: 'available',
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 66, fragile: true,
     dims: { w: 13.5, h: 14, d: 4 },
     weight: 0.45, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.30,
@@ -62,7 +62,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
 
   lunar: {
     id: 'lunar', name: 'Lunar Guardian', subtitle: 'movement of life and femininity',
-    category: ['guardians','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 87, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, productionCost: 6, hoursWorked: 5, packingEfficiency: 0.65,
@@ -79,7 +79,7 @@ Ritual: Includes a guided exercise to help reconnect with our inner cycles and p
 
   marina: {
     id: 'marina', name: 'Guardian Marina', subtitle: 'transformative power of depth',
-    category: ['guardians','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 85, priceSale: 72, fragile: true,
     dims: { w: 15, h: 19, d: 12.5 },
     weight: 1.0, productionCost: 10, hoursWorked: 5, packingEfficiency: 0.20,
@@ -91,12 +91,12 @@ With her textures — waves, peaks, currents — she evokes the strength of what
 Marina is the guardian of the hidden, of inner movement, of the transformative power of depth.
 
 Ritual: Includes an exercise to help you face challenges or fears, connecting with a stronger, renewed version of yourself.`,
-    images: ['images/marina-00.png','images/marina-01.png','images/marina-02.png','images/marina-03.png'],
+    images: ['images/marina-01.png', 'images/marina-02.png', 'images/marina-03.png', 'images/marina-04.png'],
   },
 
   salamanca: {
     id: 'salamanca', name: 'Guardian Salamanca', subtitle: 'guardian of transition',
-    category: ['guardians','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 89, priceSale: 76, fragile: true,
     dims: { w: 16, h: 18.5, d: 13 },
     weight: 1.0, productionCost: 10, hoursWorked: 5, packingEfficiency: 0.20,
@@ -106,12 +106,12 @@ Ritual: Includes an exercise to help you face challenges or fears, connecting wi
 Her companion, the threshold guardian, allows us to leave that cave, guides us, and builds a bridge toward the new. Together, they guard the portals of change and invite us to transform without losing our connection to what came before.
 
 Ritual: Includes an exercise inviting reflection on inherited mandates and consciously choosing what we want to continue.`,
-    images: ['images/salamanca-00.png','images/salamanca-01.png','images/salamanca-02.png','images/salamanca-03.png'],
+    images: ['images/salamanca-01.png', 'images/salamanca-02.png', 'images/salamanca-03.png', 'images/salamanca-04.png'],
   },
 
   trina: {
     id: 'trina', name: 'Guardian Trina', subtitle: 'the dreams protector',
-    category: ['guardians','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 89, priceSale: 76, fragile: true,
     dims: { w: 10, h: 15, d: 10 },
     weight: 0.56, productionCost: 6, hoursWorked: 5, packingEfficiency: 0.20,
@@ -121,12 +121,12 @@ Ritual: Includes an exercise inviting reflection on inherited mandates and consc
 A guardian of the hidden, she watches in silence and supports processes of understanding and inner revelation. Calm but powerful, she protects dreams.
 
 Ritual: Includes an exercise to dialogue with the past and reconstruct it in a way that creates a positive impact, broadening our perspective.`,
-    images: ['images/trina-00.png','images/trina-01.png','images/trina-02.png'],
+    images: ['images/trina-01.png', 'images/trina-02.png', 'images/trina-03.png'],
   },
 
   amalia: {
     id: 'amalia', name: 'Guardian Amalia', subtitle: 'conscious serenity',
-    category: ['guardians','ritual'], status: 'available',
+    category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 157, priceSale: 123, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
     weight: 1.45, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
@@ -141,7 +141,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
 
   traveler: {
     id: 'traveler', name: 'The Silent Traveler', subtitle: 'the ancient messenger',
-    category: ['viajeros'], status: 'available',
+    category: ['viajeros'], status: 'available', wholesaleAvailable: true,
     price: 93, fragile: true,
     dims: { w: 18.5, h: 17.5, d: 16 },
     weight: 1.1, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.45,
@@ -149,12 +149,12 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
     description: `The Silent Traveler does not journey alone; he moves in harmony with his companion, his steadfast support. Together, they traverse the world — their world. They seem to have stepped out of a mythological tale, with a touch of Spain perhaps present in the bull, an unconscious expression of cultural ties.
 
 This piece was sketched while wandering through the Gibralfaro mountain in Málaga. The traveler carries with him something ancient, almost aboriginal, like the aesthetic of an ancient script, as though telling a story from a distant time.`,
-    images: ['images/traveler-00.png','images/traveler-02.png','images/traveler-03.png','images/traveler-04.png','images/traveler-05.png'],
+    images: ['images/traveler-02.png', 'images/traveler-03.png', 'images/traveler-04.png', 'images/traveler-05.png', 'images/traveler-06.png'],
   },
 
   gibran: {
     id: 'gibran', name: 'Traveler Gibran', subtitle: 'a fully present traveler',
-    category: ['viajeros'], status: 'available',
+    category: ['viajeros'], status: 'available', wholesaleAvailable: true,
     price: 78, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
     weight: 0.35, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.20,
@@ -162,14 +162,14 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
     description: `Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences "for the feed," but often forgetting what truly matters. The deepest memories don't come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.
 
 This piece is a reminder that the essential thing is not to accumulate places, but to live the present fully. Destinations fade, but emotions and shared moments remain.`,
-    images: ['images/gibran-00.png','images/gibran-01.png','images/gibran-02.png','images/gibran-03.png'],
+    images: ['images/gibran-01.png', 'images/gibran-02.png', 'images/gibran-03.png', 'images/gibran-04.png'],
   },
 
   // ─── LÁMPARAS ──────────────────────────────────────────────────
 
   totem: {
     id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life',
-    category: ['lamparas'], status: 'available',
+    category: ['lamparas'], status: 'available', wholesaleAvailable: true,
     price: 122, priceSale: 104, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
     weight: 1.35, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.20,
@@ -185,7 +185,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   carnival: {
     id: 'carnival', name: 'Carnival Jar', subtitle: 'life cycles',
-    category: ['macetas'], status: 'available',
+    category: ['macetas'], status: 'available', wholesaleAvailable: true,
     price: 178, priceSale: 120, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
     weight: 1.6, productionCost: 10, hoursWorked: 11, packingEfficiency: 0.30,
@@ -198,8 +198,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'candle-cat': {
     id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
-    price: 54, fragile: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    price: 55, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
@@ -209,7 +209,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'candle-freckles': {
     id: 'candle-freckles', name: 'Malva Freckles Candle Holder', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 44, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 2, hoursWorked: 1, packingEfficiency: 0.85,
@@ -221,7 +221,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   gaze: {
     id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 54, fragile: true,
+    price: 48, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
@@ -234,7 +234,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   heartandfox: {
     id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 54, fragile: true,
+    price: 48, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
@@ -244,12 +244,40 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
   },
 
+  'snake-heart-flam-1': {
+    id: 'snake-heart-flam-1', name: 'Snake Heart Flam 1', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'sold',
+    price: 48, fragile: true,
+    dims: { w: 20, h: 20, d: 4 },
+    weight: 0.5, packingEfficiency: 0.25,
+    productionCost: 2, hoursWorked: 1.7,
+    materials: 'Ceramic, bright glaze, underglazes, textile and metal details',
+    description: `A vivid wall piece combining the symbolic force of the snake with the warmth of the heart and the energy of flame. Part of the Wall Art collection.`,
+    images: [
+      'images/snakeheartflam-01.png','images/snakeheartflam-02.png',
+    ],
+  },
+
+  'bright-star-1': {
+    id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    price: 48, fragile: true,
+    dims: { w: 23, h: 40, d: 2 },
+    weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
+    productionCost: 3, hoursWorked: 2,
+    materials: 'Ceramic, bright glaze, underglazes and textile details',
+    description: `A luminous wall piece from the Wall Art collection. Bright glazes and textile details create a piece that catches light and holds attention.`,
+    images: [
+      'images/brightstar-01.png','images/brightstar-02.png',
+    ],
+  },
+
   // ─── CUADROS ───────────────────────────────────────────────────
 
   thewalk: {
     id: 'thewalk', name: 'The Walk',
-    category: ['cuadros'], status: 'available',
-    price: 60, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 59, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 4, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -258,8 +286,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   bird: {
     id: 'bird', name: 'Bird',
-    category: ['cuadros'], status: 'available',
-    price: 50, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 46, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 4, hoursWorked: 3.5, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -268,8 +296,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   mistify: {
     id: 'mistify', name: 'Mistify',
-    category: ['cuadros'], status: 'available',
-    price: 60, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 59, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 4, hoursWorked: 5, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -278,7 +306,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   wait: {
     id: 'wait', name: 'Wait for me',
-    category: ['cuadros'], status: 'available',
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
     price: 215, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -290,7 +318,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   marea: {
     id: 'marea', name: 'Marea',
-    category: ['cuadros'], status: 'available',
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
     price: 305, priceSale: 250, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -302,7 +330,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   pivot: {
     id: 'pivot', name: 'Pivot',
-    category: ['cuadros'], status: 'available',
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
     price: 305, priceSale: 250, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -314,8 +342,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   whispers: {
     id: 'whispers', name: 'Whispers of the Deep',
-    category: ['cuadros'], status: 'available',
-    price: 270, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 269, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, productionCost: 4, hoursWorked: 9, framed: 'stretched canvas', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -325,8 +353,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   horizons: {
     id: 'horizons', name: 'Inner Horizons',
-    category: ['cuadros'], status: 'available',
-    price: 330, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 329, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, productionCost: 4, hoursWorked: 11, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -336,8 +364,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   encuentro: {
     id: 'encuentro', name: 'Encuentros',
-    category: ['cuadros'], status: 'available',
-    price: 330, priceSale: 270, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 329, priceSale: 270, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
     weight: 2.3, productionCost: 4, hoursWorked: 11, framed: 'framed', flatPackable: true,
@@ -348,8 +376,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   confluence: {
     id: 'confluence', name: 'Confluence',
-    category: ['cuadros'], status: 'available',
-    price: 390, fragile: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 389, fragile: false,
     dims: { w: 90, h: 60, d: 0.1 },
     weight: 0.8, productionCost: 4, hoursWorked: 13, framed: 'stretched canvas',
     materials: 'Acrylic on canvas',
@@ -359,7 +387,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   dreams: {
     id: 'dreams', name: 'Dreams Echo',
-    category: ['cuadros'], status: 'available',
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
     price: 75, fragile: false,
     dims: { w: 40, h: 40, d: 1.5 },
     weight: 0.43, productionCost: 4, hoursWorked: 5, framed: 'stretched canvas',
@@ -372,7 +400,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'floral-dream-1': {
     id: 'floral-dream-1', name: 'Floral Dream 1',
-    category: ['dibujo'], status: 'available',
+    category: ['dibujo'], status: 'available', wholesaleAvailable: true,
     price: 157, priceSale: 120, fragile: false,
     dims: { w: 30, h: 40, d: 2 },
     weight: 0.6, productionCost: 4, hoursWorked: 5, framed: 'framed', flatPackable: true,
@@ -382,7 +410,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'floral-dream-2': {
     id: 'floral-dream-2', name: 'Floral Dream 2',
-    category: ['dibujo'], status: 'available',
+    category: ['dibujo'], status: 'available', wholesaleAvailable: true,
     price: 157, priceSale: 120, fragile: false,
     dims: { w: 30, h: 40, d: 2 },
     weight: 0.6, framed: 'framed', flatPackable: true, productionCost: 4, hoursWorked: 4,
@@ -392,7 +420,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   master: {
     id: 'master', name: 'Master',
-    category: ['dibujo'], status: 'available',
+    category: ['dibujo'], status: 'available', wholesaleAvailable: true,
     price: 127, priceSale: 90, fragile: false,
     dims: { w: 25, h: 35, d: 2 },
     weight: 0.5, productionCost: 4, hoursWorked: 4, framed: 'framed', flatPackable: true,
@@ -404,7 +432,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   newman: {
     id: 'newman', name: 'A New Man', subtitle: 'guardian of inner space',
-    category: ['guardians'], status: 'available',
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 146, fragile: true,
     dims: { w: 16, h: 35, d: 18 },
     weight: 3.0, productionCost: 10, hoursWorked: 8, packingEfficiency: 0,
@@ -421,34 +449,6 @@ For indoor use only.`,
     ],
   },
 
-
-  'snake-heart-flam-1': {
-    id: 'snake-heart-flam-1', name: 'Snake Heart Flam 1', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'sold',
-    price: 54, fragile: true,
-    dims: { w: 20, h: 20, d: 4 },
-    weight: 0.5, packingEfficiency: 0.25,
-    productionCost: 2, hoursWorked: 1.7,
-    materials: 'Ceramic, bright glaze, underglazes, textile and metal details',
-    description: `A vivid wall piece combining the symbolic force of the snake with the warmth of the heart and the energy of flame. Part of the Wall Art collection.`,
-    images: [
-      'images/snakeheartflam-01.png','images/snakeheartflam-02.png',
-    ],
-  },
-
-  'bright-star-1': {
-    id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
-    price: 49, fragile: true,
-    dims: { w: 23, h: 40, d: 2 },
-    weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
-    productionCost: 3, hoursWorked: 2,
-    materials: 'Ceramic, bright glaze, underglazes and textile details',
-    description: `A luminous wall piece from the Wall Art collection. Bright glazes and textile details create a piece that catches light and holds attention.`,
-    images: [
-      'images/brightstar-01.png','images/brightstar-02.png',
-    ],
-  },
 
   // ─── VENDIDO ───────────────────────────────────────────────────
 
