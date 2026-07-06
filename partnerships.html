@@ -207,8 +207,8 @@
 
 <script>
 (function() {
-  // Wholesale price = retail price / 3 (your margin shrinks to 1/3 of normal retail)
   const WHOLESALE_DIVISOR = 3;
+  const MIN_HOURLY = 10;
   const gallery = document.getElementById('partner-gallery');
 
   function buildGallery(filter) {
@@ -220,14 +220,16 @@
       if (!p.wholesaleAvailable) return;
       if (filter !== 'all' && !p.category?.includes(filter)) return;
 
-      // Retail price = original list price (not discounted)
       const retailPrice = p.price;
       if (!retailPrice) return;
 
-      // Wholesale price = retail / 3
-      const wholesalePrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
+      const cost = p.productionCost || 0;
+      const hours = p.hoursWorked || 0;
+      const calcPrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
+      const minPrice = hours > 0 ? Math.round(MIN_HOURLY * hours + cost) : 0;
+      const wholesalePrice = Math.max(calcPrice, minPrice);
+      const usedMinimum = minPrice > calcPrice && minPrice > 0;
 
-      // Dimensions
       let dimsStr = '';
       if (p.dims) {
         const d = p.dimsFramed || p.dims;
@@ -270,6 +272,5 @@
   });
 })();
 </script>
-
 </body>
 </html>

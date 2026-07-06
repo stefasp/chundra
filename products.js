@@ -204,7 +204,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.5, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. With a more pop and contemporary aesthetic, it features a playful yet elegant cat gaze that looks back at the viewer with charm and subtle sophistication. Its color palette blends lilacs, violets, and blues, creating a modern, dreamy presence that balances character and refinement.`,
-    images: ['images/portavela-catpower-01.png'],
+    images: ['images/portavela-catpower-01.png', 'images/portavela-catpower-02.png', 'images/portavela-catpower-03.png'],
   },
 
   'candle-freckles': {
