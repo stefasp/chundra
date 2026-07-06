@@ -20,7 +20,7 @@ const PRODUCTS = {
 She seems to stand at the threshold of something unresolved, as if facing a crossroads not entirely her own — something inherited, something ancient. And yet, she does not resist it. She resolves it quietly, with elegance.
 
 Ariadna does not impose direction; she refines it. Her presence is light, almost floating, but carries a deep certainty. She reminds us that not all tensions must be broken — some are meant to be held, transformed, and woven into something precise, something beautiful.`,
-    images: ['images/ariadna-06.png','images/ariadna-01.png','images/ariadna-02.png','images/ariadna-03.png','images/ariadna-04.png','images/ariadna-05.png'],
+    images: ['images/ariadna-01.png','images/ariadna-06.png','images/ariadna-02.png','images/ariadna-03.png','images/ariadna-04.png','images/ariadna-05.png'],
   },
 
   zaira: {
@@ -57,7 +57,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     weight: 0.45, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `A symbol of balance between nesting and flying. The woman, embraced by the bird's wing, reminds us that we can put down roots, care for others, and create harmony without losing the freedom to spread our wings. A piece that invites stillness, care, and expansion.`,
-    images: ['images/mara-02.png','images/mara-01.png','images/mara-03.png', 'images/mara-04.png'],
+    images: ['images/mara-01.png','images/mara-02.png','images/mara-03.png', 'images/mara-04.png'],
   },
 
   lunar: {
@@ -74,7 +74,7 @@ The Lunar Guardian reminds us that we are not linear: our power moves, changes, 
 **It includes two interchangeable heads**, each carrying its own symbolic power.
 
 Ritual: Includes a guided exercise to help reconnect with our inner cycles and prepare for moments of introspection and strength.`,
-    images: ['images/lunar-05.png','images/lunar-01.png','images/lunar-02.png','images/lunar-03.png','images/lunar-04.png'],
+    images: ['images/lunar-01.png','images/lunar-05.png','images/lunar-02.png','images/lunar-03.png','images/lunar-04.png'],
   },
 
   marina: {
@@ -149,7 +149,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
     description: `The Silent Traveler does not journey alone; he moves in harmony with his companion, his steadfast support. Together, they traverse the world — their world. They seem to have stepped out of a mythological tale, with a touch of Spain perhaps present in the bull, an unconscious expression of cultural ties.
 
 This piece was sketched while wandering through the Gibralfaro mountain in Málaga. The traveler carries with him something ancient, almost aboriginal, like the aesthetic of an ancient script, as though telling a story from a distant time.`,
-    images: ['images/traveler-02.png', 'images/traveler-03.png', 'images/traveler-04.png', 'images/traveler-05.png', 'images/traveler-06.png'],
+    images: ['images/traveler-01.png', 'images/traveler-03.png', 'images/traveler-04.png', 'images/traveler-05.png', 'images/traveler-02.png'],
   },
 
   gibran: {
