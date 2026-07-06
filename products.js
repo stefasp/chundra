@@ -199,7 +199,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'candle-cat': {
     id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 55, fragile: true,
+    price: 54, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
@@ -221,7 +221,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   gaze: {
     id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 48, fragile: true,
+    price: 54, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
@@ -234,7 +234,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   heartandfox: {
     id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 48, fragile: true,
+    price: 54, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
@@ -425,7 +425,7 @@ For indoor use only.`,
   'snake-heart-flam-1': {
     id: 'snake-heart-flam-1', name: 'Snake Heart Flam 1', subtitle: 'wall art collection',
     category: ['wallart'], status: 'sold',
-    price: 48, fragile: true,
+    price: 54, fragile: true,
     dims: { w: 20, h: 20, d: 4 },
     weight: 0.5, packingEfficiency: 0.25,
     productionCost: 2, hoursWorked: 1.7,
@@ -439,7 +439,7 @@ For indoor use only.`,
   'bright-star-1': {
     id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 48, fragile: true,
+    price: 49, fragile: true,
     dims: { w: 23, h: 40, d: 2 },
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
     productionCost: 3, hoursWorked: 2,
