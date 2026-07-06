@@ -28,7 +28,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
     category: ['guardians'], status: 'available',
     price: 116, priceSale: 103, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
-    weight: 0.96, productionCost: 10, hoursWorked: 10, packingEfficiency: 0.50,
+    weight: 0.96, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
     description: `Zaira seems to move guided by her gut feelings.
 
@@ -57,7 +57,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     weight: 0.45, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `A symbol of balance between nesting and flying. The woman, embraced by the bird's wing, reminds us that we can put down roots, care for others, and create harmony without losing the freedom to spread our wings. A piece that invites stillness, care, and expansion.`,
-    images: ['images/mara-02.png','images/mara-01.png','images/mara-03.png'],
+    images: ['images/mara-02.png','images/mara-01.png','images/mara-03.png', 'images/mara-04.png'],
   },
 
   lunar: {
@@ -74,7 +74,7 @@ The Lunar Guardian reminds us that we are not linear: our power moves, changes, 
 **It includes two interchangeable heads**, each carrying its own symbolic power.
 
 Ritual: Includes a guided exercise to help reconnect with our inner cycles and prepare for moments of introspection and strength.`,
-    images: ['images/lunar-00.png','images/lunar-01.png','images/lunar-02.png','images/lunar-03.png','images/lunar-04.png'],
+    images: ['images/lunar-05.png','images/lunar-01.png','images/lunar-02.png','images/lunar-03.png','images/lunar-04.png'],
   },
 
   marina: {
@@ -129,7 +129,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
     category: ['guardians','ritual'], status: 'available',
     price: 157, priceSale: 123, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
-    weight: 1.45, productionCost: 10, hoursWorked: 10, packingEfficiency: 0.30,
+    weight: 1.45, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `Amalia represents conscious serenity, the wisdom attained when we stop reacting and start observing. Her face conveys temperance, balance, and inner clarity. This piece invites you to pause, reconnect with calm, and remember that the deepest strength arises from lucid silence.
 
@@ -157,7 +157,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
     category: ['viajeros'], status: 'available',
     price: 78, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
-    weight: 0.35, productionCost: 3, hoursWorked: 4.5, packingEfficiency: 0.20,
+    weight: 0.35, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic',
     description: `Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences "for the feed," but often forgetting what truly matters. The deepest memories don't come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.
 
@@ -172,7 +172,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
     category: ['lamparas'], status: 'available',
     price: 122, priceSale: 104, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
-    weight: 1.35, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.20,
+    weight: 1.35, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.20,
     materials: 'Ceramic',
     description: `This piece speaks of the cycle of life. The figures could represent one person — youth and age — or two, reflecting how life is passed from one to another. It's a reminder that we don't completely leave when we go; we leave parts of ourselves in those we love, in those who love us, and in the things we build and leave behind.
 
@@ -191,7 +191,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 1.6, productionCost: 10, hoursWorked: 11, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `This piece embodies the strength of encounters and the transformations that occur when they happen. Everything is intertwined, all vital energies are connected, the cycles that pass through us, and the beauty that arises from chaos. A presence that inhabits the space and fills it with inner movement.`,
-    images: ['images/rito-00.png','images/rito-01.png','images/rito-02.png','images/rito-03.png','images/rito-04.png','images/carnival-05.png','images/carnival-06.png'],
+    images: ['images/rito-01.png','images/rito-02.png','images/rito-03.png','images/rito-04.png','images/rito-05.png','images/rito-06.png', 'images/rito-07.png', 'images/rito-08.png'],
   },
 
   // ─── WALL ART ──────────────────────────────────────────────────
@@ -238,7 +238,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
-    weight: 0.5, productionCost: 2.1, hoursWorked: 2, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 2.1, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
