@@ -94,8 +94,17 @@
 
   // ── Populate ────────────────────────────────────────────────
   function populate(p) {
-    // Category
-    const cats = (p.category || []).map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(' · ');
+    // Category labels (English)
+    const CAT_LABELS = {
+      guardians: 'Guardians', guardianas: 'Guardians',
+      viajeros: 'Travelers', lamparas: 'Lamps',
+      macetas: 'Pots & Jars', wallart: 'Wall Art',
+      cuadros: 'Paintings', dibujo: 'Drawings',
+      ritual: 'Ritual Pieces',
+    };
+    const cats = (p.category || [])
+      .map(c => CAT_LABELS[c] || c.charAt(0).toUpperCase() + c.slice(1))
+      .join(' · ');
     document.getElementById('pm-category-label').textContent = cats;
 
     // Title & subtitle

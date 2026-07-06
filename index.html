@@ -10,7 +10,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chundra | Cerámica y arte conceptual hecho a mano | Handmade conceptual Art & Ceramics</title>
+    <title>Chundra — For the Slightly Eccentric | Handmade Ceramics, Jewellery & Objects</title>
 
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="mobile.css">
@@ -22,23 +22,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend:wght@100..900&family=Staatliches&display=swap&family=League+Spartan:wght@100..900" rel="stylesheet">
 
-    <meta name="title" content="Chundra — Ceramics for Collectors | Mystical, Ancestral & Feminine Art by Stefania">
-    <meta name="description" content="Chundra es arte espiritual hecho a mano: cerámica ritual y pinturas simbólicas inspiradas en la sabiduría ancestral y la introspección. Discover unique handmade ceramics & mystical art for collectors.">
-    <meta name="keywords" content="arte espiritual, cerámica artística, arte simbólico, arte ritual, mystical art, spiritual art, handmade ceramics, symbolic art, ritual art, collectible art">
+    <!-- Primary SEO -->
+    <meta name="title" content="Chundra — For the Slightly Eccentric | Handmade Ceramics & Objects">
+    <meta name="description" content="Chundra makes things for people who notice things. Ceramics, jewellery, and objects designed to interrupt the ordinary — pieces that hold color, hold meaning, and hold the room. Made slowly, by hand, in Spain. Ships worldwide.">
+    <meta name="keywords" content="
+      eclectic home decor, statement home decor, unique home objects, handmade ceramics,
+      artisan design, ceramic sculpture, abstract painting, spiritual objects, ritual art,
+      eccentric decor, maximalist decor, colorful home decor, bohemian home decor,
+      European design brand, Spanish ceramics, handmade jewellery, artisan jewellery,
+      gifts for art lovers, unique gifts, collector objects, conversation piece decor,
+      ekklektische Einrichtung, handgemachte Keramik, ausgefallene Dekoration, Keramik Skulptur,
+      décoration éclectique, céramique artisanale, objet décoratif unique, décoration colorée,
+      decoración ecléctica, cerámica artesanal, objetos decorativos únicos, diseño de autor
+    ">
 
-    <meta property="og:title" content="Chundra | Arte espiritual y cerámica ritual hecha a mano">
-    <meta property="og:description" content="Piezas únicas de cerámica y pintura espiritual. Discover mystical handmade art for collectors.">
-    <meta name="twitter:title" content="Chundra | Spiritual & Ritual Handmade Art">
-    <meta name="twitter:description" content="Unique ceramics and paintings inspired by ancestral wisdom, symbolism and inner connection.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.chundra.site">
+    <meta property="og:title" content="Chundra — For the Slightly Eccentric">
+    <meta property="og:description" content="Objects hard to forget. Ceramics, jewellery, and objects designed to interrupt the ordinary. Made slowly, by hand, in Spain.">
+    <meta property="og:image" content="https://www.chundra.site/images/hero1.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chundra — For the Slightly Eccentric">
+    <meta name="twitter:description" content="Objects hard to forget. Ceramics, jewellery, and objects designed to interrupt the ordinary. Made slowly, by hand, in Spain.">
+    <meta name="twitter:image" content="https://www.chundra.site/images/hero1.png">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Brand",
+      "@type": "Store",
       "name": "Chundra",
-      "creator": { "@type": "Person", "name": "Stefania Spangenberg" },
-      "description": "Chundra is a spiritual art brand creating handmade ceramics and paintings inspired by ancestral wisdom, symbolism, and inner reflection.",
-      "url": "https://www.chundra.site"
+      "url": "https://www.chundra.site",
+      "logo": "https://www.chundra.site/images/logo.png",
+      "description": "Chundra makes things for people who notice things. Ceramics, jewellery, and objects designed to interrupt the ordinary — made slowly, by hand, in Spain.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Handmade Ceramics, Jewellery & Objects",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Ceramic Sculptures" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Abstract Paintings" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Wall Art Ceramics" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Handmade Jewellery" } }
+        ]
+      },
+      "sameAs": ["https://www.instagram.com/chundra.art/"]
     }
     </script>
     <script>window['ga-disable-G-Q8DDRJ6Y35'] = true;</script>
@@ -64,12 +97,12 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <img src="images/hero1.png" alt="Hero Image">
+  <img src="images/hero1.png" id="hero-img" alt="Chundra" data-slides="images/hero1.png,images/hero2.png,images/hero3.png">
   <img src="images/logo.png" class="logo" alt="Logo"/>
   <div class="hero-text">
-    <h2>Spiritual handmade art & ceramics | Arte espiritual y cerámica ritual hecha a mano</h2>
-    <p>The wisdom you seek<br>already lives within.</p>
-    <img src="images/notathing.png" class="slogan" alt="Objetos con Alma"/>
+    <img src="images/logo-full.png" class="slogan" alt="Objets with a soul">
+    <p>For the slightly eccentric</p>
+    <h2>Ceramics, jewellery &amp; objects designed to interrupt the ordinary.</h2>
   </div>
   <div class="filter-bar edu-italic">
     <button class="filter-btn active" data-filter="all">All</button>
@@ -81,15 +114,6 @@
     <button class="filter-btn" data-filter="cuadros">Paintings</button>
     <button class="filter-btn" data-filter="dibujo">Drawings</button>
     <button class="filter-btn" data-filter="ritual" data-tooltip="Art accompanied by a reflective practice">Ritual Pieces</button>
-
-
-    
-
-    <!-- VENDIDO -->
-    
-
-  
-
 
 </div>
 </section>
@@ -159,6 +183,14 @@
         <h3>Heart & Fox</h3>
         <p>Wall art · ceramic</p>
         <br><strong>50 €</strong>
+      </div>
+    </div>
+    <div class="card" data-product-id="bright-star-1" data-category="wallart">
+      <div class="image-container"><img src="images/brightstar-01.png" alt="Bright Star 1"></div>
+      <div class="details">
+        <h3>Bright Star 1</h3>
+        <p>Wall art · ceramic, bright glaze</p>
+        <br><strong>62 €</strong>
       </div>
     </div>
 
@@ -451,6 +483,15 @@
       </div>
     </div>
 
+
+    <div class="card sold" data-product-id="snake-heart-flam-1" data-category="wallart">
+      <div class="image-container"><img src="images/snakeheartflam-01.png" alt="Snake Heart Flam 1"></div>
+      <div class="details">
+        <h3>Snake Heart Flam 1</h3>
+        <p>Wall art · ceramic, bright glaze</p>
+      </div>
+    </div>
+
     <!-- VENDIDO -->
 <div class="card sold" data-product-id="breathingdeeply" data-category="macetas">
       <div class="image-container"><img src="images/breathingdeeply-01.png" alt="Breathing Deeply"></div>
@@ -515,5 +556,23 @@
 <script src="cart-modal.js"></script>
 <script src="index.js"></script>
 
+
+<script>
+(function() {
+  const img = document.getElementById('hero-img');
+  if (!img) return;
+  const slides = img.dataset.slides.split(',');
+  if (slides.length < 2) return;
+  let current = 0;
+  setInterval(() => {
+    img.style.opacity = '0';
+    setTimeout(() => {
+      current = (current + 1) % slides.length;
+      img.src = slides[current];
+      img.style.opacity = '1';
+    }, 600);
+  }, 5000);
+})();
+</script>
 </body>
 </html>

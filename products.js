@@ -26,7 +26,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh',
     category: ['guardians'], status: 'available',
-    price: 120, priceSale: 103, fragile: true,
+    price: 116, priceSale: 103, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
     weight: 0.96, productionCost: 10, hoursWorked: 10, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
@@ -41,7 +41,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   juana: {
     id: 'juana', name: 'Guardian Juana', subtitle: 'feline strength',
     category: ['guardians'], status: 'available',
-    price: 76, priceSale: 56, fragile: true,
+    price: 66, fragile: true,
     dims: { w: 12.5, h: 15, d: 3 },
     weight: 0.36, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
@@ -52,7 +52,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   mara: {
     id: 'mara', name: 'Guardian Mara', subtitle: 'the power to nest, the power to fly',
     category: ['guardians'], status: 'available',
-    price: 76, priceSale: 56, fragile: true,
+    price: 66, fragile: true,
     dims: { w: 13.5, h: 14, d: 4 },
     weight: 0.45, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
@@ -63,7 +63,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   lunar: {
     id: 'lunar', name: 'Lunar Guardian', subtitle: 'movement of life and femininity',
     category: ['guardians','ritual'], status: 'available',
-    price: 90, fragile: true,
+    price: 87, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, productionCost: 6, hoursWorked: 5, packingEfficiency: 0.65,
     materials: 'Ceramic',
@@ -127,7 +127,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
   amalia: {
     id: 'amalia', name: 'Guardian Amalia', subtitle: 'conscious serenity',
     category: ['guardians','ritual'], status: 'available',
-    price: 160, priceSale: 123, fragile: true,
+    price: 157, priceSale: 123, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
     weight: 1.45, productionCost: 10, hoursWorked: 10, packingEfficiency: 0.30,
     materials: 'Ceramic',
@@ -155,7 +155,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
   gibran: {
     id: 'gibran', name: 'Traveler Gibran', subtitle: 'a fully present traveler',
     category: ['viajeros'], status: 'available',
-    price: 80, fragile: true,
+    price: 78, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
     weight: 0.35, productionCost: 3, hoursWorked: 4.5, packingEfficiency: 0.20,
     materials: 'Ceramic',
@@ -176,7 +176,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
     materials: 'Ceramic',
     description: `This piece speaks of the cycle of life. The figures could represent one person — youth and age — or two, reflecting how life is passed from one to another. It's a reminder that we don't completely leave when we go; we leave parts of ourselves in those we love, in those who love us, and in the things we build and leave behind.
 
-Like a totem, it stands tall, carrying the weight of memories, of connections, of legacy. Sold without lampshade.`,
+Like a totem, it stands tall, carrying the weight of memories, of connections, of legacy. **Sold without lampshade.**`,
     images: ['images/totem-01.png','images/totem-02.png','images/totem-03.png'],
     video: 'images/totem.mp4',
   },
@@ -186,7 +186,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   carnival: {
     id: 'carnival', name: 'Carnival Jar', subtitle: 'life cycles',
     category: ['macetas'], status: 'available',
-    price: 180, priceSale: 120, fragile: true,
+    price: 178, priceSale: 120, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
     weight: 1.6, productionCost: 10, hoursWorked: 11, packingEfficiency: 0.30,
     materials: 'Ceramic',
@@ -199,7 +199,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'candle-cat': {
     id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 50, fragile: true,
+    price: 55, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
@@ -210,9 +210,9 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'candle-freckles': {
     id: 'candle-freckles', name: 'Malva Freckles Candle Holder', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 50, fragile: true,
+    price: 44, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
-    weight: 0.5, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 2, hoursWorked: 1, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. In soft violet-grey tones with white and earthy speckled details, it carries a refined and sophisticated presence.`,
     images: ['images/portavela-malva-01.png','images/portavela-malva-02.png'],
@@ -221,11 +221,11 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   gaze: {
     id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 62, fragile: true,
+    price: 48, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
-    weight: 0.5, productionCost: 3, hoursWorked: 3, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 2, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece captures a luminous gaze emerging from a deep, night-blue face, surrounded by golden petals. The eyes are alert and alive, as if quietly tracing every detail of the world around them. It speaks of a perception that goes beyond seeing.`,
     images: ['images/justhere-01.png','images/justhere-02.png','images/justhere-03.png'],
@@ -234,11 +234,11 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   heartandfox: {
     id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available',
-    price: 62, fragile: true,
+    price: 48, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
-    weight: 0.5, productionCost: 3, hoursWorked: 3, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 2.1, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
@@ -405,7 +405,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   newman: {
     id: 'newman', name: 'A New Man', subtitle: 'guardian of inner space',
     category: ['guardians'], status: 'available',
-    price: 195, fragile: true,
+    price: 146, fragile: true,
     dims: { w: 16, h: 35, d: 18 },
     weight: 3.0, productionCost: 10, hoursWorked: 8, packingEfficiency: 0,
     materials: 'Ceramic, textile, acrylic details, semi-matte varnish',
@@ -418,6 +418,35 @@ For indoor use only.`,
       'images/newman-01.png','images/newman-02.png','images/newman-03.png',
       'images/newman-04.png','images/newman-05.png','images/newman-06.png',
       'images/newman-07.png',
+    ],
+  },
+
+
+  'snake-heart-flam-1': {
+    id: 'snake-heart-flam-1', name: 'Snake Heart Flam 1', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'sold',
+    price: 48, fragile: true,
+    dims: { w: 20, h: 20, d: 4 },
+    weight: 0.5, packingEfficiency: 0.25,
+    productionCost: 2, hoursWorked: 1.7,
+    materials: 'Ceramic, bright glaze, underglazes, textile and metal details',
+    description: `A vivid wall piece combining the symbolic force of the snake with the warmth of the heart and the energy of flame. Part of the Wall Art collection.`,
+    images: [
+      'images/snakeheartflam-01.png','images/snakeheartflam-02.png',
+    ],
+  },
+
+  'bright-star-1': {
+    id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'available',
+    price: 48, fragile: true,
+    dims: { w: 23, h: 40, d: 2 },
+    weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
+    productionCost: 3, hoursWorked: 2,
+    materials: 'Ceramic, bright glaze, underglazes and textile details',
+    description: `A luminous wall piece from the Wall Art collection. Bright glazes and textile details create a piece that catches light and holds attention.`,
+    images: [
+      'images/brightstar-01.png','images/brightstar-02.png',
     ],
   },
 
@@ -460,7 +489,7 @@ const PRODUCT_ORDER = [
   'ariadna','zaira','juana','mara','lunar','marina','salamanca','trina','amalia',
   'carnival','traveler','gibran','totem',
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
-  'newman','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
+  'newman','snake-heart-flam-1','bright-star-1','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
 ];
 
 // ── Dynamic sort order ──────────────────────────────────────────
