@@ -143,11 +143,11 @@
 
     if (p.dims) {
       const d = p.dims;
-      let dimsStr = `${d.w} W × ${d.h} H × ${d.d} D cm`;
-      if (p.dimsFramed) {
-        const f = p.dimsFramed;
-        dimsStr += ` (framed: ${f.w} W × ${f.h} H × ${f.d} D cm)`;
-      }
+      // Build dimension string — skip D if 0 (flat paper/canvas works)
+      let dimsStr = d.d > 0
+        ? `${d.w} W × ${d.h} H × ${d.d} D cm`
+        : `${d.w} W × ${d.h} H cm`;
+      if (p.gsm) dimsStr += ` · ${p.gsm} gsm`;
       if (p.dimsCompact) {
         const c = p.dimsCompact;
         dimsStr += ` / central figure: ${c.w} W × ${c.h} H × ${c.d} D cm`;
@@ -161,9 +161,20 @@
       ? setSpec('pm-spec-weight', 'Weight', `${p.weight} kg`)
       : hide('pm-spec-weight');
 
-    typeof p.framed === 'boolean'
-      ? setSpec('pm-spec-framed', 'Framing', p.framed ? 'Framed' : 'Unframed')
-      : hide('pm-spec-framed');
+    if (p.framed) {
+      const framingMap = { 'framed': 'Framed', 'unframed': 'Unframed', 'stretched canvas': 'Stretched canvas' };
+      let framingLabel = framingMap[p.framed] || p.framed;
+      if (p.framed === 'framed' && p.dimsFramed) {
+        const f = p.dimsFramed;
+        const fStr = f.d > 0
+          ? `${f.w} W × ${f.h} H × ${f.d} D cm`
+          : `${f.w} W × ${f.h} H cm`;
+        framingLabel += ` (${fStr})`;
+      }
+      setSpec('pm-spec-framed', 'Framing', framingLabel);
+    } else {
+      hide('pm-spec-framed');
+    }
 
     p.dimsNote
       ? setSpec('pm-spec-dims-note', '', `⚠ ${p.dimsNote}`)

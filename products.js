@@ -165,7 +165,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
     category: ['viajeros'], status: 'available', wholesaleAvailable: true,
     price: 93, fragile: true,
     dims: { w: 18.5, h: 17.5, d: 16 },
-    weight: 1.1, productionCost: 10, hoursWorked: 5, packingEfficiency: 0.45,
+    weight: 1.1, productionCost: 7, hoursWorked: 4, packingEfficiency: 0.45,
     materials: 'Ceramic and textile',
     description: `The Silent Traveler does not journey alone; he moves in harmony with his companion, his steadfast support. Together, they traverse the world — their world. They seem to have stepped out of a mythological tale, with a touch of Spain perhaps present in the bull, an unconscious expression of cultural ties.
 
@@ -340,7 +340,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 1.2, productionCost: 4, hoursWorked: 2, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
-    images: ['images/wait-01.png'],
+    images: ['images/wait-01.png', 'images/wait-02.png', 'images/wait-03.png', 'images/wait-04.png','images/wait-05.png'],
   },
 
   marea: {
@@ -429,7 +429,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     id: 'floral-dream-1', name: 'Floral Dream 1',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
     price: 157, priceSale: 120, fragile: false,
-    dims: { w: 30, h: 40, d: 2 },
+    dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
+    dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 4, hoursWorked: 5, framed: 'framed', flatPackable: true,
     materials: 'Pencil and ink on paper',
     images: ['images/dibujo-06.png'],
@@ -439,7 +440,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     id: 'floral-dream-2', name: 'Floral Dream 2',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
     price: 157, priceSale: 120, fragile: false,
-    dims: { w: 30, h: 40, d: 2 },
+    dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
+    dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, framed: 'framed', flatPackable: true, productionCost: 4, hoursWorked: 4,
     materials: 'Pencil and ink on paper',
     images: ['images/dibujo-07.png'],
@@ -449,7 +451,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     id: 'master', name: 'Master',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
     price: 127, priceSale: 90, fragile: false,
-    dims: { w: 25, h: 35, d: 2 },
+    dims: { w: 21, h: 14, d: 0 }, gsm: 80,
+    dimsFramed: { w: 30.5, h: 22, d: 1.4 },
     weight: 0.5, productionCost: 4, hoursWorked: 4, framed: 'framed', flatPackable: true,
     materials: 'Pencil and ink on paper',
     images: ['images/dibujo-02.png'],
