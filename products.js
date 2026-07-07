@@ -290,8 +290,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
-    dims: { w: 23, h: 40, d: 1,5 },
-    dimsCompact: { w: 19, h: 19, d: 1,5 },    // central figure (used for shipping)
+    dims: { w: 23, h: 40, d: 1.5 },
+    dimsCompact: { w: 19, h: 19, d: 1.5 },    // central figure (used for shipping)
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
     productionCost: 3, hoursWorked: 2,
     materials: 'Ceramic, bright glaze, underglazes and textile details',
