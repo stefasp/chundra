@@ -142,6 +142,24 @@
     }
     .partner-email:hover { color: #318160; border-color: #318160; }
 
+    .partner-on-demand {
+      display: inline-block;
+      font-size: 0.62rem;
+      background: #f5f3e8;
+      color: #888;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 1px 6px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .partner-card-framing {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin: 0 0 4px;
+    }
+
     @media (max-width: 680px) {
       .partner-card { width: 90%; }
       .partnership-hero h1 { font-size: 2rem; }
@@ -162,12 +180,10 @@
 <section class="partnership-hero">
   <h1>Colaboremos</h1>
   <p>
-    Cada pieza está hecha a mano en Málaga — esculturas de cerámica, cuadros y dibujos
-    que ocupan un lugar propio en una repisa, una pared, un mostrador. Si buscás algo
-    distintivo para tu tienda, hablemos.
+    Cada pieza está hecha a mano — esculturas, decoracion cerámica, cuadros y dibujos. Si buscás algo distintivo para tu tienda, hablemos.
   </p>
   <p class="note">
-    Los precios mostrados son los que te ofrezco a vos, no es el precio final al público. Entrego en persona en Málaga sin costo de envío.
+    Los precios mostrados son los que te ofrezco a vos, no es el precio final al público. Entrego en persona en Málaga o Marbella sin costo de envío.
   </p>
 
   <div class="filter-bar edu-italic" id="partner-filter-bar" style="position: static; transform: none; display: inline-flex; margin-top: 24px;">
@@ -209,12 +225,25 @@
 (function() {
   const gallery = document.getElementById('partner-gallery');
 
+  const FRAMING_LABELS = {
+    'framed': 'Framed', 'unframed': 'Unframed', 'stretched canvas': 'Stretched canvas'
+  };
+  const PAINTING_CATS = ['cuadros', 'dibujo'];
+
   function buildGallery(filter) {
     gallery.innerHTML = '';
-    getSortedProductOrder().forEach(id => {
+
+    // Include sold items if they have wholesaleAvailable
+    const allIds = getSortedProductOrder();
+    // Also get sold items that are wholesale available
+    const soldIds = Object.keys(PRODUCTS).filter(id =>
+      PRODUCTS[id].status === 'sold' && PRODUCTS[id].wholesaleAvailable
+    );
+    const idsToShow = [...new Set([...allIds, ...soldIds])];
+
+    idsToShow.forEach(id => {
       const p = PRODUCTS[id];
       if (!p) return;
-      if (p.status === 'sold') return;
       if (!p.wholesaleAvailable) return;
       if (filter !== 'all' && !p.category?.includes(filter)) return;
 
@@ -227,24 +256,48 @@
       const minPrice = hours > 0 ? Math.round(10 * hours + cost) : 0;
       const wholesalePrice = Math.max(calcPrice, minPrice);
 
+      const isSold = p.status === 'sold';
+      const isPainting = (p.category || []).some(c => PAINTING_CATS.includes(c));
+
+      // Dimensions string
       let dimsStr = '';
       if (p.dims) {
-        const d = p.dimsFramed || p.dims;
-        dimsStr = `${d.w} × ${d.h} × ${d.d} cm`;
+        const d = p.dims;
+        const mainDims = d.d > 0 ? `${d.w} × ${d.h} × ${d.d} cm` : `${d.w} × ${d.h} cm`;
+        dimsStr = mainDims;
+        if (p.gsm) dimsStr += ` · ${p.gsm} gsm`;
+        // Central figure (for wall art colgantes)
+        if (p.dimsCompact) {
+          const c = p.dimsCompact;
+          dimsStr += ` / figure: ${c.w} × ${c.h} cm`;
+        }
+      }
+
+      // Framing string (for paintings/drawings)
+      let framingStr = '';
+      if (isPainting && p.framed) {
+        framingStr = FRAMING_LABELS[p.framed] || p.framed;
+        if (p.framed === 'framed' && p.dimsFramed) {
+          const f = p.dimsFramed;
+          const fDims = f.d > 0 ? `${f.w} × ${f.h} × ${f.d} cm` : `${f.w} × ${f.h} cm`;
+          framingStr += ` (${fDims})`;
+        }
       }
 
       const card = document.createElement('div');
       card.className = 'partner-card';
-      card.innerHTML = `
-        <img class="partner-card-img" src="${p.images[0]}" alt="${p.name}">
+      card.innerHTML = \`
+        <img class="partner-card-img" src="\${p.images[0]}" alt="\${p.name}">
         <div class="partner-card-body">
-          <p class="partner-card-name">${p.name}</p>
-          <p class="partner-card-materials">${p.materials || ''}</p>
-          ${dimsStr ? `<p class="partner-card-dims">${dimsStr}</p>` : ''}
+          \${isSold ? '<span class="partner-on-demand">Made to order</span>' : ''}
+          <p class="partner-card-name">\${p.name}</p>
+          <p class="partner-card-materials">\${p.materials || ''}</p>
+          \${dimsStr ? \`<p class="partner-card-dims">\${dimsStr}</p>\` : ''}
+          \${framingStr ? \`<p class="partner-card-framing">\${framingStr}</p>\` : ''}
           <div class="partner-price-block">
-            <span class="partner-my-price">€${wholesalePrice}</span>
+            <span class="partner-my-price">€\${wholesalePrice}</span>
           </div>
-        </div>`;
+        </div>\`;
       gallery.appendChild(card);
     });
   }

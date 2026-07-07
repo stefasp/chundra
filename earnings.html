@@ -135,6 +135,32 @@
     .negative { color: #d11040; font-weight: 600; }
     .na { color: #ccc; }
 
+    /* Retail availability dot */
+    .avail-dot {
+      display: inline-block;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .avail-dot.yes { background: #618764; }
+    .avail-dot.no  { background: #ccc; }
+
+    /* Min-price override highlight */
+    .min-override {
+      font-size: 0.75rem;
+      color: #618764;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+    /* Partner margin % */
+    .partner-pct {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-left: 4px;
+    }
+
     .group-header td {
       background: #e8e5d4 !important;
       font-weight: 700;
@@ -182,8 +208,8 @@
         <th class="num">Retail price</th>
         <th class="num">Profit (retail)</th>
         <th class="num">Profit / hour</th>
-        <th class="num border-left">Partner price</th>
-        <th class="num">Profit / hour (partner)</th>
+        <th class="num border-left">Partner price <span style="font-weight:300;font-size:0.7em">(% to partner)</span></th>
+        <th class="num">Retail avail. · Profit / hour (partner)</th>
       </tr>
     </thead>
     <tbody id="earnings-tbody"></tbody>
@@ -239,8 +265,16 @@
 
       const profitRetail = retailPrice - cost;
       const profitPerHour = hours ? profitRetail / hours : null;
-      const partnerPrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
-      const profitPartner = partnerPrice - cost;
+      const cost = p.productionCost || 0;
+      const hours = p.hoursWorked || 0;
+      const calcPartnerPrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
+      const minPartnerPrice  = hours > 0 ? Math.round(10 * hours + cost) : 0;
+      const partnerPrice     = Math.max(calcPartnerPrice, minPartnerPrice);
+      const usedMin          = minPartnerPrice > calcPartnerPrice;
+      const profitPartner    = partnerPrice - cost;
+      // % of the final partner price that goes to the partner (their margin = retailPrice - partnerPrice over retailPrice)
+      const partnerPct       = retailPrice > 0 ? Math.round((retailPrice - partnerPrice) / retailPrice * 100) : 0;
+      const isRetailAvail    = !!p.wholesaleAvailable;
 
       totalProfit += profitRetail;
       totalPartnerProfit += profitPartner;
@@ -257,8 +291,14 @@
         <td class="num">€${retailPrice}</td>
         <td class="num">${fmt(profitRetail)}</td>
         <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
-        <td class="num border-left">€${partnerPrice}</td>
-        <td class="num">${profitPartnerPerHour !== null ? fmt(profitPartnerPerHour) + '/h' : '<span class="na">—</span>'}</td>
+        <td class="num border-left">€${partnerPrice} <span class="partner-pct">(${partnerPct}% theirs)</span></td>
+        <td class="num">
+          <span class="avail-dot ${isRetailAvail ? 'yes' : 'no'}"></span>${profitPartnerPerHour !== null
+            ? (usedMin
+                ? `<span class="na" style="text-decoration:line-through">${fmt(profitPartnerPerHour)}/h</span> <span class="min-override">€10/h min</span>`
+                : fmt(profitPartnerPerHour) + '/h')
+            : '<span class="na">—</span>'}
+        </td>
       `;
       tbody.appendChild(tr);
     });
