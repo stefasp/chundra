@@ -167,8 +167,7 @@
     distintivo para tu tienda, hablemos.
   </p>
   <p class="note">
-    Los precios mostrados son los que te ofrezco a vos. El precio de venta sugerido al público es el original de cada pieza.
-    Entrego en persona en Málaga sin costo de envío.
+    Los precios mostrados son los que te ofrezco a vos, no el precio final al publico. Entrego en persona en Málaga sin costo de envío.
   </p>
 
   <div class="filter-bar edu-italic" id="partner-filter-bar" style="position: static; transform: none; display: inline-flex; margin-top: 24px;">
@@ -180,6 +179,7 @@
     <button class="filter-btn" data-filter="viajeros">Travelers</button>
     <button class="filter-btn" data-filter="cuadros">Paintings</button>
     <button class="filter-btn" data-filter="dibujo">Drawings</button>
+    <button class="filter-btn" data-filter="ritual" data-tooltip="Art accompanied by a reflective practice">Ritual Pieces</button>
   </div>
 </section>
 
@@ -242,7 +242,6 @@
           <p class="partner-card-materials">${p.materials || ''}</p>
           ${dimsStr ? `<p class="partner-card-dims">${dimsStr}</p>` : ''}
           <div class="partner-price-block">
-            <span class="partner-price-label">Tu precio</span>
             <span class="partner-my-price">€${wholesalePrice}</span>
           </div>
         </div>`;
