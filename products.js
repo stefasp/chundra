@@ -432,7 +432,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 4, hoursWorked: 5, framed: 'framed', flatPackable: true,
-    materials: 'Pencil and ink on paper',
+    materials: 'Pencil and ink on paper 180 gsm',
     images: ['images/dibujo-06.png'],
   },
 
@@ -443,7 +443,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, framed: 'framed', flatPackable: true, productionCost: 4, hoursWorked: 4,
-    materials: 'Pencil and ink on paper',
+    materials: 'Pencil and ink on paper 180 gsm',
     images: ['images/dibujo-07.png'],
   },
 
@@ -454,7 +454,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 21, h: 14, d: 0 }, gsm: 80,
     dimsFramed: { w: 30.5, h: 22, d: 1.4 },
     weight: 0.5, productionCost: 4, hoursWorked: 4, framed: 'framed', flatPackable: true,
-    materials: 'Pencil and ink on paper',
+    materials: 'Pencil and ink on paper 80 gsm',
     images: ['images/dibujo-02.png'],
   },
 
