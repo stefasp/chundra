@@ -23,7 +23,7 @@ const PRODUCTS = {
   ariadna: {
     id: 'ariadna', name: 'Ariadna', subtitle: 'a quiet enigma',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 90, fragile: true,
+    price: 152, priceSale: 90, fragile: true,
     dims: { w: 17, h: 32.5, d: 16.5 },
     weight: 1.42, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.62,
     materials: 'Mixed — ceramic, acrylic paint, textile, matte varnish',
@@ -47,7 +47,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 116, priceSale: 103, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
-    weight: 0.96, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.50,
+    weight: 0.96, productionCost: 7, hoursWorked: 5, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
     description: `Zaira seems to move guided by her gut feelings.
 
@@ -90,7 +90,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   lunar: {
     id: 'lunar', name: 'Lunar Guardian', subtitle: 'movement of life and femininity',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 87, fragile: true,
+    price: 139, priceSale: 87, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, productionCost: 6, hoursWorked: 4, packingEfficiency: 0.65,
     materials: 'Ceramic',
@@ -162,7 +162,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 109, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
-    weight: 1.45, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.30,
+    weight: 1.45, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `Amalia represents conscious serenity, the wisdom attained when we stop reacting and start observing. Her face conveys temperance, balance, and inner clarity. This piece invites you to pause, reconnect with calm, and remember that the deepest strength arises from lucid silence.
 
@@ -209,9 +209,9 @@ This piece is a reminder that the essential thing is not to accumulate places, b
   totem: {
     id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life',
     category: ['lamparas'], status: 'available', wholesaleAvailable: true,
-    price: 122, priceSale: 104, fragile: true,
+    price: 132, priceSale: 104, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
-    weight: 1.35, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.20,
+    weight: 1.35, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic',
     description: `This piece speaks of the cycle of life. The figures could represent one person — youth and age — or two, reflecting how life is passed from one to another. It's a reminder that we don't completely leave when we go; we leave parts of ourselves in those we love, in those who love us, and in the things we build and leave behind.
 
@@ -227,7 +227,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['macetas'], status: 'available', wholesaleAvailable: true,
     price: 178, priceSale: 120, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
-    weight: 1.6, productionCost: 10, hoursWorked: 8.5, packingEfficiency: 0.30,
+    weight: 1.6, productionCost: 10, hoursWorked: 7, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `This piece embodies the strength of encounters and the transformations that occur when they happen. Everything is intertwined, all vital energies are connected, the cycles that pass through us, and the beauty that arises from chaos. A presence that inhabits the space and fills it with inner movement.`,
     images: ['images/rito-01.png','images/rito-02.png','images/rito-03.png','images/rito-04.png','images/rito-05.png','images/rito-06.png', 'images/rito-07.png', 'images/rito-08.png'],

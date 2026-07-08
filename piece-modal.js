@@ -81,6 +81,17 @@
   function openModal(productId) {
     const p = PRODUCTS[productId];
     if (!p) return;
+
+    // GA4: track product view
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'view_item', {
+        item_id: productId,
+        item_name: p.name,
+        item_category: (p.category || []).join('/'),
+        price: p.priceSale ?? p.price,
+        currency: 'EUR',
+      });
+    }
     currentProduct = p;
     images = p.images || [];
     currentSlide = 0;
@@ -348,9 +359,20 @@
 
   cartBtn.addEventListener('click', () => {
     if (!currentProduct || currentProduct.status === 'sold') return;
-    Cart.hasItem(currentProduct.id)
-      ? Cart.removeItem(currentProduct.id)
-      : Cart.addItem(currentProduct.id);
+    if (Cart.hasItem(currentProduct.id)) {
+      Cart.removeItem(currentProduct.id);
+    } else {
+      Cart.addItem(currentProduct.id);
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'add_to_cart', {
+          item_id: currentProduct.id,
+          item_name: currentProduct.name,
+          item_category: (currentProduct.category || []).join('/'),
+          price: currentProduct.priceSale ?? currentProduct.price,
+          currency: 'EUR',
+        });
+      }
+    }
     updateCartBtn();
   });
 

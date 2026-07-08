@@ -135,6 +135,11 @@
     .negative { color: #d11040; font-weight: 600; }
     .na { color: #ccc; }
 
+    .sale-tag {
+      font-size: 0.72rem;
+      color: #d11040;
+      margin-left: 5px;
+    }
     /* Retail availability dot */
     .avail-dot {
       display: inline-block;
@@ -208,7 +213,7 @@
         <th class="num">Retail PVP</th>
         <th class="num">Retail Profit</th>
         <th class="num">Retail Profit / hour</th>
-        <th class="num border-left">Partner PVP</th>
+        <th class="num border-left">Partner PVP - 67%</th>
         <th class="num">Partner price</th>
         <th class="num">Profit / hour (partner)</th>
       </tr>
@@ -275,8 +280,11 @@
       const cost = p.productionCost || 0;
       const hours = p.hoursWorked || 0;
 
-      const profitRetail = retailPrice - cost;
-      const profitPerHour = hours ? profitRetail / hours : null;
+      const salePrice      = p.priceSale || null;
+      const profitRetail   = retailPrice - cost;
+      const profitPerHour  = hours ? profitRetail / hours : null;
+      const profitSale     = salePrice ? salePrice - cost : null;
+      const profitPerHourSale = (salePrice && hours) ? profitSale / hours : null;
 
       const calcPartnerPrice         = Math.round(retailPrice / WHOLESALE_DIVISOR);
       const minPartnerPrice          = hours > 0 ? Math.round(10 * hours + cost) : 0;
@@ -304,10 +312,10 @@
         <td class="piece-name"><img class="piece-img" src="${p.images[0]}" alt="">${p.name}</td>
         <td class="num">€${cost}</td>
         <td class="num border-right">${hours ?? '<span class="na">—</span>'}</td>
-        <td class="num">€${retailPrice}</td>
-        <td class="num">${fmt(profitRetail)}</td>
-        <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
-        <td class="num border-left">€${partnerPVP} <span class="partner-pct">(${partnerPVPpct}% theirs)</span></td>
+        <td class="num">€${retailPrice}${salePrice ? ' <span class="sale-tag">€' + salePrice + '</span>' : ''}</td>
+        <td class="num">${fmt(profitRetail)}${profitSale !== null ? ' <span class="sale-tag">' + fmt(profitSale) + '</span>' : ''}</td>
+        <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}${profitPerHourSale !== null ? ' <span class="sale-tag">' + fmt(profitPerHourSale) + '/h</span>' : ''}</td>
+        <td class="num border-left">€${partnerPVP}</td>
         <td class="num">€${partnerPrice}</td>
         <td class="num">
           <span class="avail-dot ${isRetailAvail ? 'yes' : 'no'}"></span>${profitPartnerPerHourCalc !== null
