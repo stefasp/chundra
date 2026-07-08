@@ -70,7 +70,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 66, fragile: true,
     dims: { w: 12.5, h: 15, d: 3 },
-    weight: 0.36, productionCost: 2, hoursWorked: 3, packingEfficiency: 0.30,
+    weight: 0.36, productionCost: 2, hoursWorked: 2.5, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `Sharp and alert. This piece celebrates the voracity to reach dreams and the determination to conquer what we desire. It is not softness; it is drive, energy, and power concentrated in every action.`,
     images: ['images/juana-01.png', 'images/juana-02.png', 'images/juana-03.png', 'images/juana-04.png'],
@@ -81,7 +81,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 66, fragile: true,
     dims: { w: 13.5, h: 14, d: 4 },
-    weight: 0.45, productionCost: 2, hoursWorked: 3, packingEfficiency: 0.30,
+    weight: 0.45, productionCost: 2, hoursWorked: 2.5, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `A symbol of balance between nesting and flying. The woman, embraced by the bird's wing, reminds us that we can put down roots, care for others, and create harmony without losing the freedom to spread our wings. A piece that invites stillness, care, and expansion.`,
     images: ['images/mara-01.png','images/mara-02.png','images/mara-03.png', 'images/mara-04.png'],
@@ -160,7 +160,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
   amalia: {
     id: 'amalia', name: 'Guardian Amalia', subtitle: 'conscious serenity',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 157, priceSale: 123, fragile: true,
+    price: 109, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
     weight: 1.45, productionCost: 10, hoursWorked: 6, packingEfficiency: 0.30,
     materials: 'Ceramic',
@@ -196,7 +196,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
     category: ['viajeros'], status: 'available', wholesaleAvailable: true,
     price: 78, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
-    weight: 0.35, productionCost: 3, hoursWorked: 2.5, packingEfficiency: 0.20,
+    weight: 0.35, productionCost: 3, hoursWorked: 2.8, packingEfficiency: 0.20,
     materials: 'Ceramic',
     description: `Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences "for the feed," but often forgetting what truly matters. The deepest memories don't come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.
 
@@ -442,7 +442,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'floral-dream-1': {
     id: 'floral-dream-1', name: 'Floral Dream 1',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
-    price: 120, priceSale: 120, fragile: false,
+    price: 120, priceSale: 90, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 4, hoursWorked: 4, framed: 'framed', flatPackable: true,
@@ -453,7 +453,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'floral-dream-2': {
     id: 'floral-dream-2', name: 'Floral Dream 2',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
-    price: 90, priceSale: 120, fragile: false,
+    price: 90, priceSale: 70, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, framed: 'framed', flatPackable: true, productionCost: 4, hoursWorked: 3,
@@ -464,7 +464,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   master: {
     id: 'master', name: 'Master',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
-    price: 127, priceSale: 90, fragile: false,
+    price: 70, priceSale: 60, fragile: false,
     dims: { w: 21, h: 14, d: 0 }, gsm: 80,
     dimsFramed: { w: 30.5, h: 22, d: 1.4 },
     weight: 0.5, productionCost: 4, hoursWorked: 3, framed: 'framed', flatPackable: true,

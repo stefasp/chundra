@@ -236,10 +236,21 @@
   function buildTable(filter) {
     tbody.innerHTML = '';
 
-    const ids = getSortedProductOrder().filter(id => {
+    // Sort within each group by hours worked (ascending)
+    const allSorted = getSortedProductOrder();
+    const sculptureIds = allSorted.filter(id => {
       const p = PRODUCTS[id];
-      if (!p || p.status === 'sold') return false;
-      if (p.productionCost === undefined) return false; // skip pieces without cost data
+      return p && !isPainting(p) && p.status !== 'sold' && p.productionCost !== undefined;
+    }).sort((a, b) => (PRODUCTS[a].hoursWorked || 0) - (PRODUCTS[b].hoursWorked || 0));
+    const paintingIds = allSorted.filter(id => {
+      const p = PRODUCTS[id];
+      return p && isPainting(p) && p.status !== 'sold' && p.productionCost !== undefined;
+    }).sort((a, b) => (PRODUCTS[a].hoursWorked || 0) - (PRODUCTS[b].hoursWorked || 0));
+    const sortedByHours = [...sculptureIds, ...paintingIds];
+
+    const ids = sortedByHours.filter(id => {
+      const p = PRODUCTS[id];
+      if (!p) return false;
       if (filter === 'sculptures') return !isPainting(p);
       if (filter === 'paintings') return isPainting(p);
       return true;
