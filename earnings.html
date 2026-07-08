@@ -104,13 +104,13 @@
       position: sticky;
       top: 0;
     }
-    .earnings-table thead th.num { text-align: right; }
+    .earnings-table thead th.num { text-align: left; }
     .earnings-table tbody td {
       padding: 9px 12px;
       border-bottom: 1px solid #eee;
       color: #444;
     }
-    .earnings-table tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .earnings-table tbody td.num { text-align: left; font-variant-numeric: tabular-nums; }
     .earnings-table .border-right { border-right: 2px solid #c8c5b0; }
     .earnings-table .border-left { border-left: 2px solid #c8c5b0; }
     .earnings-table thead th.border-right { border-right: 2px solid #463370; }
@@ -131,7 +131,7 @@
       margin-right: 8px;
       vertical-align: middle;
     }
-    .positive { color: #318160; font-weight: 600; }
+    .positive { font-weight: 600; }
     .negative { color: #d11040; font-weight: 600; }
     .na { color: #ccc; }
 
@@ -144,7 +144,7 @@
       vertical-align: middle;
     }
     .avail-dot.yes { background: #618764; }
-    .avail-dot.no  { background: #ccc; }
+    .avail-dot.no  { background: #ff6262; }
 
     /* Min-price override highlight */
     .min-override {
@@ -209,7 +209,7 @@
         <th class="num">Profit (retail)</th>
         <th class="num">Profit / hour</th>
         <th class="num border-left">Partner price <span style="font-weight:300;font-size:0.7em">(% to partner)</span></th>
-        <th class="num">Retail avail. · Profit / hour (partner)</th>
+        <th class="num">Profit / hour (partner)</th>
       </tr>
     </thead>
     <tbody id="earnings-tbody"></tbody>
@@ -260,18 +260,19 @@
       }
 
       const retailPrice = p.price; // list price, not discounted
-      const cost = p.productionCost;
-      const hours = p.hoursWorked;
+      const cost = p.productionCost || 0;
+      const hours = p.hoursWorked || 0;
 
       const profitRetail = retailPrice - cost;
       const profitPerHour = hours ? profitRetail / hours : null;
-      const cost = p.productionCost || 0;
-      const hours = p.hoursWorked || 0;
-      const calcPartnerPrice = Math.round(retailPrice / WHOLESALE_DIVISOR);
-      const minPartnerPrice  = hours > 0 ? Math.round(10 * hours + cost) : 0;
-      const partnerPrice     = Math.max(calcPartnerPrice, minPartnerPrice);
-      const usedMin          = minPartnerPrice > calcPartnerPrice;
-      const profitPartner    = partnerPrice - cost;
+
+      const calcPartnerPrice         = Math.round(retailPrice / WHOLESALE_DIVISOR);
+      const minPartnerPrice          = hours > 0 ? Math.round(10 * hours + cost) : 0;
+      const partnerPrice             = Math.max(calcPartnerPrice, minPartnerPrice);
+      const usedMin                  = minPartnerPrice > calcPartnerPrice;
+      const profitPartnerCalc        = calcPartnerPrice - cost;
+      const profitPartnerPerHourCalc = hours ? profitPartnerCalc / hours : null;
+      const profitPartner            = partnerPrice - cost;
       // % of the final partner price that goes to the partner (their margin = retailPrice - partnerPrice over retailPrice)
       const partnerPct       = retailPrice > 0 ? Math.round((retailPrice - partnerPrice) / retailPrice * 100) : 0;
       const isRetailAvail    = !!p.wholesaleAvailable;
@@ -293,11 +294,11 @@
         <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
         <td class="num border-left">€${partnerPrice} <span class="partner-pct">(${partnerPct}% theirs)</span></td>
         <td class="num">
-          <span class="avail-dot ${isRetailAvail ? 'yes' : 'no'}"></span>${profitPartnerPerHour !== null
+          <span class="avail-dot ${isRetailAvail ? 'yes' : 'no'}"></span>${profitPartnerPerHourCalc !== null
             ? (usedMin
-                ? `<span class="na" style="text-decoration:line-through">${fmt(profitPartnerPerHour)}/h</span> <span class="min-override">€10/h min</span>`
-                : fmt(profitPartnerPerHour) + '/h')
-            : '<span class="na">—</span>'}
+                ? '<span class=\"na\" style=\"text-decoration:line-through\">' + fmt(profitPartnerPerHourCalc) + '/h</span> <span class=\"min-override\">€10/h min</span>'
+                : fmt(profitPartnerPerHourCalc) + '/h')
+            : '<span class=\"na\">—</span>'}
         </td>
       `;
       tbody.appendChild(tr);

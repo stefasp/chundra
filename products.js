@@ -10,7 +10,7 @@ const PRODUCTS = {
   flyingpendant: {
     id: 'flyingpendant', name: 'Flying pendant', subtitle: 'Folk charm',
     category: ['pendants'], status: 'available', wholesaleAvailable: true,
-    price: 20, fragile: true,
+    price: 21, fragile: true,
     dims: { w: 5.5, h: 7, d: 0.5 },
     weight: 0.36, productionCost: 1, hoursWorked: 1.5, packingEfficiency: 0.10,
     materials: 'Ceramic and chain',
@@ -394,7 +394,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   horizons: {
     id: 'horizons', name: 'Inner Horizons',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: false,
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
     price: 329, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, productionCost: 4, hoursWorked: 11, framed: 'unframed', flatPackable: true,
