@@ -205,10 +205,11 @@
         <th>Piece</th>
         <th class="num">Prod. cost</th>
         <th class="num border-right">Hours</th>
-        <th class="num">Retail price</th>
-        <th class="num">Profit (retail)</th>
-        <th class="num">Profit / hour</th>
-        <th class="num border-left">Partner price <span style="font-weight:300;font-size:0.7em">(% to partner)</span></th>
+        <th class="num">Retail PVP</th>
+        <th class="num">Retail Profit</th>
+        <th class="num">Retail Profit / hour</th>
+        <th class="num border-left">Partner PVP</th>
+        <th class="num">Partner price</th>
         <th class="num">Profit / hour (partner)</th>
       </tr>
     </thead>
@@ -254,7 +255,7 @@
       if (group !== lastGroup && filter === 'all') {
         const tr = document.createElement('tr');
         tr.className = 'group-header';
-        tr.innerHTML = `<td colspan="8">${group}</td>`;
+        tr.innerHTML = `<td colspan="9">${group}</td>`;
         tbody.appendChild(tr);
         lastGroup = group;
       }
@@ -275,6 +276,9 @@
       const profitPartner            = partnerPrice - cost;
       // % of the final partner price that goes to the partner (their margin = retailPrice - partnerPrice over retailPrice)
       const partnerPct       = retailPrice > 0 ? Math.round((retailPrice - partnerPrice) / retailPrice * 100) : 0;
+      // Partner PVP: they keep 67%, so our price = 33% of their PVP → PVP = partnerPrice / 0.33
+      const partnerPVP       = Math.round(partnerPrice / 0.33);
+      const partnerPVPpct    = Math.round((partnerPVP - partnerPrice) / partnerPVP * 100);
       const isRetailAvail    = !!p.wholesaleAvailable;
 
       totalProfit += profitRetail;
@@ -292,7 +296,8 @@
         <td class="num">€${retailPrice}</td>
         <td class="num">${fmt(profitRetail)}</td>
         <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}</td>
-        <td class="num border-left">€${partnerPrice} <span class="partner-pct">(${partnerPct}% theirs)</span></td>
+        <td class="num border-left">€${partnerPVP} <span class="partner-pct">(${partnerPVPpct}% theirs)</span></td>
+        <td class="num">€${partnerPrice}</td>
         <td class="num">
           <span class="avail-dot ${isRetailAvail ? 'yes' : 'no'}"></span>${profitPartnerPerHourCalc !== null
             ? (usedMin
