@@ -211,7 +211,6 @@
         <th class="num">Prod. cost</th>
         <th class="num border-right">Hours</th>
         <th class="num">Retail PVP</th>
-        <th class="num">Retail Profit</th>
         <th class="num">Retail Profit / hour</th>
         <th class="num border-left">Partner PVP - 67%</th>
         <th class="num">Partner price</th>
@@ -271,7 +270,7 @@
       if (group !== lastGroup && filter === 'all') {
         const tr = document.createElement('tr');
         tr.className = 'group-header';
-        tr.innerHTML = `<td colspan="9">${group}</td>`;
+        tr.innerHTML = `<td colspan="8">${group}</td>`;
         tbody.appendChild(tr);
         lastGroup = group;
       }
@@ -313,7 +312,6 @@
         <td class="num">€${cost}</td>
         <td class="num border-right">${hours ?? '<span class="na">—</span>'}</td>
         <td class="num">€${retailPrice}${salePrice ? ' <span class="sale-tag">€' + salePrice + '</span>' : ''}</td>
-        <td class="num">${fmt(profitRetail)}${profitSale !== null ? ' <span class="sale-tag">' + fmt(profitSale) + '</span>' : ''}</td>
         <td class="num">${profitPerHour !== null ? fmt(profitPerHour) + '/h' : '<span class="na">—</span>'}${profitPerHourSale !== null ? ' <span class="sale-tag">' + fmt(profitPerHourSale) + '/h</span>' : ''}</td>
         <td class="num border-left">€${partnerPVP}</td>
         <td class="num">€${partnerPrice}</td>
