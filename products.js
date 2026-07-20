@@ -494,6 +494,32 @@ For indoor use only.`,
   },
 
 
+
+  'night-owl': {
+    id: 'night-owl', name: 'Night Owl', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'available',
+    price: 48, fragile: true,
+    dims: { w: 19, h: 31, d: 3 },
+    dimsCompact: { w: 19, h: 19, d: 3 },
+    weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
+    productionCost: 3, hoursWorked: 3,
+    wholesaleAvailable: true,
+    materials: 'Ceramic, bright glaze, underglazes and textile details',
+    images: ['images/nightowl-01.png', 'images/nightowl-02.png', 'images/nightowl-03.png', 'images/nightowl-04.png'],
+  },
+
+  'the-eye': {
+    id: 'the-eye', name: 'The Eye', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'available',
+    price: 42, fragile: true,
+    dims: { w: 19, h: 19, d: 1.5 },
+    weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
+    productionCost: 3, hoursWorked: 3,
+    wholesaleAvailable: true,
+    materials: 'Ceramic, bright glaze, underglazes, metal and textile details',
+    images: ['images/eye-01.png', 'images/eye-02.png', 'images/eye-03.png', 'images/eye-04.png', 'images/eye-05.png'],
+  },
+
   // ─── VENDIDO ───────────────────────────────────────────────────
 
 
@@ -533,7 +559,7 @@ const PRODUCT_ORDER = [
   'ariadna','zaira','juana','mara','lunar','marina','salamanca','trina','amalia',
   'carnival','traveler','gibran','totem',
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
-  'newman','snake-heart-flam-1','bright-star-1','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
+  'newman','snake-heart-flam-1','night-owl','the-eye','bright-star-1','floral-dream-1','floral-dream-2','master','breathingdeeply','amazona',
 ];
 
 // ── Dynamic sort order ──────────────────────────────────────────
