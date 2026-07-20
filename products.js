@@ -511,7 +511,7 @@ For indoor use only.`,
   'the-eye': {
     id: 'the-eye', name: 'The Eye', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true, wholesaleAvailable: true,
-    price: 42, fragile: true,
+    price: 48, fragile: true,
     dims: { w: 19, h: 19, d: 1.5 },
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
     productionCost: 3, hoursWorked: 3,
