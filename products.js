@@ -505,7 +505,7 @@ For indoor use only.`,
     productionCost: 3, hoursWorked: 3,
     wholesaleAvailable: true,
     materials: 'Ceramic, bright glaze, underglazes and textile details',
-    images: ['images/nightowl-01.png', 'images/nightowl-02.png', 'images/nightowl-03.png', 'images/nightowl-04.png'],
+    images: ['images/nightOwl-01.png', 'images/nightOwl-02.png', 'images/nightOwl-03.png', 'images/nightOwl-04.png'],
   },
 
   'the-eye': {
