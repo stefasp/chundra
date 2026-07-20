@@ -497,7 +497,7 @@ For indoor use only.`,
 
   'night-owl': {
     id: 'night-owl', name: 'Night Owl', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 19, h: 31, d: 3 },
     dimsCompact: { w: 19, h: 19, d: 3 },
@@ -510,7 +510,7 @@ For indoor use only.`,
 
   'the-eye': {
     id: 'the-eye', name: 'The Eye', subtitle: 'wall art collection',
-    category: ['wallart'], status: 'available',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true, wholesaleAvailable: true,
     price: 42, fragile: true,
     dims: { w: 19, h: 19, d: 1.5 },
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
@@ -525,7 +525,7 @@ For indoor use only.`,
 
   breathingdeeply: {
     id: 'breathingdeeply', name: 'Breathing Deeply', subtitle: 'Silence is part of music',
-    category: ['macetas'], status: 'sold',
+    category: ['macetas'], status: 'sold', wholesaleAvailable: true,
     price: 78, fragile: true, productionCost: 10, hoursWorked: 6,
     dims: null,
     weight: null,
@@ -542,7 +542,7 @@ For indoor use only.`,
 
   amazona: {
     id: 'amazona', name: 'Amazona', subtitle: 'cosmic feminine mystery',
-    category: ['macetas'], status: 'sold',
+    category: ['macetas'], status: 'sold',  wholesaleAvailable: true,
     price: 97, fragile: true,
     dims: { w: 18, h: 15.5, d: 18 },
     weight: 1.28, productionCost: 10, hoursWorked: 8,
