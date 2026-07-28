@@ -13,7 +13,7 @@ const PRODUCTS = {
     price: 21, fragile: true,
     dims: { w: 5.5, h: 7, d: 0.5 },
     weight: 0.36, productionCost: 1, hoursWorked: 1, packingEfficiency: 0.10,
-    materials: 'Ceramic and chain',
+    materials: 'Ceramic',
     description: `Inspired by contemporary folk aesthetics, this handcrafted ceramic pendant brings a quiet sense of originality to any outfit. Light enough for everyday wear, yet expressive enough to become a signature piece.`,
     images: ['images/flying-01.png', 'images/flying-02.png', 'images/flying-03.png'],
   },
