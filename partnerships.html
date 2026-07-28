@@ -253,12 +253,24 @@
   function buildGallery(filter) {
     gallery.innerHTML = '';
 
-    // Collect available + sold-but-wholesale-available products
-    const baseIds = getSortedProductOrder();
-    const soldIds = Object.keys(PRODUCTS).filter(id =>
-      PRODUCTS[id] && PRODUCTS[id].status === 'sold' && PRODUCTS[id].wholesaleAvailable
-    );
-    const allIds = [...new Set([...baseIds, ...soldIds])];
+    // Build sorted list: sculptures by price, then paintings by price.
+    // Sold-but-wholesale items slot into their natural position by price, not at the end.
+    const PAINTING_CATS_SORT = ['cuadros', 'dibujo'];
+    function isPaintingSort(p) { return (p.category || []).some(c => PAINTING_CATS_SORT.includes(c)); }
+
+    const allProducts = Object.keys(PRODUCTS).filter(id => {
+      const p = PRODUCTS[id];
+      return p && p.wholesaleAvailable;
+    });
+
+    const sculptures = allProducts
+      .filter(id => !isPaintingSort(PRODUCTS[id]))
+      .sort((a, b) => (PRODUCTS[a].price || 0) - (PRODUCTS[b].price || 0));
+    const paintings = allProducts
+      .filter(id => isPaintingSort(PRODUCTS[id]))
+      .sort((a, b) => (PRODUCTS[a].price || 0) - (PRODUCTS[b].price || 0));
+
+    const allIds = [...sculptures, ...paintings];
 
     allIds.forEach(function(id) {
       const p = PRODUCTS[id];
