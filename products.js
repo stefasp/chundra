@@ -227,7 +227,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['macetas'], status: 'available', wholesaleAvailable: true,
     price: 178, priceSale: 120, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
-    weight: 1.6, productionCost: 10, hoursWorked: 7, packingEfficiency: 0.30,
+    weight: 1.6, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `This piece embodies the strength of encounters and the transformations that occur when they happen. Everything is intertwined, all vital energies are connected, the cycles that pass through us, and the beauty that arises from chaos. A presence that inhabits the space and fills it with inner movement.`,
     images: ['images/rito-01.png','images/rito-02.png','images/rito-03.png','images/rito-04.png','images/rito-05.png','images/rito-06.png', 'images/rito-07.png', 'images/rito-08.png'],
