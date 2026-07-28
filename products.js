@@ -251,10 +251,21 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 44, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
-    weight: 0.5, productionCost: 2, hoursWorked: 1, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 3, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. In soft violet-grey tones with white and earthy speckled details, it carries a refined and sophisticated presence.`,
     images: ['images/portavela-malva-01.png','images/portavela-malva-02.png'],
+  },
+
+  'melted-colors': {
+    id: 'melted-colors', name: 'Melted Colors Candle Holder', subtitle: 'wall art collection',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    price: 44, fragile: true,
+    dims: { w: 14, h: 20, d: 7 },
+    weight: 0.5, productionCost: 3, hoursWorked: 1.5, packingEfficiency: 0.85,
+    materials: 'Ceramic',
+    description: `This piece belongs to the Wall Art collection and is designed with a delicate metal mexican heart. It includes a hall to add a string, allowing the candle holder to be displayed on the wall like a small personal temple of light.`,
+    images: ['images/altarmeltedcolors-01.png'],
   },
 
   gaze: {
