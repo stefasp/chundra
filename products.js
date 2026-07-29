@@ -23,7 +23,7 @@ const PRODUCTS = {
   ariadna: {
     id: 'ariadna', name: 'Ariadna', subtitle: 'a quiet enigma',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 152, priceSale: 90, fragile: true,
+    price: 152, fragile: true,
     dims: { w: 17, h: 32.5, d: 16.5 },
     weight: 1.42, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.62,
     materials: 'Mixed — ceramic, acrylic paint, textile, matte varnish',
@@ -45,7 +45,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 116, priceSale: 103, fragile: true,
+    price: 116, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
     weight: 0.96, productionCost: 7, hoursWorked: 5, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
@@ -90,7 +90,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   lunar: {
     id: 'lunar', name: 'Lunar Guardian', subtitle: 'movement of life and femininity',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 139, priceSale: 87, fragile: true,
+    price: 139, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, productionCost: 6, hoursWorked: 4, packingEfficiency: 0.65,
     materials: 'Ceramic',
@@ -113,7 +113,7 @@ Ritual: Includes a guided exercise to help reconnect with our inner cycles and p
   marina: {
     id: 'marina', name: 'Guardian Marina', subtitle: 'transformative power of depth',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 85, priceSale: 72, fragile: true,
+    price: 85, fragile: true,
     dims: { w: 15, h: 19, d: 12.5 },
     weight: 1.0, productionCost: 10, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic, glass and fabric',
@@ -130,7 +130,7 @@ Ritual: Includes an exercise to help you face challenges or fears, connecting wi
   salamanca: {
     id: 'salamanca', name: 'Guardian Salamanca', subtitle: 'guardian of transition',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 89, priceSale: 76, fragile: true,
+    price: 89, fragile: true,
     dims: { w: 16, h: 18.5, d: 13 },
     weight: 1.0, productionCost: 10, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic, metal and fabric',
@@ -145,7 +145,7 @@ Ritual: Includes an exercise inviting reflection on inherited mandates and consc
   trina: {
     id: 'trina', name: 'Guardian Trina', subtitle: 'the dreams protector',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 89, priceSale: 76, fragile: true,
+    price: 89, fragile: true,
     dims: { w: 10, h: 15, d: 10 },
     weight: 0.56, productionCost: 6, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic and fabric',
@@ -209,7 +209,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
   totem: {
     id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life',
     category: ['lamparas'], status: 'available', wholesaleAvailable: true,
-    price: 132, priceSale: 104, fragile: true,
+    price: 132, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
     weight: 1.35, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic',
@@ -225,7 +225,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   carnival: {
     id: 'carnival', name: 'Carnival Jar', subtitle: 'life cycles',
     category: ['macetas'], status: 'available', wholesaleAvailable: true,
-    price: 178, priceSale: 120, fragile: true,
+    price: 178, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
     weight: 1.6, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
     materials: 'Ceramic',
@@ -371,7 +371,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   marea: {
     id: 'marea', name: 'Marea',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 305, priceSale: 250, fragile: false,
+    price: 305, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
@@ -383,7 +383,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   pivot: {
     id: 'pivot', name: 'Pivot',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 305, priceSale: 250, fragile: false,
+    price: 305,fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
@@ -417,7 +417,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   encuentro: {
     id: 'encuentro', name: 'Encuentros',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 329, priceSale: 270, fragile: false,
+    price: 309, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
     weight: 2.3, productionCost: 4, hoursWorked: 11, framed: 'framed', flatPackable: true,
@@ -453,7 +453,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'floral-dream-1': {
     id: 'floral-dream-1', name: 'Floral Dream 1',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
-    price: 120, priceSale: 90, fragile: false,
+    price: 120, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 6, hoursWorked: 4.5, framed: 'framed', flatPackable: true,
@@ -464,7 +464,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'floral-dream-2': {
     id: 'floral-dream-2', name: 'Floral Dream 2',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
-    price: 90, priceSale: 70, fragile: false,
+    price: 90, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 6, hoursWorked: 3.5, framed: 'framed', flatPackable: true,
@@ -475,7 +475,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   master: {
     id: 'master', name: 'Master',
     category: ['dibujo'], status: 'available', wholesaleAvailable: true,
-    price: 70, priceSale: 60, fragile: false,
+    price: 70, fragile: false,
     dims: { w: 21, h: 14, d: 0 }, gsm: 80,
     dimsFramed: { w: 30.5, h: 22, d: 1.4 },
     weight: 0.5, productionCost: 4, hoursWorked: 3, framed: 'framed', flatPackable: true,

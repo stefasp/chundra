@@ -46,7 +46,7 @@ body {
     z-index: 50;
     left: 0;
     width: 100%;
-    display: block;
+    display: none;
 }
 .marquee-wrapper .marquee {
     display: flex;
