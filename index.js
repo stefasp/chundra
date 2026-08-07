@@ -9,6 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards      = document.querySelectorAll('.card[data-category]');
 
+  const CAT_DESCRIPTIONS = {
+    guardians: {
+      title: "Some objects decorate a space. <br>Others quietly shape the way we move through it.",
+      body: "Each Guardian embodies a human quality — courage, patience, kindness, resilience, curiosity. Chosen with intention, it becomes a gentle daily reminder of the person you want to become. Over time, these small reminders help shape the mindset you bring into your life, one day at a time."
+    },
+    ritual: {
+      title: "A ritual object is completed <br>by the person who lives with it.",
+      body: "Every ritual piece includes a reflective exercise, but its meaning is never predetermined. It emerges through your own thoughts, memories, and intentions. Each piece invite you to take a momento for yourself, pay attention to a specific voice inside of you, and return to the questions that matter most. Over time, they become personal landmarks in your own story."
+    },
+  };
+
+  const catDescEl   = document.getElementById('cat-description');
+  const catDescText = document.getElementById('cat-desc-text');
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
@@ -19,6 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const cats = (card.dataset.category || '').split(' ');
         card.style.display = cats.includes(filter) ? '' : 'none';
       });
+      // Show category description if available
+      if (CAT_DESCRIPTIONS[filter] && catDescEl && catDescText) {
+        const desc = CAT_DESCRIPTIONS[filter];
+        catDescText.innerHTML = `<p class="cat-desc-title">${desc.title}</p><p class="cat-desc-body">${desc.body}</p>`;
+        catDescEl.style.display = 'block';
+      } else if (catDescEl) {
+        catDescEl.style.display = 'none';
+      }
     });
   });
 

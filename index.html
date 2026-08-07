@@ -99,22 +99,23 @@
   <img src="images/logo.png" class="logo" alt="Logo"/>
   <div class="hero-text">
     <img src="images/logo-full.png" class="slogan" alt="Objets with a soul">
-    <p>For the slightly eccentric</p>
+    <p>Art can decorate a home. <br> Meaning can transform it.</p>
     <h2>Ceramics, jewellery &amp; objects designed to interrupt the ordinary.</h2>
   </div>
-  <div class="filter-bar edu-italic">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="wallart">Wall Art</button>
-    <button class="filter-btn" data-filter="pendants">Pendants</button>
-    <button class="filter-btn" data-filter="guardians">Guardians</button>
-    <button class="filter-btn" data-filter="lamparas">Lamps</button>
-    <button class="filter-btn" data-filter="macetas">Pots & Jars</button>
-    <button class="filter-btn" data-filter="viajeros">Travelers</button>
-    <button class="filter-btn" data-filter="cuadros">Paintings</button>
-    <button class="filter-btn" data-filter="dibujo">Drawings</button>
-    <button class="filter-btn" data-filter="ritual" data-tooltip="Art accompanied by a reflective practice">Ritual Pieces</button>
+  <div class="edu-italic filter-bar" id="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ritual">Ritual Pieces</button>
+          <button class="filter-btn" data-filter="guardians">Guardians</button>
+          <button class="filter-btn" data-filter="wallart">Wall Art</button>
+          <button class="filter-btn" data-filter="jewellery">Jewellery</button>
+          <button class="filter-btn" data-filter="functional">Functional</button>
+        </div>
+</section>
 
-</div>
+<section>
+  <div id="cat-description" style="display:none; max-width:640px; margin:0 auto; padding:64px 0px 0px; text-align:center;">
+    <p id="cat-desc-text"></p>
+  </div>
 </section>
 
 <!-- Gallery Section -->
@@ -122,7 +123,7 @@
   <div class="gallery">
 
 
-    <div class="card" data-product-id="flyingpendant" data-category="pendants">
+    <div class="card" data-product-id="flyingpendant" data-category="jewellery">
       <div class="image-container"><img src="images/flying-01.png" alt="bird pendant colorful"></div>
       <div class="details">
         <h3>Pendant Flying</h3>
@@ -268,7 +269,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="gibran" data-category="viajeros">
+    <div class="card" data-product-id="gibran" data-category="guardians">
       <div class="image-container"><img src="images/gibran-01.png" alt="Gibran"></div>
       <div class="details">
         <h3>Traveler Gibran</h3>
@@ -295,7 +296,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="traveler" data-category="viajeros">
+    <div class="card" data-product-id="traveler" data-category="guardians">
       <div class="image-container"><img src="images/traveler-01.png" alt="Silent Traveler"></div>
       <div class="details">
         <h3>The Silent Traveler</h3>
@@ -318,7 +319,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="totem" data-category="lamparas">
+    <div class="card" data-product-id="totem" data-category="functional">
       <div class="image-container"><img src="images/totem-01.png" alt="Totem of Legacy"></div>
       <div class="details">
         <h3>Totem of Legacy</h3>
@@ -341,7 +342,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="carnival" data-category="macetas">
+    <div class="card" data-product-id="carnival" data-category="functional">
       <div class="image-container"><img src="images/rito-01.png" alt="Carnival Jar"></div>
       <div class="details">
         <h3>Carnival Jar</h3>
@@ -364,7 +365,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="bird" data-category="cuadros">
+    <div class="card" data-product-id="bird" data-category="wallart">
       <div class="image-container"><img src="images/small-painting-bird-01.png" alt="Bird"></div>
       <div class="details">
         <h3>Bird</h3>
@@ -373,7 +374,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="seaandforest" data-category="cuadros">
+    <div class="card" data-product-id="seaandforest" data-category="wallart">
       <div class="image-container"><img src="images/small-painting-seeandforest-01.png" alt="Sea and forest"></div>
       <div class="details">
         <h3>Sea and forest</h3>
@@ -382,7 +383,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="thewalk" data-category="cuadros">
+    <div class="card" data-product-id="thewalk" data-category="wallart">
       <div class="image-container"><img src="images/small-painting-thewalk-01.png" alt="The Walk"></div>
       <div class="details">
         <h3>The Walk</h3>
@@ -391,7 +392,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="mistify" data-category="cuadros">
+    <div class="card" data-product-id="mistify" data-category="wallart">
       <div class="image-container"><img src="images/small-painting-mistify-01.png" alt="Mistify"></div>
       <div class="details">
         <h3>Mistify</h3>
@@ -400,7 +401,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="master" data-category="dibujo">
+    <div class="card" data-product-id="master" data-category="wallart">
       <div class="image-container"><img src="images/dibujo-02.png" alt="Master"></div>
       <div class="details">
         <h3>Master</h3>
@@ -414,7 +415,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="floral-dream-2" data-category="dibujo">
+    <div class="card" data-product-id="floral-dream-2" data-category="wallart">
       <div class="image-container"><img src="images/dibujo-07.png" alt="Floral Dream 2"></div>
       <div class="details">
         <h3>Floral Dream 2</h3>
@@ -428,7 +429,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="dreams" data-category="cuadros">
+    <div class="card" data-product-id="dreams" data-category="wallart">
       <div class="image-container"><img src="images/dreams-01.png" alt="Dreams Echo"></div>
       <div class="details">
         <h3>Dreams Echo</h3>
@@ -437,7 +438,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="floral-dream-1" data-category="dibujo">
+    <div class="card" data-product-id="floral-dream-1" data-category="wallart">
       <div class="image-container"><img src="images/dibujo-06.png" alt="Floral Dream 1"></div>
       <div class="details">
         <h3>Floral Dream 1</h3>
@@ -451,7 +452,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="wait" data-category="cuadros">
+    <div class="card" data-product-id="wait" data-category="wallart">
       <div class="image-container"><img src="images/wait-01.png" alt="Wait for me"></div>
       <div class="details">
         <h3>Wait for me</h3>
@@ -460,7 +461,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="marea" data-category="cuadros">
+    <div class="card" data-product-id="marea" data-category="wallart">
       <div class="image-container"><img src="images/marea-01.png" alt="Marea"></div>
       <div class="details">
         <h3>Marea</h3>
@@ -474,7 +475,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="pivot" data-category="cuadros">
+    <div class="card" data-product-id="pivot" data-category="wallart">
       <div class="image-container"><img src="images/pivot-01.png" alt="Pivot"></div>
       <div class="details">
         <h3>Pivot</h3>
@@ -488,7 +489,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="whispers" data-category="cuadros">
+    <div class="card" data-product-id="whispers" data-category="wallart">
       <div class="image-container"><img src="images/whispers-01.png" alt="Whispers of the Deep"></div>
       <div class="details">
         <h3>Whispers of the Deep</h3>
@@ -497,7 +498,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="encuentro" data-category="cuadros">
+    <div class="card" data-product-id="encuentro" data-category="wallart">
       <div class="image-container"><img src="images/encuentros-03.png" alt="Encuentros"></div>
       <div class="details">
         <h3>Encuentros</h3>
@@ -511,7 +512,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="horizons" data-category="cuadros">
+    <div class="card" data-product-id="horizons" data-category="wallart">
       <div class="image-container"><img src="images/horizons-01.png" alt="Inner Horizons"></div>
       <div class="details">
         <h3>Inner Horizons</h3>
@@ -520,7 +521,7 @@
       </div>
     </div>
 
-    <div class="card" data-product-id="confluence" data-category="cuadros">
+    <div class="card" data-product-id="confluence" data-category="wallart">
       <div class="image-container"><img src="images/confluence-01.png" alt="Confluence"></div>
       <div class="details">
         <h3>Confluence</h3>
@@ -537,7 +538,7 @@
       </div>
     </div>
 
-    <div class="card sold" data-product-id="breathingdeeply" data-category="macetas">
+    <div class="card sold" data-product-id="breathingdeeply" data-category="functional">
       <div class="image-container"><img src="images/breathingdeeply-01.png" alt="Breathing Deeply"></div>
       <div class="details">
         <h3>Breathing Deeply Jar</h3>
@@ -545,7 +546,7 @@
       </div>
     </div>
 
-    <div class="card sold" data-product-id="amazona" data-category="guardians">
+    <div class="card sold" data-product-id="amazona" data-category="functional">
       <div class="image-container"><img src="images/amazona-01.png" alt="Amazona"></div>
       <div class="details">
         <h3>Amazona</h3>

@@ -34,6 +34,20 @@ body {
 .buying-info strong { text-align: left; font-size: 19px !important; }
 .buying-info .button { display: inline-block; }
 
+.cat-desc-title {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #666;
+    font-weight: 200;
+    font-style: italic;
+}
+.cat-desc-body {
+  font-size: 0.88rem;
+  color: #777;
+  line-height: 1.8;
+  font-weight: 200;
+}
+
 /* ── Marquee — always below modals ── */
 .marquee-wrapper {
     background-color: #d11040;
@@ -555,3 +569,5 @@ section.gallery-container { padding: 60px 0; }
   margin: 0 0 40px;
   font-weight: 200;
 }
+
+

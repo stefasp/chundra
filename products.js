@@ -45,9 +45,9 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 136, fragile: true,
+    price: 167, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
-    weight: 0.96, productionCost: 7, hoursWorked: 6, packingEfficiency: 0.50,
+    weight: 0.96, productionCost: 14, hoursWorked: 7, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
     description: `Zaira seems to move guided by her gut feelings.
 
@@ -100,7 +100,7 @@ The Lunar Guardian reminds us that we are not linear: our power moves, changes, 
 
 **It includes two interchangeable heads**, each carrying its own symbolic power.
 
-Ritual: Includes a guided exercise to help reconnect with our inner cycles and prepare for moments of introspection and strength.`,
+Ritual: Includes a guided exercise to help reconnect with your femenine inner cycles and prepare for moments of introspection and strength.`,
     images: [
       'images/lunar-01.png',
       'images/lunar-02.png',
@@ -174,7 +174,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
 
   traveler: {
     id: 'traveler', name: 'The Silent Traveler', subtitle: 'the ancient messenger',
-    category: ['viajeros'], status: 'available', wholesaleAvailable: true,
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 119, fragile: true,
     dims: { w: 18.5, h: 17.5, d: 16 },
     weight: 1.1, productionCost: 5, hoursWorked: 5, packingEfficiency: 0.45,
@@ -193,7 +193,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
 
   gibran: {
     id: 'gibran', name: 'Traveler Gibran', subtitle: 'a fully present traveler',
-    category: ['viajeros'], status: 'available', wholesaleAvailable: true,
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 94, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
     weight: 0.35, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.20,
@@ -208,7 +208,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
 
   totem: {
     id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life',
-    category: ['lamparas'], status: 'available', wholesaleAvailable: true,
+    category: ['functional'], status: 'available', wholesaleAvailable: true,
     price: 132, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
     weight: 1.35, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
@@ -224,7 +224,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   carnival: {
     id: 'carnival', name: 'Carnival Jar', subtitle: 'life cycles',
-    category: ['macetas'], status: 'available', wholesaleAvailable: true,
+    category: ['functional'], status: 'available', wholesaleAvailable: true,
     price: 178, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
     weight: 1.6, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
@@ -328,7 +328,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   thewalk: {
     id: 'thewalk', name: 'The Walk',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 69, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
@@ -337,7 +337,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
   seaandforest: {
     id: 'seaandforest', name: 'Sea and forest',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 69, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
@@ -347,7 +347,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   mistify: {
     id: 'mistify', name: 'Mistify',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 69, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
@@ -357,7 +357,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   bird: {
     id: 'bird', name: 'Bird',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 46, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 1, hoursWorked: 1.5, framed: 'unframed', flatPackable: true,
@@ -367,7 +367,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   wait: {
     id: 'wait', name: 'Wait for me',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 322, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -379,7 +379,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   marea: {
     id: 'marea', name: 'Marea',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 455, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -391,7 +391,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   pivot: {
     id: 'pivot', name: 'Pivot',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 480,fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -403,7 +403,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   whispers: {
     id: 'whispers', name: 'Whispers of the Deep',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 269, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, productionCost: 4, hoursWorked: 9, framed: 'stretched canvas', flatPackable: true,
@@ -414,7 +414,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   horizons: {
     id: 'horizons', name: 'Inner Horizons',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 329, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, productionCost: 4, hoursWorked: 11, framed: 'unframed', flatPackable: true,
@@ -425,7 +425,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   encuentro: {
     id: 'encuentro', name: 'Encuentros',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 309, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
@@ -437,7 +437,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   confluence: {
     id: 'confluence', name: 'Confluence',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 389, fragile: false,
     dims: { w: 90, h: 60, d: 0.1 },
     weight: 0.8, productionCost: 8, hoursWorked: 13, framed: 'stretched canvas',
@@ -448,7 +448,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   dreams: {
     id: 'dreams', name: 'Dreams Echo',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 75, fragile: false,
     dims: { w: 40, h: 40, d: 1.5 },
     weight: 0.43, productionCost: 3, hoursWorked: 2, framed: 'stretched canvas',
@@ -461,7 +461,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'floral-dream-1': {
     id: 'floral-dream-1', name: 'Floral Dream 1',
-    category: ['dibujo'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 120, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
@@ -472,7 +472,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'floral-dream-2': {
     id: 'floral-dream-2', name: 'Floral Dream 2',
-    category: ['dibujo'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 90, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
@@ -483,7 +483,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   master: {
     id: 'master', name: 'Master',
-    category: ['dibujo'], status: 'available', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 70, fragile: false,
     dims: { w: 21, h: 14, d: 0 }, gsm: 80,
     dimsFramed: { w: 30.5, h: 22, d: 1.4 },
@@ -545,7 +545,7 @@ For indoor use only.`,
 
   breathingdeeply: {
     id: 'breathingdeeply', name: 'Breathing Deeply Jar', subtitle: 'Silence is part of music',
-    category: ['macetas'], status: 'sold', wholesaleAvailable: true,
+    category: ['functional'], status: 'sold', wholesaleAvailable: true,
     price: 78, fragile: true, productionCost: 10, hoursWorked: 5,
     dims: null,
     weight: null,
@@ -562,7 +562,7 @@ For indoor use only.`,
 
   amazona: {
     id: 'amazona', name: 'Amazona', subtitle: 'cosmic feminine mystery',
-    category: ['macetas'], status: 'sold',  wholesaleAvailable: true,
+    category: ['functional'], status: 'sold',  wholesaleAvailable: true,
     price: 167, fragile: true,
     dims: { w: 18, h: 15.5, d: 18 },
     weight: 1.28, productionCost: 10, hoursWorked: 6,
