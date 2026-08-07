@@ -10,9 +10,9 @@ const PRODUCTS = {
   flyingpendant: {
     id: 'flyingpendant', name: 'Flying pendant', subtitle: 'Folk charm',
     category: ['pendants'], status: 'available', wholesaleAvailable: true,
-    price: 21, fragile: true,
+    price: 29, fragile: true,
     dims: { w: 5.5, h: 7, d: 0.5 },
-    weight: 0.36, productionCost: 1, hoursWorked: 1, packingEfficiency: 0.10,
+    weight: 0.36, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.10,
     materials: 'Ceramic',
     description: `One-of-a-kind Clay Necklace. Inspired by contemporary folk aesthetics, this handcrafted ceramic pendant brings a quiet sense of originality to any outfit. Light enough for everyday wear, yet expressive enough to become a signature piece.`,
     images: ['images/flying-01.png', 'images/flying-02.png', 'images/flying-03.png', 'images/flying-04.png'],
@@ -45,9 +45,9 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 116, fragile: true,
+    price: 136, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
-    weight: 0.96, productionCost: 7, hoursWorked: 5, packingEfficiency: 0.50,
+    weight: 0.96, productionCost: 7, hoursWorked: 6, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
     description: `Zaira seems to move guided by her gut feelings.
 
@@ -68,9 +68,9 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   juana: {
     id: 'juana', name: 'Guardian Juana', subtitle: 'feline strength',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 66, fragile: true,
+    price: 96, fragile: true,
     dims: { w: 12.5, h: 15, d: 3 },
-    weight: 0.36, productionCost: 2, hoursWorked: 2.5, packingEfficiency: 0.30,
+    weight: 0.36, productionCost: 2, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `Sharp and alert. This piece celebrates the voracity to reach dreams and the determination to conquer what we desire. It is not softness; it is drive, energy, and power concentrated in every action.`,
     images: ['images/juana-01.png', 'images/juana-02.png', 'images/juana-03.png', 'images/juana-04.png'],
@@ -79,9 +79,9 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   mara: {
     id: 'mara', name: 'Guardian Mara', subtitle: 'the power to nest, the power to fly',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
-    price: 66, fragile: true,
+    price: 96, fragile: true,
     dims: { w: 13.5, h: 14, d: 4 },
-    weight: 0.45, productionCost: 2, hoursWorked: 2.5, packingEfficiency: 0.30,
+    weight: 0.45, productionCost: 2, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
     description: `A symbol of balance between nesting and flying. The woman, embraced by the bird's wing, reminds us that we can put down roots, care for others, and create harmony without losing the freedom to spread our wings. A piece that invites stillness, care, and expansion.`,
     images: ['images/mara-01.png','images/mara-02.png','images/mara-03.png', 'images/mara-04.png'],
@@ -160,9 +160,9 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
   amalia: {
     id: 'amalia', name: 'Guardian Amalia', subtitle: 'conscious serenity',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
-    price: 109, fragile: true,
+    price: 189, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
-    weight: 1.45, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.30,
+    weight: 1.45, productionCost: 10, hoursWorked: 7, packingEfficiency: 0.30,
     materials: 'Ceramic',
     description: `Amalia represents conscious serenity, the wisdom attained when we stop reacting and start observing. Her face conveys temperance, balance, and inner clarity. This piece invites you to pause, reconnect with calm, and remember that the deepest strength arises from lucid silence.
 
@@ -175,9 +175,9 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
   traveler: {
     id: 'traveler', name: 'The Silent Traveler', subtitle: 'the ancient messenger',
     category: ['viajeros'], status: 'available', wholesaleAvailable: true,
-    price: 93, fragile: true,
+    price: 119, fragile: true,
     dims: { w: 18.5, h: 17.5, d: 16 },
-    weight: 1.1, productionCost: 5, hoursWorked: 3, packingEfficiency: 0.45,
+    weight: 1.1, productionCost: 5, hoursWorked: 5, packingEfficiency: 0.45,
     materials: 'Ceramic and textile',
     description: `The Silent Traveler does not journey alone; he moves in harmony with his companion, his steadfast support. Together, they traverse the world — their world. They seem to have stepped out of a mythological tale, with a touch of Spain perhaps present in the bull, an unconscious expression of cultural ties.
 
@@ -194,9 +194,9 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
   gibran: {
     id: 'gibran', name: 'Traveler Gibran', subtitle: 'a fully present traveler',
     category: ['viajeros'], status: 'available', wholesaleAvailable: true,
-    price: 78, fragile: true,
+    price: 94, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
-    weight: 0.35, productionCost: 3, hoursWorked: 2.8, packingEfficiency: 0.20,
+    weight: 0.35, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic',
     description: `Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences "for the feed," but often forgetting what truly matters. The deepest memories don't come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.
 
@@ -329,11 +329,30 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   thewalk: {
     id: 'thewalk', name: 'The Walk',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 59, fragile: false,
+    price: 69, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
-    weight: 0.3, productionCost: 2, hoursWorked: 3, framed: 'unframed', flatPackable: true,
+    weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
     images: ['images/small-painting-thewalk-01.png','images/small-painting-thewalk-02.png','images/small-painting-thewalk-03.png','images/small-painting-thewalk-04.png','images/small-painting-thewalk-05.png','images/small-painting-thewalk-06.png'],
+  },
+  seaandforest: {
+    id: 'seaandforest', name: 'Sea and forest',
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 69, fragile: false,
+    dims: { w: 20, h: 20, d: 1.5 },
+    weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
+    materials: 'Mixed media on canvas',
+    images: ['images/small-painting-seeandforest-01.png','images/small-painting-seaandforest-02.png','images/small-painting-seeandforest-03.png','images/small-painting-seaandforest-04.png','images/small-painting-seaandforest-05.png','images/small-painting-seaandforest-06.png'],
+  },
+
+  mistify: {
+    id: 'mistify', name: 'Mistify',
+    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
+    price: 69, fragile: false,
+    dims: { w: 20, h: 20, d: 1.5 },
+    weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
+    materials: 'Mixed media on canvas',
+    images: ['images/small-painting-mistify-01.png','images/small-painting-mistify-02.png','images/small-painting-mistify-03.png','images/small-painting-mistify-04.png'],
   },
 
   bird: {
@@ -346,20 +365,10 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     images: ['images/small-painting-bird-01.png','images/small-painting-bird-02.png'],
   },
 
-  mistify: {
-    id: 'mistify', name: 'Mistify',
-    category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 59, fragile: false,
-    dims: { w: 20, h: 20, d: 1.5 },
-    weight: 0.3, productionCost: 2, hoursWorked: 2, framed: 'unframed', flatPackable: true,
-    materials: 'Mixed media on canvas',
-    images: ['images/small-painting-mistify-01.png','images/small-painting-mistify-02.png','images/small-painting-mistify-03.png','images/small-painting-mistify-04.png'],
-  },
-
   wait: {
     id: 'wait', name: 'Wait for me',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 215, fragile: false,
+    price: 322, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 1.2, productionCost: 6, hoursWorked: 2, framed: 'framed', flatPackable: true,
@@ -371,7 +380,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   marea: {
     id: 'marea', name: 'Marea',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 305, fragile: false,
+    price: 455, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
@@ -383,7 +392,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   pivot: {
     id: 'pivot', name: 'Pivot',
     category: ['cuadros'], status: 'available', wholesaleAvailable: true,
-    price: 305,fragile: false,
+    price: 480,fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
@@ -554,7 +563,7 @@ For indoor use only.`,
   amazona: {
     id: 'amazona', name: 'Amazona', subtitle: 'cosmic feminine mystery',
     category: ['macetas'], status: 'sold',  wholesaleAvailable: true,
-    price: 97, fragile: true,
+    price: 167, fragile: true,
     dims: { w: 18, h: 15.5, d: 18 },
     weight: 1.28, productionCost: 10, hoursWorked: 6,
     materials: 'Ceramic',
