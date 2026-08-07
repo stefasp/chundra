@@ -342,7 +342,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
-    images: ['images/small-painting-seeandforest-01.png','images/small-painting-seaandforest-02.png','images/small-painting-seeandforest-03.png','images/small-painting-seaandforest-04.png','images/small-painting-seaandforest-05.png','images/small-painting-seaandforest-06.png'],
+    images: ['images/small-painting-seeandforest-01.png','images/small-painting-seeandforest-02.png','images/small-painting-seeandforest-03.png','images/small-painting-seeandforest-04.png','images/small-painting-seeandforest-05.png','images/small-painting-seeandforest-06.png'],
   },
 
   mistify: {
