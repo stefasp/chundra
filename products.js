@@ -10,7 +10,7 @@ const PRODUCTS = {
   flyingpendant: {
     id: 'flyingpendant', name: 'Flying pendant', subtitle: 'Folk charm',
     category: ['jewellery'], status: 'available', wholesaleAvailable: true,
-    price: 29, fragile: true,
+    price: 39, fragile: true,
     dims: { w: 5.5, h: 7, d: 0.18 },
     weight: 0.1, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.10,
     materials: 'Ceramic',
@@ -20,7 +20,7 @@ const PRODUCTS = {
   catpendant: {
     id: 'catpendant', name: 'Cat pendant', subtitle: 'Gothic glam charm',
     category: ['jewellery'], status: 'available', wholesaleAvailable: true,
-    price: 29, fragile: true,
+    price: 39, fragile: true,
     dims: { w: 4.5, h: 11, d: 0.18 },
     weight: 0.1, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.50,
     materials: 'Ceramic',
