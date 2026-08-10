@@ -17,6 +17,16 @@ const PRODUCTS = {
     description: `One-of-a-kind Clay Necklace. Inspired by contemporary folk aesthetics, this handcrafted ceramic pendant brings a quiet sense of originality to any outfit. Light enough for everyday wear, yet expressive enough to become a signature piece.`,
     images: ['images/flying-01.png', 'images/flying-02.png', 'images/flying-03.png', 'images/flying-04.png'],
   },
+  catpendant: {
+    id: 'catpendant', name: 'Cat pendant', subtitle: 'Gothic glam charm',
+    category: ['jewellery'], status: 'available', wholesaleAvailable: true,
+    price: 29, fragile: true,
+    dims: { w: 4.5, h: 11, d: 0.4 },
+    weight: 0.36, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.50,
+    materials: 'Ceramic',
+    description: `One-of-a-kind Clay Necklace. Inspired by cute glam gothic aesthetics, this handcrafted ceramic pendant brings a quiet sense of originality to any outfit.`,
+    images: ['images/cat-pendant-01.png', 'images/cat-pendant-02.png'],
+  },
 
   // ─── GUARDIANAS ────────────────────────────────────────────────
 
