@@ -370,7 +370,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   thewalk: {
     id: 'thewalk', name: 'The Walk',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 69, fragile: false,
+    price: 79, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -379,7 +379,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   seaandforest: {
     id: 'seaandforest', name: 'Sea and forest',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 69, fragile: false,
+    price: 79, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -389,7 +389,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   mistify: {
     id: 'mistify', name: 'Mistify',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 69, fragile: false,
+    price: 79, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
@@ -399,7 +399,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   bird: {
     id: 'bird', name: 'Bird',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 46, fragile: false,
+    price: 56, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 1, hoursWorked: 1.5, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
