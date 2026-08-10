@@ -409,10 +409,10 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   wait: {
     id: 'wait', name: 'Wait for me',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 322, fragile: false,
+    price: 302, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
-    weight: 1.2, productionCost: 6, hoursWorked: 2, framed: 'framed', flatPackable: true,
+    weight: 1.2, productionCost: 12, hoursWorked: 2, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/wait-01.png', 'images/wait-02.png', 'images/wait-03.png', 'images/wait-04.png','images/wait-05.png'],
@@ -421,10 +421,10 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   marea: {
     id: 'marea', name: 'Marea',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 455, fragile: false,
+    price: 329, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
-    weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
+    weight: 0.7, productionCost: 12, hoursWorked: 8, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/marea-01.png','images/marea-02.png','images/marea-03.png','images/pivot-06.png'],
@@ -433,7 +433,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   pivot: {
     id: 'pivot', name: 'Pivot',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 480,fragile: false,
+    price: 329,fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
@@ -445,7 +445,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   whispers: {
     id: 'whispers', name: 'Whispers of the Deep',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 319, fragile: false,
+    price: 290, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, productionCost: 4, hoursWorked: 9, framed: 'stretched canvas', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -456,7 +456,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   horizons: {
     id: 'horizons', name: 'Inner Horizons',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 329, fragile: false,
+    price: 359, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, productionCost: 4, hoursWorked: 11, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
