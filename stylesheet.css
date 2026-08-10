@@ -579,3 +579,30 @@ section.gallery-container { padding: 60px 0; }
 }
 
 
+
+/* ── Category badges — bottom right, always visible ── */
+.card-badges {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  z-index: 10;
+  pointer-events: none;
+  justify-content: flex-end;
+}
+.cat-badge {
+    font-size: 0.70rem;
+    font-weight: 600;
+    padding: 5px 8px 3px;
+    border-radius: 34px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.cat-badge.ritual     { background: #ac955b; }
+.cat-badge.guardians  { background: #618764; }
+.cat-badge.wallart    { background: #62a385; }
+.cat-badge.jewellery  { background: #b07799; }
+.cat-badge.functional { background: #7996a2; }

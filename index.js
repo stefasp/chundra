@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const CAT_DESCRIPTIONS = {
     guardians: {
-      title: "Some objects decorate a space. <br>Others quietly shape the way we move through it.",
+      title: "Some objects decorate a space. Others quietly shape the way we move through it.",
       body: "Each Guardian embodies a human quality — courage, patience, kindness, resilience, curiosity. Chosen with intention, it becomes a gentle daily reminder of the person you want to become. Over time, these small reminders help shape the mindset you bring into your life, one day at a time."
     },
     ritual: {
-      title: "A ritual object is completed <br>by the person who lives with it.",
-      body: "Every ritual piece includes a reflective exercise, but its meaning is never predetermined. It emerges through your own thoughts, memories, and intentions. Each piece invite you to take a momento for yourself, pay attention to a specific voice inside of you, and return to the questions that matter most. Over time, they become personal landmarks in your own story."
+      title: "A ritual object is completed by the person who lives with it.",
+      body: "Every piece includes a simple reflective exercise, but its meaning is never predetermined. It emerges through your own thoughts, memories, and intentions. These objects invite you to pause, pay attention, and return to the questions that matter most. Over time, they become personal landmarks in your own story."
     },
   };
 
@@ -97,9 +97,27 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     `;
 
-    // Sold state — add class and overlay
+    // Sold state
     if (p.status === 'sold') {
       card.classList.add('sold');
+    } else {
+      // Category badges (not shown on sold items)
+      const CAT_LABELS = {
+        ritual: 'Ritual', guardians: 'Guardian', wallart: 'Wall Art',
+        jewellery: 'Jewellery', functional: 'Functional',
+      };
+      const badgesEl = document.createElement('div');
+      badgesEl.className = 'card-badges';
+      (p.category || []).forEach(cat => {
+        if (!CAT_LABELS[cat]) return;
+        const badge = document.createElement('span');
+        badge.className = `cat-badge ${cat}`;
+        badge.textContent = CAT_LABELS[cat];
+        badgesEl.appendChild(badge);
+      });
+      if (badgesEl.children.length > 0) {
+        card.appendChild(badgesEl);
+      }
     }
   });
 

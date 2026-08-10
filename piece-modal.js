@@ -82,6 +82,9 @@
     const p = PRODUCTS[productId];
     if (!p) return;
 
+    // Update URL hash for shareable links
+    history.pushState(null, '', '#' + productId);
+
     // GA4: track product view
     if (typeof gtag !== 'undefined') {
       gtag('event', 'view_item', {
@@ -93,7 +96,9 @@
       });
     }
     currentProduct = p;
-    images = p.images || [];
+    // Include video after images if present
+    images = [...(p.images || [])];
+    if (p.video) images.push(p.video);
     currentSlide = 0;
     populate(p);
     renderSlide(0);
@@ -310,8 +315,28 @@
   // ── Slider ──────────────────────────────────────────────────
   function renderSlide(idx) {
     currentSlide = ((idx % images.length) + images.length) % images.length;
-    mainImg.src = images[currentSlide];
-    mainImg.alt = currentProduct?.name || '';
+    const src = images[currentSlide];
+    const isVideo = /\.mp4$|\.webm$|\.mov$/i.test(src);
+    const wrap = mainImg.parentElement;
+    // Remove any existing video element
+    const existingVideo = wrap.querySelector('.pm-main-video');
+    if (existingVideo) existingVideo.remove();
+    if (isVideo) {
+      mainImg.style.display = 'none';
+      const vid = document.createElement('video');
+      vid.src = src;
+      vid.autoplay = true;
+      vid.muted = true;
+      vid.loop = true;
+      vid.playsInline = true;
+      vid.className = 'pm-main-video';
+      vid.style.cssText = 'width:100%;height:100%;object-fit:contain;background:#000;position:absolute;inset:0;';
+      wrap.appendChild(vid);
+    } else {
+      mainImg.style.display = '';
+      mainImg.src = src;
+      mainImg.alt = currentProduct?.name || '';
+    }
     thumbs.querySelectorAll('.pm-thumb').forEach((t, i) =>
       t.classList.toggle('active', i === currentSlide)
     );
@@ -322,12 +347,20 @@
     if (images.length <= 1) { thumbs.style.display = 'none'; return; }
     thumbs.style.display = 'flex';
     images.forEach((src, i) => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.className = 'pm-thumb' + (i === 0 ? ' active' : '');
-      img.alt = `Photo ${i + 1}`;
-      img.addEventListener('click', () => renderSlide(i));
-      thumbs.appendChild(img);
+      const isVideo = /\.mp4$|\.webm$|\.mov$/i.test(src);
+      let el;
+      if (isVideo) {
+        el = document.createElement('div');
+        el.innerHTML = '▶';
+        el.style.cssText = 'width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:#222;color:#fff;font-size:1rem;border-radius:3px;cursor:pointer;flex-shrink:0;';
+      } else {
+        el = document.createElement('img');
+        el.src = src;
+        el.alt = `Photo ${i + 1}`;
+      }
+      el.className = 'pm-thumb' + (i === 0 ? ' active' : '');
+      el.addEventListener('click', () => renderSlide(i));
+      thumbs.appendChild(el);
     });
   }
 
@@ -383,6 +416,8 @@
     modal.classList.remove('is-open');
     document.body.style.overflow = '';
     currentProduct = null;
+    // Clear URL hash
+    history.pushState(null, '', window.location.pathname);
   }
 
   document.getElementById('pm-close').addEventListener('click', closeModal);
@@ -399,4 +434,10 @@
   });
 
   window.PieceModal = { open: openModal, close: closeModal };
+
+  // Open modal from URL hash on page load (for shareable links)
+  const hashId = window.location.hash.slice(1);
+  if (hashId && typeof PRODUCTS !== 'undefined' && PRODUCTS[hashId]) {
+    openModal(hashId);
+  }
 })();

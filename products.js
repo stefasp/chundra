@@ -9,7 +9,7 @@ const PRODUCTS = {
 
   flyingpendant: {
     id: 'flyingpendant', name: 'Flying pendant', subtitle: 'Folk charm',
-    category: ['pendants'], status: 'available', wholesaleAvailable: true,
+    category: ['jewellery'], status: 'available', wholesaleAvailable: true,
     price: 29, fragile: true,
     dims: { w: 5.5, h: 7, d: 0.5 },
     weight: 0.36, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.10,
@@ -240,10 +240,31 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 55, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
-    weight: 0.5, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 5, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. With a more pop and contemporary aesthetic, it features a playful yet elegant cat gaze that looks back at the viewer with charm and subtle sophistication. Its color palette blends lilacs, violets, and blues, creating a modern, dreamy presence that balances character and refinement.`,
     images: ['images/portavela-catpower-01.png', 'images/portavela-catpower-02.png', 'images/portavela-catpower-03.png'],
+  },
+  'melt-face': {
+    id: 'melt-face', name: 'Fire Ritual Vessel', subtitle: 'A Fire Ritual for moments of stillness, imagination and wonder.',
+    category: ['functional','ritual'], status: 'available', wholesaleAvailable: true,
+    price: 57, fragile: true,
+    dims: { w: 14, h: 9, d: 11 },
+    weight: 0.5, productionCost: 5, hoursWorked: 3, packingEfficiency: 0.85,
+    materials: 'Ceramic',
+    description: `The circumference of the glass is 9 cm, the nose makes the diameter a little larger. There is something ancient about watching fire. The movement of the flame. The light it casts across a room. The smoke slowly disappearing into the air.<br/> For a few moments, there is nothing to solve. Nothing to achieve. Nothing to understand. Just watch. Let your mind wander wherever it wants to go. Sometimes, when we stop looking for answers, unexpected things find their way in. This piece was created as an invitation to make a pause. What emerge can make a calm, a sense of self-respect and creative-self emerge and grow in you.`,
+    images: ['images/melt-face-01.png', 'images/melt-face-02.png', 'images/melt-face-03.mp4'],
+  },
+
+  'melt-fishing': {
+    id: 'melt-fishing', name: 'Fire Ritual Vessel', subtitle: 'A Fire Ritual for moments of stillness, imagination and wonder.',
+    category: ['functional','ritual'], status: 'available', wholesaleAvailable: true,
+    price: 57, fragile: true,
+    dims: { w: 8, h: 11, d: 7 },
+    weight: 0.5, productionCost: 4, hoursWorked: 3, packingEfficiency: 0.85,
+    materials: 'Ceramic',
+    description: `Vessel height is 7,5 cm (excluding character on top).There is something ancient about watching fire. The movement of the flame. The light it casts across a room. The smoke slowly disappearing into the air.<br/> For a few moments, there is nothing to solve. Nothing to achieve. Nothing to understand. Just watch. Let your mind wander wherever it wants to go. Sometimes, when we stop looking for answers, unexpected things find their way in. This piece was created as an invitation to make a pause. What emerge can make a calm, a sense of self-respect and creative-self emerge and grow in you.`,
+    images: ['images/melt-fishing-01.png', 'images/melt-fishing-02.png', 'images/melt-fishing-03.png', 'images/melt-fishing-04.png','images/melt-fishing-05.mp4'],
   },
 
   'candle-freckles': {
@@ -251,7 +272,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 44, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
-    weight: 0.5, productionCost: 3, hoursWorked: 1.5, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 5, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. In soft violet-grey tones with white and earthy speckled details, it carries a refined and sophisticated presence.`,
     images: ['images/portavela-malva-01.png','images/portavela-malva-02.png'],
@@ -262,7 +283,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 44, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
-    weight: 0.5, productionCost: 3, hoursWorked: 1.5, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 5, hoursWorked: 2.3, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate metal mexican heart. It includes a hall to add a string, allowing the candle holder to be displayed on the wall like a small personal temple of light.`,
     images: ['images/altarmeltedcolors-01.png'],
@@ -275,7 +296,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
     dimsCompact: { w: 14.5, h: 11.5, d: 1.5 }, // central figure (used for shipping)
     flatPackable: true,
-    weight: 0.5, productionCost: 2, hoursWorked: 1.5, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 4, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This piece captures a luminous gaze emerging from a deep, night-blue face, surrounded by golden petals. The eyes are alert and alive, as if quietly tracing every detail of the world around them. It speaks of a perception that goes beyond seeing.`,
     images: ['images/justhere-01.png','images/justhere-02.png','images/justhere-03.png'],
@@ -288,7 +309,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
-    weight: 0.5, productionCost: 2.1, hoursWorked: 1.5, packingEfficiency: 0.85,
+    weight: 0.5, productionCost: 4, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
@@ -301,7 +322,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 19, h: 36, d: 2 },
     dimsCompact: { w: 19, h: 15, d: 2 },    // central figure (used for shipping)
     weight: 0.5, packingEfficiency: 0.25,
-    productionCost: 2, hoursWorked: 1.7,
+    productionCost: 4, hoursWorked: 1.7,
     materials: 'Ceramic, bright glaze, underglazes, textile and metal details',
     description: `A vivid wall piece combining the symbolic force of the snake with the warmth of the heart and the energy of flame. Part of the Wall Art collection.`,
     images: [
@@ -316,7 +337,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 23, h: 40, d: 1.5 },
     dimsCompact: { w: 19, h: 19, d: 1.5 },    // central figure (used for shipping)
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
-    productionCost: 3, hoursWorked: 2,
+    productionCost: 4, hoursWorked: 2,
     materials: 'Ceramic, bright glaze, underglazes and textile details',
     description: `A luminous wall piece from the Wall Art collection. Bright glazes and textile details create a piece that catches light and holds attention.`,
     images: [
