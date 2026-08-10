@@ -445,7 +445,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   whispers: {
     id: 'whispers', name: 'Whispers of the Deep',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 269, fragile: false,
+    price: 319, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, productionCost: 4, hoursWorked: 9, framed: 'stretched canvas', flatPackable: true,
     materials: 'Acrylic on canvas',
@@ -572,7 +572,7 @@ For indoor use only.`,
   'the-eye': {
     id: 'the-eye', name: 'The Eye', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true, wholesaleAvailable: true,
-    price: 48, fragile: true,
+    price: 53, fragile: true,
     dims: { w: 19, h: 19, d: 1.5 },
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
     productionCost: 2, hoursWorked: 2,
