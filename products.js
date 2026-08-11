@@ -284,7 +284,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.2, productionCost: 4, hoursWorked: 3, packingEfficiency: 0.25,
     materials: 'Ceramic',
     description: `Vessel height is 7,5 cm (excluding character on top).There is something ancient about watching fire. The movement of the flame. The light it casts across a room. The smoke slowly disappearing into the air.<br/> For a few moments, there is nothing to solve. Nothing to achieve. Nothing to understand. Just watch. Let your mind wander wherever it wants to go. Sometimes, when we stop looking for answers, unexpected things find their way in. This piece was created as an invitation to make a pause. What emerge can make a calm, a sense of self-respect and creative-self emerge and grow in you.`,
-    images: ['images/melt-fishing-01.png', 'images/melt-fishing-02.png', 'images/melt-fishing-03.png', 'images/melt-fishing-04.png','images/melt-fishing-05.mp4'],
+    images: ['images/melt-fishing-01.png', 'images/melt-fishing-02.png', 'images/melt-fishing-03.png', 'images/melt-fishing-04.png','images/melt-fishing.mp4'],
   },
 
   'candle-freckles': {
