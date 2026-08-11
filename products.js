@@ -14,6 +14,7 @@ const PRODUCTS = {
     dims: { w: 5.5, h: 7, d: 0.18 },
     weight: 0.1, productionCost: 3, hoursWorked: 2, packingEfficiency: 0.10,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2026-013',
     description: `One-of-a-kind Clay Necklace. Inspired by contemporary folk aesthetics, this handcrafted ceramic pendant brings a quiet sense of originality to any outfit. Light enough for everyday wear, yet expressive enough to become a signature piece.`,
     images: ['images/flying-01.png', 'images/flying-02.png', 'images/flying-03.png', 'images/flying-04.png'],
   },
@@ -37,6 +38,7 @@ const PRODUCTS = {
     dims: { w: 17, h: 32.5, d: 16.5 },
     weight: 1.42, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.62,
     materials: 'Mixed — ceramic, acrylic paint, textile, matte varnish',
+    certificate: 'CH-CER-2026-006',
     description: `Ariadna holds a mysterious, almost somber presence, yet she vibrates with color, with life. There is something luminous in her contrasts — in the dialogue between gold, floral textures, and the vivid interplay of turquoise and warm orange tones.
 
 She seems to stand at the threshold of something unresolved, as if facing a crossroads not entirely her own — something inherited, something ancient. And yet, she does not resist it. She resolves it quietly, with elegance.
@@ -59,6 +61,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
     dims: { w: 16, h: 21, d: 19 },
     weight: 0.96, productionCost: 14, hoursWorked: 7, packingEfficiency: 0.50,
     materials: 'Mixed — ceramic, acrylic paint, matte varnish',
+    certificate: 'CH-CER-2026-008',
     description: `Zaira seems to move guided by her gut feelings.
 
 We often say we should listen to our hearts, but I'm not sure that the heart is what truly tells us where to go. I believe direction might be somewhere deeper, more primitive — from the stomach, from the viscera, from that place where sensations live before they become emotions or words.
@@ -82,6 +85,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     dims: { w: 12.5, h: 15, d: 3 },
     weight: 0.36, productionCost: 2, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
+    certificate: 'CH-CER-2023-001',
     description: `Sharp and alert. This piece celebrates the voracity to reach dreams and the determination to conquer what we desire. It is not softness; it is drive, energy, and power concentrated in every action.`,
     images: ['images/juana-01.png', 'images/juana-02.png', 'images/juana-03.png', 'images/juana-04.png'],
   },
@@ -93,6 +97,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     dims: { w: 13.5, h: 14, d: 4 },
     weight: 0.45, productionCost: 2, hoursWorked: 4, packingEfficiency: 0.30,
     materials: 'Ceramic and fabric',
+    certificate: 'CH-CER-2024-001',
     description: `A symbol of balance between nesting and flying. The woman, embraced by the bird's wing, reminds us that we can put down roots, care for others, and create harmony without losing the freedom to spread our wings. A piece that invites stillness, care, and expansion.`,
     images: ['images/mara-01.png','images/mara-02.png','images/mara-03.png', 'images/mara-04.png'],
   },
@@ -104,6 +109,8 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, productionCost: 6, hoursWorked: 4, packingEfficiency: 0.65,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2025-001',
+    collection: 'Ritual Collection',
     description: `This piece celebrates the essence of the feminine in all its complexity. The Lunar Guardian honors the shifting nature of femininity. The torso, resting on a surface reminiscent of the sea's texture, connects us to nature — its flow and the constant movement of life.
 
 The Lunar Guardian reminds us that we are not linear: our power moves, changes, and transforms.
@@ -127,6 +134,8 @@ Ritual: Includes a guided exercise to help reconnect with your femenine inner cy
     dims: { w: 15, h: 19, d: 12.5 },
     weight: 1.0, productionCost: 10, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic, glass and fabric',
+    certificate: 'CH-CER-2025-004',
+    collection: 'Ritual Collection',
     description: `Marina inhabits the deep waters, where calm and storm coexist.
 
 With her textures — waves, peaks, currents — she evokes the strength of what moves beneath, what is not always visible. With her blue stone as a beacon, she guards the mysteries of emotional flow and invites us to dive into the unknown without fear.
@@ -144,6 +153,8 @@ Ritual: Includes an exercise to help you face challenges or fears, connecting wi
     dims: { w: 16, h: 18.5, d: 13 },
     weight: 1.0, productionCost: 10, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic, metal and fabric',
+    certificate: 'CH-CER-2025-005',
+    collection: 'Ritual Collection',
     description: `Salamanca is the guardian of transition and loyalty, a companion in processes of change and a protector during transformations. Her presence is earthy and warm, with an energy of rootedness and shelter. She represents the ancestral: her textures evoke caves, our origins, the inherited and the ancient.
 
 Her companion, the threshold guardian, allows us to leave that cave, guides us, and builds a bridge toward the new. Together, they guard the portals of change and invite us to transform without losing our connection to what came before.
@@ -159,6 +170,8 @@ Ritual: Includes an exercise inviting reflection on inherited mandates and consc
     dims: { w: 10, h: 15, d: 10 },
     weight: 0.56, productionCost: 6, hoursWorked: 3, packingEfficiency: 0.20,
     materials: 'Ceramic and fabric',
+    certificate: 'CH-CER-2025-003',
+    collection: 'Ritual Collection',
     description: `Trina comes from the Latin Trinus, meaning "triple." Filled with wisdom, balance, and wholeness (body, mind, and spirit / past, present, and future / birth, life, and death). Delicate yet carrying inner strength — feminine, ancient, introspective.
 
 A guardian of the hidden, she watches in silence and supports processes of understanding and inner revelation. Calm but powerful, she protects dreams.
@@ -174,6 +187,8 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
     dims: { w: 13, h: 38, d: 13 },
     weight: 1.45, productionCost: 10, hoursWorked: 7, packingEfficiency: 0.30,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2024-004',
+    collection: 'Ritual Collection',
     description: `Amalia represents conscious serenity, the wisdom attained when we stop reacting and start observing. Her face conveys temperance, balance, and inner clarity. This piece invites you to pause, reconnect with calm, and remember that the deepest strength arises from lucid silence.
 
 Includes a ritual to reconnect with the present and cultivate a kinder, more serene inner state, through the creation of a personal mantra to accompany your meditations.`,
@@ -189,6 +204,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
     dims: { w: 18.5, h: 17.5, d: 16 },
     weight: 1.1, productionCost: 5, hoursWorked: 5, packingEfficiency: 0.45,
     materials: 'Ceramic and textile',
+    certificate: 'CH-CER-2024-005',
     description: `The Silent Traveler does not journey alone; he moves in harmony with his companion, his steadfast support. Together, they traverse the world — their world. They seem to have stepped out of a mythological tale, with a touch of Spain perhaps present in the bull, an unconscious expression of cultural ties.
 
 This piece was sketched while wandering through the Gibralfaro mountain in Málaga. The traveler carries with him something ancient, almost aboriginal, like the aesthetic of an ancient script, as though telling a story from a distant time.`,
@@ -208,6 +224,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
     dims: { w: 15, h: 12, d: 6.5 },
     weight: 0.35, productionCost: 3, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2025-002',
     description: `Nowadays it seems we live on autopilot: collecting destinations, photos, and experiences "for the feed," but often forgetting what truly matters. The deepest memories don't come from the places we visit, but from how we feel every step of the way, from shared laughter, unexpected wonder, and the connection with those who accompany us.
 
 This piece is a reminder that the essential thing is not to accumulate places, but to live the present fully. Destinations fade, but emotions and shared moments remain.`,
@@ -223,6 +240,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
     dims: { w: 13, h: 30, d: 9 },
     weight: 1.35, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2024-002',
     description: `This piece speaks of the cycle of life. The figures could represent one person — youth and age — or two, reflecting how life is passed from one to another. It's a reminder that we don't completely leave when we go; we leave parts of ourselves in those we love, in those who love us, and in the things we build and leave behind.
 
 Like a totem, it stands tall, carrying the weight of memories, of connections, of legacy. **Sold without lampshade.**`,
@@ -239,6 +257,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 17, h: 21, d: 17 },
     weight: 1.6, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2024-003',
     description: `This piece embodies the strength of encounters and the transformations that occur when they happen. Everything is intertwined, all vital energies are connected, the cycles that pass through us, and the beauty that arises from chaos. A presence that inhabits the space and fills it with inner movement.`,
     images: ['images/rito-01.png','images/rito-02.png','images/rito-03.png','images/rito-04.png','images/rito-05.png','images/rito-06.png', 'images/rito-07.png', 'images/rito-08.png'],
   },
@@ -252,6 +271,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 5, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2026-004',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. With a more pop and contemporary aesthetic, it features a playful yet elegant cat gaze that looks back at the viewer with charm and subtle sophistication. Its color palette blends lilacs, violets, and blues, creating a modern, dreamy presence that balances character and refinement.`,
     images: ['images/portavela-catpower-01.png', 'images/portavela-catpower-02.png', 'images/portavela-catpower-03.png'],
   },
@@ -294,6 +314,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 5, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2026-003',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. In soft violet-grey tones with white and earthy speckled details, it carries a refined and sophisticated presence.`,
     images: ['images/portavela-malva-01.png','images/portavela-malva-02.png'],
   },
@@ -318,6 +339,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     flatPackable: true,
     weight: 0.5, productionCost: 4, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2026-002',
     description: `This piece captures a luminous gaze emerging from a deep, night-blue face, surrounded by golden petals. The eyes are alert and alive, as if quietly tracing every detail of the world around them. It speaks of a perception that goes beyond seeing.`,
     images: ['images/justhere-01.png','images/justhere-02.png','images/justhere-03.png'],
   },
@@ -331,6 +353,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     flatPackable: true,
     weight: 0.5, productionCost: 4, hoursWorked: 1.5, packingEfficiency: 0.85,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2026-001',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
   },
@@ -344,6 +367,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.5, packingEfficiency: 0.25,
     productionCost: 4, hoursWorked: 1.7,
     materials: 'Ceramic, bright glaze, underglazes, textile and metal details',
+    certificate: 'CH-CER-2026-012',
     description: `A vivid wall piece combining the symbolic force of the snake with the warmth of the heart and the energy of flame. Part of the Wall Art collection.`,
     images: [
       'images/snakeheartflam-01.png','images/snakeheartflam-02.png',
@@ -359,6 +383,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
     productionCost: 4, hoursWorked: 2,
     materials: 'Ceramic, bright glaze, underglazes and textile details',
+    certificate: 'CH-CER-2026-011',
     description: `A luminous wall piece from the Wall Art collection. Bright glazes and textile details create a piece that catches light and holds attention.`,
     images: [
       'images/brightstar-01.png','images/brightstar-02.png',
@@ -374,6 +399,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
+    certificate: 'CH-PAINT-2026-002',
+    collection: 'Faces on Canvas',
     images: ['images/small-painting-thewalk-01.png','images/small-painting-thewalk-02.png','images/small-painting-thewalk-03.png','images/small-painting-thewalk-04.png','images/small-painting-thewalk-05.png','images/small-painting-thewalk-06.png'],
   },
   seaandforest: {
@@ -383,6 +410,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
+    certificate: 'CH-PAINT-2026-003',
+    collection: 'Faces on Canvas',
     images: ['images/small-painting-seeandforest-01.png','images/small-painting-seeandforest-02.png','images/small-painting-seeandforest-03.png','images/small-painting-seeandforest-04.png','images/small-painting-seeandforest-05.png','images/small-painting-seeandforest-06.png'],
   },
 
@@ -393,6 +422,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
     materials: 'Mixed media on canvas',
+    certificate: 'CH-PAINT-2026-001',
+    collection: 'Faces on Canvas',
     images: ['images/small-painting-mistify-01.png','images/small-painting-mistify-02.png','images/small-painting-mistify-03.png','images/small-painting-mistify-04.png'],
   },
 
@@ -403,6 +434,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 1, hoursWorked: 1.5, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
+    certificate: 'CH-PAINT-2023-002',
     images: ['images/small-painting-bird-01.png','images/small-painting-bird-02.png'],
   },
 
@@ -414,6 +446,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 1.2, productionCost: 12, hoursWorked: 2, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
+    certificate: 'CH-PAINT-2024-002',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/wait-01.png', 'images/wait-02.png', 'images/wait-03.png', 'images/wait-04.png','images/wait-05.png'],
   },
@@ -426,6 +459,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 12, hoursWorked: 8, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
+    certificate: 'CH-PAINT-2020-001',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/marea-01.png','images/marea-02.png','images/marea-03.png','images/pivot-06.png'],
   },
@@ -438,6 +472,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
     weight: 0.7, productionCost: 6, hoursWorked: 8, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on wood',
+    certificate: 'CH-PAINT-2021-001',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/pivot-01.png','images/pivot-02.png','images/pivot-03.png','images/pivot-06.png'],
   },
@@ -449,6 +484,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, productionCost: 4, hoursWorked: 9, framed: 'stretched canvas', flatPackable: true,
     materials: 'Acrylic on canvas',
+    certificate: 'CH-PAINT-2023-001',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/whispers-01.png'],
   },
@@ -460,6 +496,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, productionCost: 4, hoursWorked: 11, framed: 'unframed', flatPackable: true,
     materials: 'Acrylic on canvas',
+    certificate: 'CH-PAINT-2024-001',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/horizons-01.png','images/horizons-02.png','images/horizons-05.png'],
   },
@@ -472,6 +509,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
     weight: 2.3, productionCost: 4, hoursWorked: 11, framed: 'framed', flatPackable: true,
     materials: 'Acrylic on canvas',
+    certificate: 'CH-PAINT-2020-002',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/encuentros-01.png','images/encuentros-02.png','images/encuentros-03.png'],
   },
@@ -483,6 +521,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 90, h: 60, d: 0.1 },
     weight: 0.8, productionCost: 8, hoursWorked: 13, framed: 'stretched canvas',
     materials: 'Acrylic on canvas',
+    certificate: 'CH-PAINT-2022-002',
     shippingNote: 'Shipping to Europe and beyond: quote on request for non-Inpost destinations.',
     images: ['images/confluence-01.png','images/confluence-02.png','images/confluence-03.png'],
   },
@@ -494,6 +533,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 40, h: 40, d: 1.5 },
     weight: 0.43, productionCost: 3, hoursWorked: 2, framed: 'stretched canvas',
     materials: 'Acrylic on canvas',
+    certificate: 'CH-PAINT-2022-001',
     inpostOnly: true,
     images: ['images/dreams-01.png','images/dreams-02.png','images/dreams-03.png','images/dreams-04.png','images/dreams-05.png'],
   },
@@ -508,6 +548,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 6, hoursWorked: 4.5, framed: 'framed', flatPackable: true,
     materials: 'Pencil and ink on paper 180 gsm',
+    certificate: 'CH-DRAW-2020-001',
+    collection: 'Intertwined',
     images: ['images/dibujo-06.png'],
   },
 
@@ -519,6 +561,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 30, h: 40, d: 0 },
     weight: 0.6, productionCost: 6, hoursWorked: 3.5, framed: 'framed', flatPackable: true,
     materials: 'Pencil and ink on paper 180 gsm',
+    certificate: 'CH-DRAW-2020-003',
+    collection: 'Intertwined',
     images: ['images/dibujo-07.png'],
   },
 
@@ -530,6 +574,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsFramed: { w: 30.5, h: 22, d: 1.4 },
     weight: 0.5, productionCost: 4, hoursWorked: 3, framed: 'framed', flatPackable: true,
     materials: 'Pencil and ink on paper 80 gsm',
+    certificate: 'CH-DRAW-2020-002',
+    collection: 'Intertwined',
     images: ['images/dibujo-02.png'],
   },
 
@@ -542,6 +588,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dims: { w: 16, h: 35, d: 18 },
     weight: 3.0, productionCost: 10, hoursWorked: 7, packingEfficiency: 0,
     materials: 'Ceramic, textile, acrylic details, semi-matte varnish',
+    certificate: 'CH-CER-2026-007',
     description: `A New Man reflects on the construction of masculinity in Western culture and imagines the possibility of another configuration of being. The figure appears rigid, pale and unfinished, yet opens to reveal an interior where plants and flowers emerge in vivid contrast.
 
 What happens when softness, vulnerability and inner life are suppressed in favor of performance, strength and protection? This work proposes that when this armor breaks, it is not the self that collapses, but a fiction. What appears through the crack is not purity or an essential truth, but space: space to listen, to transform, and to inhabit oneself with greater honesty.
@@ -566,6 +613,7 @@ For indoor use only.`,
     productionCost: 2, hoursWorked: 2.2,
     wholesaleAvailable: true,
     materials: 'Ceramic, bright glaze, underglazes and textile details',
+    certificate: 'CH-CER-2026-009',
     images: ['images/nightOwl-01.png', 'images/nightOwl-02.png', 'images/nightOwl-03.png', 'images/nightOwl-04.png'],
   },
 
@@ -577,7 +625,8 @@ For indoor use only.`,
     weight: 0.5, packingEfficiency: 0.85, flatPackable: true,
     productionCost: 2, hoursWorked: 2,
     wholesaleAvailable: true,
-    materials: 'Ceramic, bright glaze, underglazes, metal and textile details',
+    materials: 'Ceramic, bright glaze, underglazes, metal details',
+    certificate: 'CH-CER-2026-010',
     images: ['images/eye-01.png', 'images/eye-02.png', 'images/eye-03.png', 'images/eye-04.png', 'images/eye-05.png'],
   },
 
@@ -591,6 +640,7 @@ For indoor use only.`,
     dims: null,
     weight: null,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2026-005',
     description: `There is something paradoxically beautiful in the way we connect with others and with the world around us when we allow ourselves to disconnect from the symbolic universe we have built as humans. Beyond the structures of civilization lies a reality that is not separate from us but makes everything else possible: rich, silent, alive. Silence is part of music. This shaman invites us to pause — perhaps to disconnect, or perhaps to finally connect. We are more than humans, we are animals. Breath.
 
 For indoor use only.`,
@@ -608,6 +658,7 @@ For indoor use only.`,
     dims: { w: 18, h: 15.5, d: 18 },
     weight: 1.28, productionCost: 10, hoursWorked: 6,
     materials: 'Ceramic',
+    certificate: 'CH-CER-2024-006',
     description: `She embodies the feminine with grace, with power, carrying an ancient energy that feels almost otherworldly. Amazona is a creature from another planet, for the feminine has been so long disqualified in this one that when it rises within us, it feels like a hidden, distant, precious force. Surrounded by petals, she watches us, studies us, and invites us to question the feminine — what it means, what it hides, and what it holds. She is both the question and the answer, a cosmic reminder of the strength and beauty that lie within the feminine mystery.`,
     images: ['images/amazona-01.png','images/amazona-02.png','images/amazona-03.png','images/amazona-04.png'],
   },

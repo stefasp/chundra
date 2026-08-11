@@ -32,6 +32,8 @@
 
           <div id="pm-specs">
             <div class="pm-spec" id="pm-spec-materials"></div>
+            <div class="pm-spec" id="pm-spec-collection"></div>
+            <div class="pm-spec" id="pm-spec-cert"></div>
             <div class="pm-spec" id="pm-spec-dims"></div>
             <div class="pm-spec" id="pm-spec-weight"></div>
             <div class="pm-spec" id="pm-spec-framed"></div>
@@ -141,7 +143,7 @@
     // Description
     const descEl = document.getElementById('pm-description');
     if (p.description && p.description.trim()) {
-      const html = p.description.trim()
+      let html = p.description.trim()
         .split(/\n\n+/)
         .map(para => `<p>${para
           .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -156,6 +158,14 @@
 
     // Specs
     setSpec('pm-spec-materials', 'Materials', p.materials);
+
+    p.collection
+      ? setSpec('pm-spec-collection', 'Collection', p.collection)
+      : hide('pm-spec-collection');
+
+    p.certificate
+      ? setSpec('pm-spec-cert', 'Certificate of authenticity', p.certificate + ' · Included with this piece')
+      : hide('pm-spec-cert');
 
     if (p.dims) {
       const d = p.dims;
