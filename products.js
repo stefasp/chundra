@@ -103,7 +103,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
   },
 
   lunar: {
-    id: 'lunar', name: 'Lunar Guardian', subtitle: 'movement of life and femininity',
+    id: 'lunar', name: 'Moon Guardian', subtitle: 'Movement of life and femininity',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 139, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
@@ -352,7 +352,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
     dimsCompact: { w: 14, h: 14, d: 1.5 },    // central figure (used for shipping)
     flatPackable: true,
     weight: 0.5, productionCost: 4, hoursWorked: 1.5, packingEfficiency: 0.85,
-    materials: 'Ceramic, acrylic painting, matte varnish',
+    materials: 'Ceramic, acrylic painting, matte varnish, textile details.',
     certificate: 'CH-CER-2026-001',
     description: `This colorful piece is part of the Wall Art Collection. An introspective fox with a touch of Mexican soul — elegant, thoughtful, and festive, just as every home should be.`,
     images: ['images/heartandfox-01.png','images/heartandfox-02.png','images/heartandfox-03.png','images/heartandfox-04.png'],
