@@ -322,7 +322,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   'melted-colors': {
     id: 'melted-colors', name: 'Melted Colors Candle Holder', subtitle: 'wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
-    price: 44, fragile: true,
+    price: 48, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 5, hoursWorked: 2.3, packingEfficiency: 0.85,
     materials: 'Ceramic',
