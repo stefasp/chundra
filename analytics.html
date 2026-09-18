@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chundra — Analytics</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;600&family=Edu+AU+VIC+WA+NT+Pre:wght@400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EBE9D4;
+      --surface: #fff;
+      --purple: #594593;
+      --green: #618764;
+      --text: #444;
+      --muted: #888;
+      --border: #e0ddc8;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: "Lexend", sans-serif;
+      font-weight: 200;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-family: "Edu AU VIC WA NT Pre", cursive;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--purple);
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    #date-range {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    #date-range input {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+    #refresh-btn {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    #refresh-btn:hover { background: var(--green); }
+
+    /* Auth screen */
+    #auth-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      gap: 16px;
+      text-align: center;
+    }
+    #auth-screen p { color: var(--muted); font-size: 0.9rem; max-width: 360px; line-height: 1.7; }
+    #sign-in-btn {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 28px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    #sign-in-btn:hover { background: var(--green); }
+
+    /* Dashboard */
+    #dashboard { display: none; padding: 28px 32px; }
+
+    .summary-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border-radius: 6px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+    }
+    .stat-card .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .stat-card .value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--purple);
+    }
+    .stat-card .sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .charts-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .charts-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+    .card h2 {
+      font-size: 0.78rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .card canvas { max-height: 220px; }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    table.data-table th {
+      text-align: left;
+      font-weight: 400;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding: 4px 0 8px;
+    }
+    table.data-table td {
+      padding: 7px 0;
+      border-bottom: 1px solid #f5f3e8;
+      color: var(--text);
+    }
+    table.data-table td:last-child { text-align: right; font-weight: 600; color: var(--purple); }
+
+    .loading { color: var(--muted); font-size: 0.85rem; padding: 20px 0; text-align: center; }
+
+    @media (max-width: 900px) {
+      .summary-row { grid-template-columns: repeat(2, 1fr); }
+      .charts-row, .charts-row-3 { grid-template-columns: 1fr; }
+      #dashboard { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Chundra Analytics</h1>
+  <div class="header-right">
+    <div id="date-range">
+      <span>From</span>
+      <input type="date" id="date-start">
+      <span>to</span>
+      <input type="date" id="date-end">
+      <button id="refresh-btn">Update</button>
+    </div>
+    <span id="user-name" style="font-size:0.8rem;color:var(--muted);"></span>
+  </div>
+</header>
+
+<!-- Auth screen -->
+<div id="auth-screen">
+  <h2 style="font-family:'Edu AU VIC WA NT Pre',cursive;font-size:1.6rem;font-weight:400;color:var(--purple);">Connect your analytics</h2>
+  <p>Sign in with the Google account that has access to the Chundra GA4 property.</p>
+  <button id="sign-in-btn">Sign in with Google</button>
+  <p id="auth-error" style="color:#d11040;display:none;font-size:0.8rem;"></p>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard">
+
+  <div class="summary-row">
+    <div class="stat-card">
+      <div class="label">Active users</div>
+      <div class="value" id="stat-users">—</div>
+      <div class="sub" id="stat-users-sub"></div>
+    </div>
+    <div class="stat-card">
+      <div class="label">New users</div>
+      <div class="value" id="stat-new">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Product views</div>
+      <div class="value" id="stat-views">—</div>
+      <div class="sub">view_item events</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Add to cart</div>
+      <div class="value" id="stat-cart">—</div>
+      <div class="sub" id="stat-cart-sub"></div>
+    </div>
+  </div>
+
+  <div class="charts-row">
+    <div class="card">
+      <h2>Users over time</h2>
+      <canvas id="chart-timeline"></canvas>
+    </div>
+    <div class="card">
+      <h2>Traffic sources</h2>
+      <table class="data-table" id="table-sources">
+        <thead><tr><th>Source</th><th>Sessions</th></tr></thead>
+        <tbody><tr><td colspan="2" class="loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="charts-row-3">
+    <div class="card">
+      <h2>Products viewed</h2>
+      <table class="data-table" id="table-products">
+        <thead><tr><th>Product</th><th>Views</th></tr></thead>
+        <tbody><tr><td colspan="2" class="loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Pages visited</h2>
+      <table class="data-table" id="table-pages">
+        <thead><tr><th>Page</th><th>Views</th></tr></thead>
+        <tbody><tr><td colspan="2" class="loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Events</h2>
+      <table class="data-table" id="table-events">
+        <thead><tr><th>Event</th><th>Count</th></tr></thead>
+        <tbody><tr><td colspan="2" class="loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const PROPERTY_ID = '474703703';
+  // Replace with your OAuth Client ID after creating it in Google Cloud Console
+  const CLIENT_ID = 'YOUR_OAUTH_CLIENT_ID';
+  const SCOPES = 'https://www.googleapis.com/auth/analytics.readonly';
+
+  let accessToken = null;
+  let timelineChart = null;
+
+  // Default date range: last 90 days
+  const today = new Date();
+  const ago90 = new Date(today); ago90.setDate(today.getDate() - 90);
+  document.getElementById('date-end').value   = today.toISOString().slice(0,10);
+  document.getElementById('date-start').value = ago90.toISOString().slice(0,10);
+
+  // ── Auth ─────────────────────────────────────────────────────
+  document.getElementById('sign-in-btn').addEventListener('click', signIn);
+  document.getElementById('refresh-btn').addEventListener('click', loadAll);
+
+  function signIn() {
+    const params = new URLSearchParams({
+      client_id:     CLIENT_ID,
+      redirect_uri:  window.location.origin + window.location.pathname,
+      response_type: 'token',
+      scope:         SCOPES,
+      prompt:        'select_account',
+    });
+    window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?' + params;
+  }
+
+  function checkHash() {
+    const hash = new URLSearchParams(window.location.hash.slice(1));
+    if (hash.get('access_token')) {
+      accessToken = hash.get('access_token');
+      history.replaceState(null, '', window.location.pathname);
+      localStorage.setItem('ga_token', accessToken);
+      localStorage.setItem('ga_token_ts', Date.now());
+      showDashboard();
+      loadAll();
+    } else {
+      const stored = localStorage.getItem('ga_token');
+      const ts     = parseInt(localStorage.getItem('ga_token_ts') || '0');
+      const age    = (Date.now() - ts) / 1000;
+      if (stored && age < 3500) {
+        accessToken = stored;
+        showDashboard();
+        loadAll();
+      } else {
+        document.getElementById('auth-screen').style.display = 'flex';
+      }
+    }
+  }
+
+  function showDashboard() {
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('dashboard').style.display   = 'block';
+  }
+
+  // ── GA4 Data API ──────────────────────────────────────────────
+  async function gaRequest(body) {
+    const res = await fetch(
+      `https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY_ID}:runReport`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken,
+          'Content-Type':  'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    );
+    if (res.status === 401) {
+      localStorage.removeItem('ga_token');
+      localStorage.removeItem('ga_token_ts');
+      document.getElementById('dashboard').style.display    = 'none';
+      document.getElementById('auth-screen').style.display  = 'flex';
+      document.getElementById('auth-error').style.display   = 'block';
+      document.getElementById('auth-error').textContent     = 'Session expired — please sign in again.';
+      return null;
+    }
+    return res.json();
+  }
+
+  function dateRange() {
+    return {
+      startDate: document.getElementById('date-start').value,
+      endDate:   document.getElementById('date-end').value,
+    };
+  }
+
+  async function loadAll() {
+    await Promise.all([
+      loadSummary(),
+      loadTimeline(),
+      loadSources(),
+      loadProducts(),
+      loadPages(),
+      loadEvents(),
+    ]);
+  }
+
+  // ── Summary stats ─────────────────────────────────────────────
+  async function loadSummary() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      metrics: [
+        { name: 'activeUsers' },
+        { name: 'newUsers' },
+        { name: 'itemsViewed' },
+        { name: 'addToCarts' },
+        { name: 'sessions' },
+      ],
+    });
+    if (!data || !data.rows) return;
+    const r = data.rows[0].metricValues;
+    document.getElementById('stat-users').textContent     = r[0].value;
+    document.getElementById('stat-new').textContent       = r[1].value;
+    document.getElementById('stat-views').textContent     = r[2].value;
+    document.getElementById('stat-cart').textContent      = r[3].value;
+    const pct = r[2].value > 0
+      ? Math.round(r[3].value / r[2].value * 100) + '% of views'
+      : '';
+    document.getElementById('stat-cart-sub').textContent = pct;
+    document.getElementById('stat-users-sub').textContent = r[4].value + ' sessions';
+  }
+
+  // ── Timeline ─────────────────────────────────────────────────
+  async function loadTimeline() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      dimensions: [{ name: 'week' }],
+      metrics:    [{ name: 'activeUsers' }],
+      orderBys:   [{ dimension: { dimensionName: 'week' }, desc: false }],
+    });
+    if (!data || !data.rows) return;
+    const labels = data.rows.map(r => r.dimensionValues[0].value);
+    const values = data.rows.map(r => parseInt(r.metricValues[0].value));
+    if (timelineChart) timelineChart.destroy();
+    timelineChart = new Chart(document.getElementById('chart-timeline'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          data: values,
+          borderColor: '#594593',
+          backgroundColor: 'rgba(89,69,147,0.08)',
+          borderWidth: 2,
+          pointRadius: 3,
+          tension: 0.3,
+          fill: true,
+        }],
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#888' } },
+          y: { grid: { color: '#f0ede0' }, ticks: { font: { size: 10 }, color: '#888' } },
+        },
+      },
+    });
+  }
+
+  // ── Traffic sources ───────────────────────────────────────────
+  async function loadSources() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      dimensions: [{ name: 'sessionSource' }],
+      metrics:    [{ name: 'sessions' }],
+      orderBys:   [{ metric: { metricName: 'sessions' }, desc: true }],
+      limit: 8,
+    });
+    renderTable('table-sources', data, r => [
+      r.dimensionValues[0].value,
+      r.metricValues[0].value,
+    ]);
+  }
+
+  // ── Products viewed ───────────────────────────────────────────
+  async function loadProducts() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      dimensions: [{ name: 'itemName' }],
+      metrics:    [{ name: 'itemsViewed' }],
+      orderBys:   [{ metric: { metricName: 'itemsViewed' }, desc: true }],
+      limit: 15,
+    });
+    renderTable('table-products', data, r => [
+      r.dimensionValues[0].value,
+      r.metricValues[0].value,
+    ]);
+  }
+
+  // ── Pages ─────────────────────────────────────────────────────
+  async function loadPages() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      dimensions: [{ name: 'pageTitle' }],
+      metrics:    [{ name: 'screenPageViews' }],
+      orderBys:   [{ metric: { metricName: 'screenPageViews' }, desc: true }],
+      limit: 8,
+    });
+    renderTable('table-pages', data, r => [
+      r.dimensionValues[0].value.replace(' — Chundra', '').replace(' | Chundra', ''),
+      r.metricValues[0].value,
+    ]);
+  }
+
+  // ── Events ────────────────────────────────────────────────────
+  async function loadEvents() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      dimensions: [{ name: 'eventName' }],
+      metrics:    [{ name: 'eventCount' }],
+      orderBys:   [{ metric: { metricName: 'eventCount' }, desc: true }],
+      limit: 10,
+    });
+    renderTable('table-events', data, r => [
+      r.dimensionValues[0].value,
+      r.metricValues[0].value,
+    ]);
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────
+  function renderTable(id, data, rowFn) {
+    const tbody = document.querySelector('#' + id + ' tbody');
+    if (!data || !data.rows || data.rows.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="2" class="loading">No data</td></tr>';
+      return;
+    }
+    tbody.innerHTML = data.rows.map(r => {
+      const [label, val] = rowFn(r);
+      return `<tr><td>${label}</td><td>${val}</td></tr>`;
+    }).join('');
+  }
+
+  checkHash();
+</script>
+</body>
+</html>
