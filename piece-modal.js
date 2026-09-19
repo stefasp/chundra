@@ -87,14 +87,18 @@
     // Update URL hash for shareable links
     history.pushState(null, '', '#' + productId);
 
-    // GA4: track product view
+    // GA4: track product view (GA4 ecommerce format)
     if (typeof gtag !== 'undefined') {
       gtag('event', 'view_item', {
-        item_id: productId,
-        item_name: p.name,
-        item_category: (p.category || []).join('/'),
-        price: p.priceSale ?? p.price,
         currency: 'EUR',
+        value: p.priceSale ?? p.price,
+        items: [{
+          item_id: productId,
+          item_name: p.name,
+          item_category: (p.category || []).join('/'),
+          price: p.priceSale ?? p.price,
+          currency: 'EUR',
+        }],
       });
     }
     currentProduct = p;
@@ -408,11 +412,15 @@
       Cart.addItem(currentProduct.id);
       if (typeof gtag !== 'undefined') {
         gtag('event', 'add_to_cart', {
-          item_id: currentProduct.id,
-          item_name: currentProduct.name,
-          item_category: (currentProduct.category || []).join('/'),
-          price: currentProduct.priceSale ?? currentProduct.price,
           currency: 'EUR',
+          value: currentProduct.priceSale ?? currentProduct.price,
+          items: [{
+            item_id: currentProduct.id,
+            item_name: currentProduct.name,
+            item_category: (currentProduct.category || []).join('/'),
+            price: currentProduct.priceSale ?? currentProduct.price,
+            currency: 'EUR',
+          }],
         });
       }
     }

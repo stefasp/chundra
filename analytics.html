@@ -51,33 +51,28 @@
       align-items: center;
       gap: 16px;
     }
-    #date-range {
+    .preset-btns {
       display: flex;
-      gap: 8px;
+      gap: 4px;
       align-items: center;
-      font-size: 0.8rem;
-      color: var(--muted);
     }
-    #date-range input {
+    .preset-btn {
+      background: none;
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 4px 8px;
+      padding: 5px 10px;
       font-family: inherit;
-      font-size: 0.8rem;
-      background: var(--bg);
-      color: var(--text);
-    }
-    #refresh-btn {
-      background: var(--purple);
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 14px;
-      font-family: inherit;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      color: var(--muted);
       cursor: pointer;
+      transition: all 0.15s;
     }
-    #refresh-btn:hover { background: var(--green); }
+    .preset-btn:hover { border-color: var(--purple); color: var(--purple); }
+    .preset-btn.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff;
+    }
 
     /* Auth screen */
     #auth-screen {
@@ -201,12 +196,13 @@
 <header>
   <h1>Chundra Analytics</h1>
   <div class="header-right">
-    <div id="date-range">
-      <span>From</span>
-      <input type="date" id="date-start">
-      <span>to</span>
-      <input type="date" id="date-end">
-      <button id="refresh-btn">Update</button>
+    <div class="preset-btns" id="preset-btns">
+      <button class="preset-btn" data-days="7">7d</button>
+      <button class="preset-btn" data-days="14">2w</button>
+      <button class="preset-btn active" data-days="30">30d</button>
+      <button class="preset-btn" data-days="90">90d</button>
+      <button class="preset-btn" data-days="180">6m</button>
+      <button class="preset-btn" data-days="365">1y</button>
     </div>
     <span id="user-name" style="font-size:0.8rem;color:var(--muted);"></span>
   </div>
@@ -294,15 +290,26 @@
   let accessToken = null;
   let timelineChart = null;
 
-  // Default date range: last 90 days
-  const today = new Date();
-  const ago90 = new Date(today); ago90.setDate(today.getDate() - 90);
-  document.getElementById('date-end').value   = today.toISOString().slice(0,10);
-  document.getElementById('date-start').value = ago90.toISOString().slice(0,10);
+  // Default date range: last 30 days
+  let activeDays = 30;
+
+  function setPreset(days) {
+    activeDays = days;
+    document.querySelectorAll('.preset-btn').forEach(b => {
+      b.classList.toggle('active', parseInt(b.dataset.days) === days);
+    });
+    loadAll();
+  }
+
+  document.getElementById('preset-btns').addEventListener('click', e => {
+    const btn = e.target.closest('.preset-btn');
+    if (!btn) return;
+    setPreset(parseInt(btn.dataset.days));
+  });
 
   // ── Auth ─────────────────────────────────────────────────────
   document.getElementById('sign-in-btn').addEventListener('click', signIn);
-  document.getElementById('refresh-btn').addEventListener('click', loadAll);
+  
 
   function signIn() {
     const params = new URLSearchParams({
@@ -369,9 +376,11 @@
   }
 
   function dateRange() {
+    const end   = new Date();
+    const start = new Date(); start.setDate(end.getDate() - activeDays);
     return {
-      startDate: document.getElementById('date-start').value,
-      endDate:   document.getElementById('date-end').value,
+      startDate: start.toISOString().slice(0,10),
+      endDate:   end.toISOString().slice(0,10),
     };
   }
 
