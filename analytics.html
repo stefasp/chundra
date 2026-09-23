@@ -255,6 +255,23 @@
     </div>
   </div>
 
+  <div class="charts-row" style="margin-bottom:16px;">
+    <div class="card">
+      <h2>Countries</h2>
+      <table class="data-table" id="table-countries">
+        <thead><tr><th>Country</th><th>Users</th></tr></thead>
+        <tbody><tr><td colspan="2" class="loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card" style="display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;color:var(--muted);font-size:0.85rem;line-height:1.8;">
+        <div style="font-size:2rem;margin-bottom:8px;">📍</div>
+        <div id="top-country" style="font-size:1.1rem;font-weight:600;color:var(--purple);">—</div>
+        <div>top country</div>
+      </div>
+    </div>
+  </div>
+
   <div class="charts-row-3">
     <div class="card">
       <h2>Products viewed</h2>
@@ -389,6 +406,7 @@
       loadSummary(),
       loadTimeline(),
       loadSources(),
+      loadCountries(),
       loadProducts(),
       loadPages(),
       loadEvents(),
@@ -424,12 +442,16 @@
   async function loadTimeline() {
     const data = await gaRequest({
       dateRanges: [dateRange()],
-      dimensions: [{ name: 'week' }],
+      dimensions: [{ name: 'date' }],
       metrics:    [{ name: 'activeUsers' }],
-      orderBys:   [{ dimension: { dimensionName: 'week' }, desc: false }],
+      orderBys:   [{ dimension: { dimensionName: 'date' }, desc: false }],
     });
     if (!data || !data.rows) return;
-    const labels = data.rows.map(r => r.dimensionValues[0].value);
+    const labels = data.rows.map(r => {
+      const raw = r.dimensionValues[0].value; // YYYYMMDD
+      const d = new Date(raw.slice(0,4), raw.slice(4,6)-1, raw.slice(6,8));
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    });
     const values = data.rows.map(r => parseInt(r.metricValues[0].value));
     if (timelineChart) timelineChart.destroy();
     timelineChart = new Chart(document.getElementById('chart-timeline'), {
@@ -484,6 +506,24 @@
       r.dimensionValues[0].value,
       r.metricValues[0].value,
     ]);
+  }
+
+  // ── Countries ────────────────────────────────────────────────
+  async function loadCountries() {
+    const data = await gaRequest({
+      dateRanges: [dateRange()],
+      dimensions: [{ name: 'country' }],
+      metrics:    [{ name: 'activeUsers' }],
+      orderBys:   [{ metric: { metricName: 'activeUsers' }, desc: true }],
+      limit: 10,
+    });
+    renderTable('table-countries', data, r => [
+      r.dimensionValues[0].value,
+      r.metricValues[0].value,
+    ]);
+    if (data && data.rows && data.rows.length > 0) {
+      document.getElementById('top-country').textContent = data.rows[0].dimensionValues[0].value;
+    }
   }
 
   // ── Pages ─────────────────────────────────────────────────────
