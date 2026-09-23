@@ -606,3 +606,25 @@ section.gallery-container { padding: 60px 0; }
 .cat-badge.wallart    { background: #62a385; }
 .cat-badge.jewellery  { background: #b07799; }
 .cat-badge.functional { background: #7996a2; }
+
+/* ── Card CTA button (hover) ── */
+.card-cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #62a385;
+  color: #fff;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 18;
+  pointer-events: none;
+}
+.card:hover .card-cta { opacity: 1; }
+.card.sold .card-cta { display: none; }

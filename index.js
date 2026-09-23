@@ -97,6 +97,12 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     `;
 
+    // CTA button (hover, non-sold only)
+    const cta = document.createElement('div');
+    cta.className = 'card-cta';
+    cta.textContent = 'Ver detalles →';
+    card.appendChild(cta);
+
     // Sold state
     if (p.status === 'sold') {
       card.classList.add('sold');
