@@ -207,11 +207,10 @@
   <div class="header-right">
     <div class="preset-btns" id="preset-btns">
       <button class="preset-btn" data-days="7">7d</button>
-      <button class="preset-btn" data-days="14">2w</button>
-      <button class="preset-btn active" data-days="30">30d</button>
+      <button class="preset-btn active" data-days="28">28d</button>
       <button class="preset-btn" data-days="90">90d</button>
-      <button class="preset-btn" data-days="180">6m</button>
-      <button class="preset-btn" data-days="365">1y</button>
+      <button class="preset-btn" data-days="182">6m</button>
+      <button class="preset-btn" data-days="365">12m</button>
     </div>
     <span id="user-name" style="font-size:0.8rem;color:var(--muted);"></span>
   </div>
@@ -254,7 +253,7 @@
 
   <div class="charts-row">
     <div class="card">
-      <h2>Users over time</h2>
+      <h2>Active users per day</h2>
       <canvas id="chart-timeline"></canvas>
     </div>
     <div class="card">
@@ -318,8 +317,8 @@
   let accessToken = null;
   let timelineChart = null;
 
-  // Default date range: last 30 days
-  let activeDays = 30;
+  // Default date range: last 28 days (matches GA default)
+  let activeDays = 28;
 
   function setPreset(days) {
     activeDays = days;
@@ -404,8 +403,8 @@
   }
 
   function dateRange() {
-    const end   = new Date();
-    const start = new Date(); start.setDate(end.getDate() - activeDays);
+    const end   = new Date(); end.setDate(end.getDate() - 1); // yesterday, like GA
+    const start = new Date(end); start.setDate(end.getDate() - activeDays + 1);
     return {
       startDate: start.toISOString().slice(0,10),
       endDate:   end.toISOString().slice(0,10),
@@ -426,10 +425,10 @@
 
   // ── Summary stats ─────────────────────────────────────────────
   async function loadSummary() {
-    // Compute previous period date range
+    // Compute previous period date range (mirrors dateRange() logic, shifted back)
     function prevDateRange() {
-      const end   = new Date();
-      const start = new Date(); start.setDate(end.getDate() - activeDays);
+      const end   = new Date(); end.setDate(end.getDate() - 1); // yesterday
+      const start = new Date(end); start.setDate(end.getDate() - activeDays + 1);
       const prev_end   = new Date(start); prev_end.setDate(prev_end.getDate() - 1);
       const prev_start = new Date(prev_end); prev_start.setDate(prev_end.getDate() - activeDays + 1);
       return {
@@ -532,15 +531,17 @@
           backgroundColor: 'rgba(89,69,147,0.08)',
           borderWidth: 2,
           pointRadius: 3,
-          tension: 0.3,
           fill: true,
         }],
       },
       options: {
-        plugins: { legend: { display: false } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: {
+          title: ctx => ctx[0].label,
+          label: ctx => ' ' + ctx.parsed.y + ' active users',
+        }}},
         scales: {
-          x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#888' } },
-          y: { grid: { color: '#f0ede0' }, ticks: { font: { size: 10 }, color: '#888' } },
+          x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#888', maxTicksLimit: 12 } },
+          y: { min: 0, grid: { color: '#f0ede0' }, ticks: { font: { size: 10 }, color: '#888', stepSize: 1, precision: 0 } },
         },
       },
     });
