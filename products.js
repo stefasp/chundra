@@ -8,7 +8,7 @@ const PRODUCTS = {
 
 
   flyingpendant: {
-    id: 'flyingpendant', name: 'Flying pendant', subtitle: 'Folk charm',
+    id: 'flyingpendant', name: 'Flying pendant and chain', subtitle: 'Folk charm',
     category: ['jewellery'], status: 'available', wholesaleAvailable: true,
     price: 39, fragile: true,
     dims: { w: 5.5, h: 7, d: 0.18 },
@@ -19,7 +19,7 @@ const PRODUCTS = {
     images: ['images/flying-01.png', 'images/flying-02.png', 'images/flying-03.png', 'images/flying-04.png'],
   },
   catpendant: {
-    id: 'catpendant', name: 'Cat pendant', subtitle: 'Gothic glam charm',
+    id: 'catpendant', name: 'Cat pendant and choker', subtitle: 'Gothic glam charm',
     category: ['jewellery'], status: 'available', wholesaleAvailable: true,
     price: 39, fragile: true,
     dims: { w: 4.5, h: 11, d: 0.18 },
@@ -298,7 +298,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'melt-fishing': {
     id: 'melt-fishing', name: 'Fire Ritual Vessel', subtitle: 'A Fire Ritual for moments of stillness, imagination and wonder.',
-    category: ['functional','ritual'], status: 'available', wholesaleAvailable: true,
+    category: ['functional','ritual'], status: 'sold', wholesaleAvailable: true,
     price: 57, fragile: true,
     dims: { w: 8, h: 11, d: 7 },
     weight: 0.2, productionCost: 4, hoursWorked: 3, packingEfficiency: 0.25,
