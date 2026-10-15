@@ -605,8 +605,8 @@ For indoor use only.`,
     ],
   },
 
-  wonded: {
-    id: 'wonded', name: 'Wonded', subtitle: 'Work in progress', featured: true,
+  wounded: {
+    id: 'wounded', name: 'Wounded', subtitle: 'Work in progress', featured: true,
     category: [], status: 'unavailable', wholesaleAvailable: false,
     materials: 'Ceramic',
     description: `This piece is still a work in progress. It has been a very challenging piece to create, as it is really about my broken heart.
