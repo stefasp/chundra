@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400&display=swap");
+
+.site-nav-header,
+body {
+  margin: 0;
+}
+
+.site-nav-header {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 7%;
+  background: #fff;
+  color: #000;
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: normal;
+  text-align: left;
+  box-shadow: none;
+}
+
+.site-nav-header *,
+.site-nav-header *::before,
+.site-nav-header *::after {
+  box-sizing: border-box;
+}
+
+.site-nav-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav-header .logo-container img {
+  display: block;
+  width: auto;
+  height: 62px;
+}
+
+.site-nav-header nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-header .menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.site-nav-header .menu li {
+  margin: 0;
+}
+
+.site-nav-header .menu a,
+.site-nav-header .copy-email {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #777;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.site-nav-header .menu a:hover,
+.site-nav-header .copy-email:hover {
+  color: #222;
+}
+
+.site-nav-header .menu-toggle {
+  display: none;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: #555;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .site-nav-header {
+    height: 54px;
+    padding: 8px 5%;
+  }
+
+  .site-nav-header .logo-container img {
+    height: 38px;
+  }
+
+  .site-nav-header nav {
+    position: relative;
+  }
+
+  .site-nav-header .menu-toggle {
+    display: block;
+  }
+
+  .site-nav-header .menu {
+    position: absolute;
+    top: calc(100% + 16px);
+    right: -5vw;
+    display: none;
+    min-width: 180px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0;
+    background: #fff;
+    box-shadow: 0 4px 12px #0000001a;
+  }
+
+  .site-nav-header .menu.is-open {
+    display: flex;
+  }
+
+  .site-nav-header .menu li a,
+  .site-nav-header .copy-email {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+  }
+}

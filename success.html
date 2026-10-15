@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lexend:wght@100..900&family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-nav.css">
+  <script src="site-nav.js" defer></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -20,16 +22,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px 80px;
+      justify-content: flex-start;
+      padding: 0 20px 80px;
       text-align: center;
     }
 
-    .logo-wrap {
-      margin-bottom: 40px;
+    .site-nav-header {
+      flex-shrink: 0;
+      width: calc(100% + 40px);
+      margin: 0 -20px 40px;
     }
-    .logo-wrap img {
-      height: 70px;
+    .card {
+      margin: auto;
     }
 
     .card {
@@ -134,12 +138,6 @@
 </head>
 <body>
 
-  <div class="logo-wrap">
-    <a href="index.html">
-      <img src="images/logo.png" alt="Chundra">
-    </a>
-  </div>
-
   <div class="card">
     <div class="check">✦</div>
 
@@ -174,7 +172,7 @@
       </ul>
     </div>
 
-    <a href="index.html" class="back-btn">Back to the gallery</a>
+    <a href="shop.html" class="back-btn">Back to the gallery</a>
 
     <p class="footer-note">
       <a href="policy.html">Returns & Damage Policy</a> &nbsp;·&nbsp;

@@ -35,9 +35,15 @@
             <div class="pm-spec" id="pm-spec-collection"></div>
             <div class="pm-spec" id="pm-spec-cert"></div>
             <div class="pm-spec" id="pm-spec-dims"></div>
+            <div class="pm-spec" id="pm-spec-year"></div>
             <div class="pm-spec" id="pm-spec-weight"></div>
             <div class="pm-spec" id="pm-spec-framed"></div>
             <div class="pm-spec pm-spec-note" id="pm-spec-dims-note"></div>
+          </div>
+
+          <div id="pm-work-inquiry">
+            <p><strong>Would you like to make this piece yours?</strong></p>
+            <p>I'd love to hear from you. For inquiries, please contact me at <a href="mailto:stefus.sp@gmail.com">stefus.sp@gmail.com</a>.</p>
           </div>
 
           <!-- Shipping preview -->
@@ -80,30 +86,37 @@
   const soldMsg = document.getElementById('pm-sold-msg');
 
   // ── Open ────────────────────────────────────────────────────
-  function openModal(productId) {
+  function openModal(productId, previewImage) {
     const p = PRODUCTS[productId];
-    if (!p) return;
+    const isFeaturedView = document.body.dataset.featuredView === 'true';
+    if (!p || (p.status === 'unavailable' && !isFeaturedView) || (isFeaturedView && !p.featured)) return;
 
     // Update URL hash for shareable links
     history.pushState(null, '', '#' + productId);
 
     // GA4: track product view (GA4 ecommerce format)
     if (typeof gtag !== 'undefined') {
+      const item = {
+        item_id: productId,
+        item_name: p.name,
+        item_category: (p.category || []).join('/'),
+      };
+      const price = p.priceSale ?? p.price;
+      if (price != null) {
+        item.price = price;
+      }
       gtag('event', 'view_item', {
-        currency: 'EUR',
-        value: p.priceSale ?? p.price,
-        items: [{
-          item_id: productId,
-          item_name: p.name,
-          item_category: (p.category || []).join('/'),
-          price: p.priceSale ?? p.price,
-          currency: 'EUR',
-        }],
+        ...(price != null ? { currency: 'EUR', value: price } : {}),
+        items: [item],
       });
     }
     currentProduct = p;
     // Include video after images if present
     images = [...(p.images || [])];
+    const featuredImage = previewImage || (isFeaturedView ? p.featuredImage : null);
+    if (featuredImage) {
+      images = [featuredImage, ...images.filter(image => image !== featuredImage)];
+    }
     if (p.video) images.push(p.video);
     currentSlide = 0;
     populate(p);
@@ -137,11 +150,17 @@
 
     // Price
     const pb = document.getElementById('pm-price-block');
-    if (p.priceSale) {
+    const isFeaturedView = document.body.dataset.featuredView === 'true';
+    if (isFeaturedView || p.price == null) {
+      pb.replaceChildren();
+      pb.style.display = 'none';
+    } else if (p.priceSale) {
       const pct = Math.round((1 - p.priceSale / p.price) * 100);
       pb.innerHTML = `<span class="price-original">€${p.price}</span> <strong class="price-sale">€${p.priceSale}</strong> <span class="price-badge">–${pct}%</span>`;
+      pb.style.display = 'flex';
     } else {
       pb.innerHTML = `<strong class="pm-price">€${p.price}</strong>`;
+      pb.style.display = 'flex';
     }
 
     // Description
@@ -187,6 +206,10 @@
       hide('pm-spec-dims');
     }
 
+    p.year
+      ? setSpec('pm-spec-year', 'Year', p.year)
+      : hide('pm-spec-year');
+
     p.weight
       ? setSpec('pm-spec-weight', 'Weight', `${p.weight} kg`)
       : hide('pm-spec-weight');
@@ -215,8 +238,11 @@
 
     // Sold / cart
     const isSold = p.status === 'sold';
-    cartBtn.style.display = isSold ? 'none' : 'inline-block';
+    cartBtn.style.display = isSold || isFeaturedView || p.status === 'unavailable' ? 'none' : 'inline-block';
     soldMsg.style.display = isSold ? 'block' : 'none';
+    document.getElementById('pm-actions').style.display = isFeaturedView ? 'none' : '';
+    document.getElementById('pm-shipping-block').style.display = isFeaturedView ? 'none' : '';
+    document.getElementById('pm-work-inquiry').style.display = isFeaturedView ? 'block' : 'none';
 
     // Slider arrows
     prevBtn.style.display = images.length > 1 ? 'flex' : 'none';
@@ -405,7 +431,7 @@
   }
 
   cartBtn.addEventListener('click', () => {
-    if (!currentProduct || currentProduct.status === 'sold') return;
+    if (!currentProduct || currentProduct.status === 'sold' || currentProduct.status === 'unavailable' || document.body.dataset.featuredView === 'true') return;
     if (Cart.hasItem(currentProduct.id)) {
       Cart.removeItem(currentProduct.id);
     } else {
@@ -448,7 +474,7 @@
     const id = card.dataset.productId;
     if (!id || !PRODUCTS[id]) return;
     e.preventDefault();
-    openModal(id);
+    openModal(id, card.dataset.featuredImage);
   });
 
   window.PieceModal = { open: openModal, close: closeModal };

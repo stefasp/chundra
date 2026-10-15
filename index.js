@@ -50,16 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.card[data-product-id]').forEach(card => {
     const p = PRODUCTS[card.dataset.productId];
     if (!p) return;
+    if (p.status === 'unavailable') {
+      card.style.display = 'none';
+      return;
+    }
 
     const detailsEl = card.querySelector('.details');
     if (!detailsEl) return;
 
     // Price HTML
     let priceHTML = '';
-    if (p.priceSale) {
+    if (p.priceSale != null && p.price != null) {
       const pct = Math.round((1 - p.priceSale / p.price) * 100);
       priceHTML = `<p class="card-price"><span class="price-original">€${p.price}</span> <strong class="price-sale">€${p.priceSale}</strong> <span class="price-badge">–${pct}%</span></p>`;
-    } else {
+    } else if (p.price != null) {
       priceHTML = `<p class="card-price"><strong>€${p.price}</strong></p>`;
     }
 

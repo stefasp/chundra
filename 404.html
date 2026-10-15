@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page not found — Chundra</title>
   <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="stylesheet" href="/site-nav.css">
+  <script src="/site-nav.js" defer></script>
   <link rel="icon" href="/images/favicon.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +17,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
-      padding: 40px 20px 80px;
+      padding: 0 20px 80px;
       background: #EBE9D4;
       font-family: "Lexend", sans-serif;
       font-weight: 200;
     }
+    .site-nav-header {
+      flex-shrink: 0;
+      width: calc(100% + 40px);
+      margin: 0 -20px 40px;
+    }
+    body > h1 { margin-top: auto; }
+    body > .btn { margin-bottom: auto; }
     a { text-decoration: none; }
-    .logo { height: 70px; margin-bottom: 40px; }
     h1 {
       font-family: "Edu AU VIC WA NT Pre", cursive;
       font-size: 2rem;
@@ -51,14 +59,11 @@
   </style>
 </head>
 <body>
-  <a href="/index.html">
-    <img src="/images/logo.png" alt="Chundra" class="logo">
-  </a>
   <h1>This page has moved.</h1>
   <p>
     The piece you're looking for now lives in our gallery —
     browse everything there and click any piece to see the details.
   </p>
-  <a href="/index.html" class="btn">Back to the gallery</a>
+  <a href="/shop.html" class="btn">Back to the gallery</a>
 </body>
 </html>

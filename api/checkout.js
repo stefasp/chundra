@@ -68,7 +68,7 @@ module.exports = async function handler(req, res) {
       line_items: lineItems,
       mode: 'payment',
       success_url: `${BASE_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url:  `${BASE_URL}/index.html`,
+      cancel_url:  `${BASE_URL}/shop.html`,
       phone_number_collection: { enabled: true },
       metadata: {
         zone: zone || '',
