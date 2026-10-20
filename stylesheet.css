@@ -355,19 +355,19 @@ section.gallery-container { padding: 60px 0; }
   overflow: hidden;
 }
 .card.sold::after {
-  content: "Sold out";
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: rgba(0,0,0,0.8);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  z-index: 2;
+    content: "Sold out";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #da0202;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 340;
+    padding: 4px 5px 1px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
 }
 
 .card .image-container {
