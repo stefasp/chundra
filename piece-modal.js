@@ -396,7 +396,7 @@
       } else {
         el = document.createElement('img');
         el.src = src;
-        el.alt = `Photo ${i + 1}`;
+        el.alt = `${currentProduct?.name || 'Artwork'} — image ${i + 1}`;
       }
       el.className = 'pm-thumb' + (i === 0 ? ' active' : '');
       el.addEventListener('click', () => renderSlide(i));

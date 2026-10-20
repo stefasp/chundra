@@ -86,11 +86,14 @@
   .card {
     flex-direction: column;
     width: 90%; /* Ocupa todo el ancho en pantallas pequeñas */
-    height: 440px;
+    height: auto;
   }
 
   .card .image-container {
     width: 100%; /* Altura ajustada para pantallas móviles */
+  }
+  .gallery .card .image-container {
+    height: 300px;
   }
   .menu {
     display: none;

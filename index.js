@@ -58,15 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const detailsEl = card.querySelector('.details');
     if (!detailsEl) return;
 
-    // Price HTML
-    let priceHTML = '';
-    if (p.priceSale != null && p.price != null) {
-      const pct = Math.round((1 - p.priceSale / p.price) * 100);
-      priceHTML = `<p class="card-price"><span class="price-original">€${p.price}</span> <strong class="price-sale">€${p.priceSale}</strong> <span class="price-badge">–${pct}%</span></p>`;
-    } else if (p.price != null) {
-      priceHTML = `<p class="card-price"><strong>€${p.price}</strong></p>`;
-    }
-
     // Dimensions string
     let dimsStr = '';
     if (p.dims) {
@@ -89,45 +80,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const framingMap = { 'framed': 'Framed', 'unframed': 'Unframed', 'stretched canvas': 'Stretched canvas' };
     const framingStr = p.framed ? framingMap[p.framed] || p.framed : '';
 
+    // Price HTML
+    let priceHTML = '';
+    if (p.priceSale != null && p.price != null) {
+      const pct = Math.round((1 - p.priceSale / p.price) * 100);
+      priceHTML = `<p class="card-price"><span class="price-original">€${p.price}</span> <strong class="price-sale">€${p.priceSale}</strong> <span class="price-badge">–${pct}%</span></p>`;
+    } else if (p.price != null) {
+      priceHTML = `<p class="card-price"><strong>€${p.price}</strong></p>`;
+    }
+
     detailsEl.innerHTML = `
       <h3>${p.name}</h3>
       ${p.subtitle ? `<p class="card-subtitle">${p.subtitle}</p>` : ''}
-      ${priceHTML}
       <div class="card-specs">
-        ${p.materials ? `<p>${p.materials}</p>` : ''}
         ${dimsStr ? `<p>${dimsStr}</p>` : ''}
+        ${p.materials ? `<p>${p.materials}</p>` : ''}
         ${p.weight ? `<p>Weight: ${p.weight} kg</p>` : ''}
         ${framingStr ? `<p>${framingStr}</p>` : ''}
       </div>
+      ${priceHTML}
     `;
 
     // CTA button (hover, non-sold only)
     const cta = document.createElement('div');
     cta.className = 'card-cta';
     cta.textContent = 'Ver detalles →';
-    card.appendChild(cta);
+    card.querySelector('.image-container').appendChild(cta);
 
     // Sold state
     if (p.status === 'sold') {
       card.classList.add('sold');
-    } else {
-      // Category badges (not shown on sold items)
-      const CAT_LABELS = {
-        ritual: 'Ritual', guardians: 'Guardian', wallart: 'Wall Art',
-        jewellery: 'Jewellery', functional: 'Functional',
-      };
-      const badgesEl = document.createElement('div');
-      badgesEl.className = 'card-badges';
-      (p.category || []).forEach(cat => {
-        if (!CAT_LABELS[cat]) return;
-        const badge = document.createElement('span');
-        badge.className = `cat-badge ${cat}`;
-        badge.textContent = CAT_LABELS[cat];
-        badgesEl.appendChild(badge);
-      });
-      if (badgesEl.children.length > 0) {
-        card.appendChild(badgesEl);
-      }
     }
   });
 
