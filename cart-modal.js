@@ -170,9 +170,7 @@
         <div class="cm-item-info">
           <p class="cm-item-name">${p.name}</p>
           <p class="cm-item-meta">${p.materials || ''}</p>
-          ${p.priceSale
-            ? `<p class="cm-item-price"><span class="price-original">€${p.price}</span> <strong>€${p.priceSale}</strong></p>`
-            : `<p class="cm-item-price"><strong>€${p.price}</strong></p>`}
+          <p class="cm-item-price"><strong>€${p.price}</strong></p>
         </div>
         <button class="cm-remove-btn" data-id="${p.id}" aria-label="Remove">×</button>`;
       itemList.appendChild(li);
@@ -324,7 +322,7 @@
 
     const lineItems = products.map(p => ({
       id: p.id, name: p.name,
-      price: p.priceSale ?? p.price,
+      price: p.price,
       image: window.location.origin + '/' + p.images[0],
     }));
 

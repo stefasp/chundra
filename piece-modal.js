@@ -101,7 +101,7 @@
         item_name: p.name,
         item_category: (p.category || []).join('/'),
       };
-      const price = p.priceSale ?? p.price;
+      const price = p.price;
       if (price != null) {
         item.price = price;
       }
@@ -154,10 +154,6 @@
     if (isFeaturedView || p.price == null) {
       pb.replaceChildren();
       pb.style.display = 'none';
-    } else if (p.priceSale) {
-      const pct = Math.round((1 - p.priceSale / p.price) * 100);
-      pb.innerHTML = `<span class="price-original">€${p.price}</span> <strong class="price-sale">€${p.priceSale}</strong> <span class="price-badge">–${pct}%</span>`;
-      pb.style.display = 'flex';
     } else {
       pb.innerHTML = `<strong class="pm-price">€${p.price}</strong>`;
       pb.style.display = 'flex';
@@ -439,12 +435,12 @@
       if (typeof gtag !== 'undefined') {
         gtag('event', 'add_to_cart', {
           currency: 'EUR',
-          value: currentProduct.priceSale ?? currentProduct.price,
+          value: currentProduct.price,
           items: [{
             item_id: currentProduct.id,
             item_name: currentProduct.name,
             item_category: (currentProduct.category || []).join('/'),
-            price: currentProduct.priceSale ?? currentProduct.price,
+            price: currentProduct.price,
             currency: 'EUR',
           }],
         });

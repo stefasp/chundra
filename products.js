@@ -36,7 +36,7 @@ const PRODUCTS = {
 
   ariadna: {
     id: 'ariadna', name: 'Ariadna', subtitle: 'a quiet enigma', featured: true,
-    category: ['guardians'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 152, fragile: true,
     dims: { w: 17, h: 32.5, d: 16.5 },
     weight: 1.42, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.62,
@@ -59,7 +59,7 @@ Ariadna does not impose direction; she refines it. Her presence is light, almost
 
   zaira: {
     id: 'zaira', name: 'Zaira', subtitle: 'the wisdom of the flesh', featured: true,
-    category: ['guardians'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     featuredImage: 'images/zaira-03.png',
     price: 167, fragile: true,
     dims: { w: 16, h: 21, d: 19 },
@@ -108,7 +108,7 @@ Zaira calls us back to the flesh, to the awareness of our mortality, to a more v
 
   lunar: {
     id: 'lunar', name: 'Moon Guardian', subtitle: 'Movement of life and femininity', featured: true,
-    category: ['guardians','ritual'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 139, fragile: true,
     dims: { w: 14.5, h: 17.5, d: 10 },
     weight: 0.58, productionCost: 6, hoursWorked: 4, packingEfficiency: 0.65,
@@ -239,7 +239,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
 
   totem: {
     id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life', featured: true,
-    category: ['functional'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['functional'], status: 'available', wholesaleAvailable: true,
     price: 132, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
     weight: 1.35, productionCost: 10, hoursWorked: 4, packingEfficiency: 0.20,
@@ -398,7 +398,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   thewalk: {
     id: 'thewalk', name: 'The Walk', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 79, fragile: false,
     dims: { w: 20, h: 20, d: 1.5 },
     weight: 0.3, productionCost: 3, hoursWorked: 4, framed: 'unframed', flatPackable: true,
@@ -444,7 +444,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   wait: {
     id: 'wait', name: 'Wait for me', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 302, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -457,7 +457,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   marea: {
     id: 'marea', name: 'Marea', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 329, fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -470,7 +470,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   pivot: {
     id: 'pivot', name: 'Pivot', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 329,fragile: false,
     dims: { w: 35, h: 35, d: 0.4 },
     dimsFramed: { w: 41.5, h: 41.5, d: 1.5 },
@@ -483,7 +483,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   whispers: {
     id: 'whispers', name: 'Whispers of the Deep', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 290, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 0.7, productionCost: 4, hoursWorked: 9, framed: 'stretched canvas', flatPackable: true,
@@ -495,7 +495,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   horizons: {
     id: 'horizons', name: 'Inner Horizons', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 359, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     weight: 1.25, productionCost: 4, hoursWorked: 11, framed: 'unframed', flatPackable: true,
@@ -507,7 +507,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   encuentro: {
     id: 'encuentro', name: 'Encuentros', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 309, fragile: false,
     dims: { w: 60, h: 40, d: 0.3 },
     dimsFramed: { w: 71.5, h: 51.5, d: 2.3 },
@@ -520,8 +520,8 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   confluence: {
     id: 'confluence', name: 'Confluence', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
-    price: 389, fragile: false,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    price: 410, fragile: false,
     dims: { w: 90, h: 60, d: 0.1 },
     weight: 0.8, productionCost: 8, hoursWorked: 13, framed: 'stretched canvas',
     materials: 'Acrylic on canvas',
@@ -532,7 +532,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   dreams: {
     id: 'dreams', name: 'Dreams Echo', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 75, fragile: false,
     dims: { w: 40, h: 40, d: 1.5 },
     weight: 0.43, productionCost: 3, hoursWorked: 2, framed: 'stretched canvas',
@@ -546,7 +546,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'floral-dream-1': {
     id: 'floral-dream-1', name: 'Floral Dream 1', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 120, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
@@ -559,7 +559,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   'floral-dream-2': {
     id: 'floral-dream-2', name: 'Floral Dream 2', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 90, fragile: false,
     dims: { w: 20, h: 27.5, d: 0 }, gsm: 180,
     dimsFramed: { w: 30, h: 40, d: 0 },
@@ -572,7 +572,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   master: {
     id: 'master', name: 'Master', featured: true,
-    category: ['wallart'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 70, fragile: false,
     dims: { w: 21, h: 14, d: 0 }, gsm: 80,
     dimsFramed: { w: 30.5, h: 22, d: 1.4 },
@@ -587,7 +587,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
 
   newman: {
     id: 'newman', name: 'A New Man', subtitle: 'guardian of inner space', featured: true,
-    category: ['guardians'], status: 'unavailable', wholesaleAvailable: true,
+    category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 146, fragile: true,
     dims: { w: 16, h: 35, d: 18 },
     weight: 3.0, productionCost: 10, hoursWorked: 7, packingEfficiency: 0,
@@ -625,7 +625,8 @@ What we do with our loss, with our pain, with the love that cannot reach the des
     id: 'catch-my-breath', name: 'Catch my breath', featured: true,
     category: [], status: 'unavailable', wholesaleAvailable: false,
     materials: 'Ceramic and textile on wood canvas',
-    dims: { w: 60, h: 80, d: 0 },
+    dims: { w: 82, h: 65, d: 0 },
+    price: 678,
     year: 2026,
     description: `This piece opened up so much in me. It was a hallway leading me into a very deep, difficult room within myself. It felt like tearing away a veil that had kept me from reaching it.
 
@@ -665,6 +666,17 @@ But after this catharsis, I was able to see one of my deepest fears and greatest
     materials: 'Ceramic, bright glaze, underglazes, metal details',
     certificate: 'CH-CER-2026-010',
     images: ['images/eye-01.png', 'images/eye-02.png', 'images/eye-03.png', 'images/eye-04.png', 'images/eye-05.png'],
+  },
+
+  'night-forest': {
+    id: 'night-forest', name: 'Night Forest',
+    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    price: 78, fragile: false,
+    dims: { w: 28.5, h: 20, d: 0 },
+    weight: 0.8,
+    framed: 'framed',
+    materials: 'Acrylic on cardboard',
+    images: ['images/NightForest-01.png', 'images/NightForest-02.png', 'images/NightForest-03.png'],
   },
 
   // ─── VENDIDO ───────────────────────────────────────────────────
@@ -737,8 +749,8 @@ function getSortedProductOrder() {
   const paintings  = ids.filter(id => isPainting(PRODUCTS[id]));
 
   const byPrice = (a, b) => {
-    const pa = PRODUCTS[a].priceSale ?? PRODUCTS[a].price ?? 0;
-    const pb = PRODUCTS[b].priceSale ?? PRODUCTS[b].price ?? 0;
+    const pa = PRODUCTS[a].price ?? 0;
+    const pb = PRODUCTS[b].price ?? 0;
     return pa - pb;
   };
 

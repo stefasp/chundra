@@ -54,7 +54,7 @@ const Cart = {
 
   getSubtotal() {
     return this.getProducts().reduce((sum, p) => {
-      return sum + (p.priceSale ?? p.price);
+      return sum + p.price;
     }, 0);
   },
 
