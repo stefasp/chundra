@@ -132,7 +132,7 @@ Ritual: Includes a guided exercise to help reconnect with your femenine inner cy
   },
 
   marina: {
-    id: 'marina', name: 'Guardian Marina', subtitle: 'transformative power of depth',
+    id: 'marina', name: 'Guardian Marina', subtitle: 'Facing challenges, fears and the weaker parts of oneself',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 85, fragile: true,
     dims: { w: 15, h: 19, d: 12.5 },
@@ -151,7 +151,7 @@ Ritual: Includes an exercise to help you face challenges or fears, connecting wi
   },
 
   salamanca: {
-    id: 'salamanca', name: 'Guardian Salamanca', subtitle: 'guardian of transition',
+    id: 'salamanca', name: 'Guardian Salamanca', subtitle: 'Leaving behind inherited mandates',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 89, fragile: true,
     dims: { w: 16, h: 18.5, d: 13 },
@@ -168,7 +168,7 @@ Ritual: Includes an exercise inviting reflection on inherited mandates and consc
   },
 
   trina: {
-    id: 'trina', name: 'Guardian Trina', subtitle: 'the dreams protector',
+    id: 'trina', name: 'Guardian Trina', subtitle: 'To find healing oportunities in what hurts',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 89, fragile: true,
     dims: { w: 10, h: 15, d: 10 },
@@ -185,7 +185,7 @@ Ritual: Includes an exercise to dialogue with the past and reconstruct it in a w
   },
 
   amalia: {
-    id: 'amalia', name: 'Guardian Amalia', subtitle: 'conscious serenity',
+    id: 'amalia', name: 'Guardian Amalia', subtitle: 'Awake your conscious messanger',
     category: ['guardians','ritual'], status: 'available', wholesaleAvailable: true,
     price: 189, fragile: true,
     dims: { w: 13, h: 38, d: 13 },
@@ -202,7 +202,7 @@ Includes a ritual to reconnect with the present and cultivate a kinder, more ser
   // ─── VIAJEROS ──────────────────────────────────────────────────
 
   traveler: {
-    id: 'traveler', name: 'The Silent Traveler', subtitle: 'the ancient messenger',
+    id: 'traveler', name: 'The Silent Traveler', subtitle: 'The ancient messenger',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 119, fragile: true,
     dims: { w: 18.5, h: 17.5, d: 16 },
@@ -222,7 +222,7 @@ This piece was sketched while wandering through the Gibralfaro mountain in Mála
   },
 
   gibran: {
-    id: 'gibran', name: 'Traveler Gibran', subtitle: 'a fully present traveler',
+    id: 'gibran', name: 'Traveler Gibran', subtitle: 'A fully present traveler',
     category: ['guardians'], status: 'available', wholesaleAvailable: true,
     price: 94, fragile: true,
     dims: { w: 15, h: 12, d: 6.5 },
@@ -238,7 +238,7 @@ This piece is a reminder that the essential thing is not to accumulate places, b
   // ─── LÁMPARAS ──────────────────────────────────────────────────
 
   totem: {
-    id: 'totem', name: 'Totem of Legacy', subtitle: 'cycle of life', featured: true,
+    id: 'totem', name: 'Totem of Legacy', subtitle: 'Cycle of life', featured: true,
     category: ['functional'], status: 'available', wholesaleAvailable: true,
     price: 132, fragile: true,
     dims: { w: 13, h: 30, d: 9 },
@@ -255,14 +255,14 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   // ─── MACETAS & JARS ────────────────────────────────────────────
 
   carnival: {
-    id: 'carnival', name: 'Carnival Jar', subtitle: 'life cycles',
+    id: 'carnival', name: 'Carnival Jar', subtitle: 'We are animals too',
     category: ['functional'], status: 'available', wholesaleAvailable: true,
     price: 178, fragile: true,
     dims: { w: 17, h: 21, d: 17 },
     weight: 1.6, productionCost: 10, hoursWorked: 8, packingEfficiency: 0.30,
     materials: 'Ceramic',
     certificate: 'CH-CER-2024-003',
-    description: `This piece embodies the strength of encounters and the transformations that occur when they happen. Everything is intertwined, all vital energies are connected, the cycles that pass through us, and the beauty that arises from chaos. A presence that inhabits the space and fills it with inner movement.`,
+    description: `One day, I was walking in the woods when I saw a tree with a name carved into it. I started thinking about the person who had done that, maybe trying to leave a mark, something to remember their visit by. Then I realized that our names don't really say much about who we are. They are just words our parents chose for us. So, what do we leave behind as we move through life? Is that what we are? A tree with a name carved into it? Maybe a bird we have fed? What do we do? What do we build? Aren't our actions and our choices a better way to show who we are? And yet, we don't really think about so many of the things we do. We don't always choose them for ourselves. We are given a name, we grow up following certain rules, and we learn to fit into the world around us. Most of the time, we don't stop to ask if that's really who we are. But when you start to see that the way society expects you to be is just something from the outside, something you have learned, you can start to see the animal you really are. And that animal part of us can bring out so many feelings and truths that we may have forgotten or never really known.`,
     images: ['images/rito-01.png','images/rito-02.png','images/rito-03.png','images/rito-04.png','images/rito-05.png','images/rito-06.png', 'images/rito-07.png', 'images/rito-08.png'],
   },
 
