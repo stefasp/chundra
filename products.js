@@ -269,7 +269,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   // ─── WALL ART ──────────────────────────────────────────────────
 
   'candle-cat': {
-    id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'wall art collection',
+    id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 55, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
@@ -312,7 +312,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
 
   'candle-freckles': {
-    id: 'candle-freckles', name: 'Malva Freckles Candle Holder', subtitle: 'wall art collection',
+    id: 'candle-freckles', name: 'Malva Freckles Candle Holder', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
@@ -324,7 +324,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
 
   'melted-colors': {
-    id: 'melted-colors', name: 'Melted Colors Candle Holder', subtitle: 'wall art collection',
+    id: 'melted-colors', name: 'Melted Colors Candle Holder', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
@@ -335,7 +335,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
 
   gaze: {
-    id: 'gaze', name: 'The Gaze', subtitle: 'wall art collection',
+    id: 'gaze', name: 'The Gaze', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 14.5, h: 40, d: 1.5 },        // fully extended
@@ -349,7 +349,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
 
   heartandfox: {
-    id: 'heartandfox', name: 'Heart & Fox', subtitle: 'wall art collection',
+    id: 'heartandfox', name: 'Heart & Fox', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 14, h: 40, d: 1.5 },          // fully extended
@@ -363,7 +363,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
 
   'snake-heart-flam-1': {
-    id: 'snake-heart-flam-1', name: 'Snake Heart Flam 1', subtitle: 'wall art collection',
+    id: 'snake-heart-flam-1', name: 'Snake Heart Flam 1', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'sold', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 19, h: 36, d: 2 },
@@ -379,7 +379,7 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   },
 
   'bright-star-1': {
-    id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'wall art collection',
+    id: 'bright-star-1', name: 'Bright Star 1', subtitle: 'Wall art collection',
     category: ['wallart'], status: 'available', wholesaleAvailable: true,
     price: 48, fragile: true,
     dims: { w: 23, h: 40, d: 1.5 },

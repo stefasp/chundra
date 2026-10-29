@@ -1,7 +1,7 @@
 .shop-hero {
   min-height: clamp(220px, 26.2vw, 440px);
   padding: 32px 20px;
-  background: #333 url("images/shop-bg.png") center / cover no-repeat;
+  background: #333 url("images/shop-bg.jpg") center / cover no-repeat;
 }
 
 .shop-hero .hero-text {
