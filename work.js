@@ -2,9 +2,27 @@
   const grid = document.getElementById('featured-works');
   if (!grid) return;
 
-  Object.values(PRODUCTS)
-    .filter(product => product.featured)
-    .forEach(product => {
+  const featured = Object.values(PRODUCTS).filter(product => product.featured);
+  const firstIds = ['catch-my-breath', 'wounded'];
+  const firstWorks = firstIds
+    .map(id => featured.find(product => product.id === id))
+    .filter(Boolean);
+  const remainingWorks = featured.filter(product => !firstIds.includes(product.id));
+  const horizons = remainingWorks.find(product => product.id === 'horizons');
+
+  if (horizons) {
+    remainingWorks.splice(remainingWorks.indexOf(horizons), 1);
+    const pivotIndex = remainingWorks.findIndex(product => product.id === 'pivot');
+    remainingWorks.splice(pivotIndex === -1 ? remainingWorks.length : pivotIndex + 1, 0, horizons);
+  }
+
+  const ariadnaIndex = remainingWorks.findIndex(product => product.id === 'ariadna');
+  if (ariadnaIndex !== -1) {
+    const [ariadna] = remainingWorks.splice(ariadnaIndex, 1);
+    remainingWorks.splice(Math.floor(remainingWorks.length / 2), 0, ariadna);
+  }
+
+  [...firstWorks, ...remainingWorks].forEach(product => {
       const image = product.featuredImage || product.images?.[0];
       if (!image) {
         console.error(`Featured product "${product.id}" has no image.`);
