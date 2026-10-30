@@ -60,7 +60,7 @@ body {
     z-index: 50;
     left: 0;
     width: 100%;
-    display: none;
+    display: block;
 }
 .marquee-wrapper .marquee {
     display: flex;
