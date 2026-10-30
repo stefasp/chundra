@@ -222,11 +222,9 @@
 <script>
 (function() {
   const WHOLESALE_DIVISOR = 3;
+  const MONTHLY_WORK_HOURS = 4 * 5 * 52 / 12;
   const tbody = document.getElementById('earnings-tbody');
   const summaryEl = document.getElementById('earnings-summary');
-
-  const PAINTING_CATS = ['cuadros', 'dibujo'];
-  function isPainting(p) { return (p.category || []).some(c => PAINTING_CATS.includes(c)); }
 
   function fmt(n) {
     if (n === null || n === undefined || isNaN(n)) return '<span class="na">—</span>';
@@ -366,6 +364,9 @@
     const moreEarnings = sculptStats.totalProfit >= paintStats.totalProfit
       ? `Sculptures (€${sculptStats.totalProfit.toFixed(0)})`
       : `Paintings (€${paintStats.totalProfit.toFixed(0)})`;
+    const lessEarnings = sculptStats.totalProfit < paintStats.totalProfit
+      ? `Sculptures (€${sculptStats.totalProfit.toFixed(0)})`
+      : `Paintings (€${paintStats.totalProfit.toFixed(0)})`;
 
     summaryEl.innerHTML = `
       <div class="summary-box">
@@ -374,12 +375,17 @@
       </div>
       <div class="summary-box">
         <div class="label">Higher total profit</div>
-        <div class="value">${moreEarnings}</div>
+        <div class="value">${moreEarnings} vs ${lessEarnings}</div>
       </div>
       <div class="summary-box">
         <div class="label">Avg. profit/h (retail)</div>
         <div class="value">€${sculptStats.avgProfitPerHourRetail.toFixed(0)} <span class="group-tag">sculptures</span></div>
         <div class="value">€${paintStats.avgProfitPerHourRetail.toFixed(0)} <span class="group-tag">paintings</span></div>
+      </div>
+      <div class="summary-box">
+        <div class="label">Monthly gains (4h × 5 days/week)</div>
+        <div class="value">€${(sculptStats.avgProfitPerHourRetail * MONTHLY_WORK_HOURS).toFixed(0)} <span class="group-tag">sculptures</span></div>
+        <div class="value">€${(paintStats.avgProfitPerHourRetail * MONTHLY_WORK_HOURS).toFixed(0)} <span class="group-tag">paintings</span></div>
       </div>
       <div class="summary-box">
         <div class="label">Avg. profit/h (partner)</div>

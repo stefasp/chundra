@@ -714,7 +714,21 @@ For indoor use only.`,
 
 };
 
+const PRICE_OVERRIDES = {
+  ariadna: 112,
+  zaira: 112,
+  traveler: 86,
+  lunar: 98,
+  amalia: 108,
+  bird: 36,
+};
+
 Object.values(PRODUCTS).forEach(product => {
+  if (product.price != null) {
+    product.price -= 10;
+    if (product.id === 'juana' || product.id === 'mara') product.price -= 10;
+    if (PRICE_OVERRIDES[product.id] != null) product.price = PRICE_OVERRIDES[product.id];
+  }
   product.featured ??= false;
   product.featuredImage ??= null;
   if (product.year == null && product.certificate) {
@@ -739,7 +753,8 @@ const PRODUCT_ORDER = [
 const PAINTING_CATEGORIES = ['cuadros', 'dibujo'];
 
 function isPainting(product) {
-  return (product.category || []).some(c => PAINTING_CATEGORIES.includes(c));
+  return /^CH-(PAINT|DRAW)-/.test(product.certificate || '') ||
+    (product.category || []).some(c => PAINTING_CATEGORIES.includes(c));
 }
 
 function getSortedProductOrder() {
