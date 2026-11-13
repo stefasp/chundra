@@ -269,15 +269,26 @@ Like a totem, it stands tall, carrying the weight of memories, of connections, o
   // ─── WALL ART ──────────────────────────────────────────────────
 
   'candle-cat': {
-    id: 'candle-cat', name: 'Cat Candle Holder', subtitle: 'Wall art collection',
-    category: ['wallart'], status: 'available', wholesaleAvailable: true,
+    id: 'candle-cat', name: 'Cat Candle Holder Pink', subtitle: 'Wall art collection',
+    category: ['wallart', 'ritual'], status: 'available', wholesaleAvailable: true,
     price: 55, fragile: true,
     dims: { w: 14, h: 20, d: 7 },
     weight: 0.5, productionCost: 5, hoursWorked: 2, packingEfficiency: 0.85,
     materials: 'Ceramic',
     certificate: 'CH-CER-2026-004',
     description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. With a more pop and contemporary aesthetic, it features a playful yet elegant cat gaze that looks back at the viewer with charm and subtle sophistication. Its color palette blends lilacs, violets, and blues, creating a modern, dreamy presence that balances character and refinement.`,
-    images: ['images/portavela-catpower-01.png', 'images/portavela-catpower-02.png', 'images/portavela-catpower-03.png'],
+    images: ['images/portavela-catpower-01.png', 'images/portavela-catpower-02.png'],
+  },
+  'candle-cat-blue': {
+    id: 'candle-cat-blue', name: 'Cat Candle Holder Blue', subtitle: 'Wall art collection',
+    category: ['wallart', 'ritual'], status: 'available', wholesaleAvailable: true,
+    price: 55, fragile: true,
+    dims: { w: 14, h: 20, d: 7 },
+    weight: 0.5, productionCost: 5, hoursWorked: 2, packingEfficiency: 0.85,
+    materials: 'Ceramic',
+    certificate: 'CH-CER-2026-004',
+    description: `This piece belongs to the Wall Art collection and is designed with a delicate hanging pendant, allowing the candle holder to be displayed on the wall like a small personal temple of light. With a more pop and contemporary aesthetic, it features a playful yet elegant cat gaze that looks back at the viewer with charm and subtle sophistication. Its color palette blends lilacs, violets, and blues, creating a modern, dreamy presence that balances character and refinement.`,
+    images: ['images/portavela-catpower-blue-01.png', 'images/portavela-catpower-blue-02.png', 'images/portavela-catpower-blue-03.png'],
   },
   'sun-face': {
     id: 'sun-face', name: 'Sun Vessel',
@@ -739,7 +750,7 @@ Object.values(PRODUCTS).forEach(product => {
 
 const PRODUCT_ORDER = [
   'thewalk','bird','mistify',
-  'candle-cat','candle-freckles','gaze','heartandfox',
+  'candle-cat','candle-cat-blue','candle-freckles','gaze','heartandfox',
   'ariadna','zaira','juana','mara','lunar','marina','salamanca','trina','amalia',
   'carnival','traveler','gibran','totem',
   'wait','marea','pivot','whispers','horizons','encuentro','confluence','dreams',
